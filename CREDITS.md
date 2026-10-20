@@ -1,0 +1,10 @@
+# Sprite credits
+
+Pixel Art / Character Assets by Luiz Melo.
+
+- Volt: Martial Hero — https://luizmelo.itch.io/martial-hero
+- Ember: Martial Hero 2 — https://luizmelo.itch.io/martial-hero-2
+- Both packs are CC0 1.0 Universal: https://creativecommons.org/publicdomain/zero/1.0/
+- Download mirror: https://github.com/chriscourses/fighting-game/tree/e39c1c59ac5b133468da25ee2251f8062416ebdc/img
+
+Original sprite artwork is unchanged. Neon glow, ground reflections, shield effects, and animation integration are game rendering effects. The two attack buttons select the sprites' two sword attack animations; the underlying light/heavy damage values are retained.
