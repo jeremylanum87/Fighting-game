@@ -52,3 +52,7 @@ The roster now has more pronounced original fighting-game roles and silhouettes.
 
 ## Arcade graphics edition
 Eight new detailed pixel-art strips (64 source poses) replace the simple procedural fighters, with eight portrait images. Runtime pose sequencing and transforms adapt them to the existing normal attacks and 24 specials; these are eight source poses per fighter, not bespoke hand-drawn frames for every move. Beveled health bars, portraits, low-resolution pixel scaling and an animated spectator layer complete the arcade presentation. The original roster, combat logic, archetypes and mobile controls are preserved.
+
+## Named combo system
+Tap attacks to chain connected normals into specials. Two connected lights can chain together, then cancel into heavy and a compatible special. Whiffs cannot cancel; a third light cannot loop the chain. Fourteen-frame input buffering makes follow-ups easier on touch controls.
+Each fighter has an on-screen named route: Live Wire, Burn Notice, Word Perfect, Block Rocker, Ginga Flow, Checkmate, Fast Forward, and Gold Record. The guide uses the selected fighter’s move names. The HUD tracks actual health damage and hit count, counts a multi-hit special as one route input, and marks combos complete/blocked/interrupted when the defender recovers, guards, or turns the fight around. Existing progressive damage scaling and special cooldowns still apply.
