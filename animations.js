@@ -31,16 +31,53 @@ function rigPose(id,state,t){
  }
  return p;
 }
-function makeRigFrame(id,state,index,count){const c=document.createElement('canvas');c.width=128;c.height=128;const g=c.getContext('2d'),p=rigPose(id,state,index/Math.max(1,count-1)),color=fighterRoster[id].color,skin=SKINS[id];g.imageSmoothingEnabled=false;g.translate(60,112+p.offset);if(p.angle){g.translate(0,-29);g.rotate(p.angle);g.translate(0,29)}
+const BODY_STYLES={
+ volt:{width:.96,height:1,skin:'#c08a62',pants:'#253342',fit:'boxer',stance:1},
+ ember:{width:1.02,height:1.02,skin:'#925f46',pants:'#25312e',fit:'hoodvest',stance:2},
+ cipher:{width:.88,height:1.04,skin:'#d2a47c',pants:'#242638',fit:'coat',stance:3},
+ brick:{width:1.26,height:1.08,skin:'#a77450',pants:'#292f34',fit:'wrestler',stance:4},
+ jade:{width:.94,height:.98,skin:'#ba855b',pants:'#d5cdb3',fit:'capoeira',stance:5},
+ rook:{width:1.14,height:1.03,skin:'#9e7256',pants:'#253444',fit:'bomber',stance:6},
+ haze:{width:.88,height:.98,skin:'#ca9b72',pants:'#212c37',fit:'hoodie',stance:7},
+ goldie:{width:1.08,height:1,skin:'#ad734b',pants:'#314357',fit:'varsity',stance:8}
+};
+function makeRigFrame(id,state,index,count){const c=document.createElement('canvas');c.width=128;c.height=128;const g=c.getContext('2d'),p=rigPose(id,state,index/Math.max(1,count-1)),color=fighterRoster[id].color,b=BODY_STYLES[id],skin=b.skin;g.imageSmoothingEnabled=false;g.translate(60,112+p.offset);g.scale(b.width,b.height);if(p.angle){g.translate(0,-29);g.rotate(p.angle);g.translate(0,29)}
+ const fill=(x,y,w,h,color)=>{g.fillStyle=color;g.fillRect(Math.round(x),Math.round(y),w,h)};
  function line(a,b,w,c){g.strokeStyle=c;g.lineWidth=w;g.lineCap='square';g.beginPath();g.moveTo(Math.round(a[0]),Math.round(a[1]));g.lineTo(Math.round(b[0]),Math.round(b[1]));g.stroke()}
- const dark='#1a2530',shoe='#ebe3cb';
- for(const [knee,foot] of [[p.leftKnee,p.leftFoot],[p.rightKnee,p.rightFoot]]){line(p.hip,knee,11,dark);line(knee,foot,10,dark);g.fillStyle=shoe;g.fillRect(Math.round(foot[0])-5,Math.round(foot[1])-2,15,5);g.fillStyle='#2d3436';g.fillRect(Math.round(foot[0])-5,Math.round(foot[1])+2,15,2)}
- line(p.shoulder,p.leftElbow,9,'#263344');line(p.leftElbow,p.leftHand,7,skin);g.fillStyle=skin;g.fillRect(Math.round(p.leftHand[0])-4,Math.round(p.leftHand[1])-4,8,8);
- line(p.shoulder,p.hip,22,'#101b25');line([p.shoulder[0]-2,p.shoulder[1]],[p.hip[0]-2,p.hip[1]],17,color);line([p.shoulder[0]+5,p.shoulder[1]],[p.hip[0]+5,p.hip[1]],3,'#f0e1af');g.fillStyle='#192531';g.fillRect(p.hip[0]-11,p.hip[1]-1,23,5);
- line(p.shoulder,p.rightElbow,10,color);line(p.rightElbow,p.rightHand,7,skin);g.fillStyle=skin;g.fillRect(Math.round(p.rightHand[0])-4,Math.round(p.rightHand[1])-4,9,8);g.fillStyle=color;g.fillRect(Math.round(p.rightHand[0])-4,Math.round(p.rightHand[1])+1,9,3);
- g.fillStyle=skin;g.fillRect(Math.round(p.head[0])-7,Math.round(p.head[1])-8,15,17);g.fillStyle='#18242e';g.fillRect(Math.round(p.head[0])-8,Math.round(p.head[1])-11,17,7);g.fillStyle=color;g.fillRect(Math.round(p.head[0])-9,Math.round(p.head[1])-7,23,3);g.fillStyle='#171d24';g.fillRect(Math.round(p.head[0])+4,Math.round(p.head[1])-1,3,2);
- // Small gold chain on each jacket; Goldie's is heavier.
- line([p.shoulder[0]-5,p.shoulder[1]-1],[p.shoulder[0],p.shoulder[1]+7],id==='goldie'?2:1,'#e8bd52');line([p.shoulder[0],p.shoulder[1]+7],[p.shoulder[0]+5,p.shoulder[1]-1],id==='goldie'?2:1,'#e8bd52');return c;}
+ if(state==='idle'||state==='guard'){
+  if(id==='volt'){p.rightHand=[18,-61];p.leftHand=[-5,-58];p.rightElbow=[21,-43]}
+  if(id==='ember'){p.head[0]=-4;p.leftHand=[-2,-57];p.rightHand=[23,-59];p.rightElbow=[26,-43]}
+  if(id==='cipher'){p.rightHand=[29,-51];p.leftHand=[-4,-54];p.leftFoot=[-18,-1]}
+  if(id==='brick'){p.leftHand=[-23,-38];p.rightHand=[28,-36];p.shoulder[1]=-49;p.leftFoot=[-19,-1];p.rightFoot=[22,-1]}
+  if(id==='jade'){p.offset+=3;p.leftHand=[-23,-39];p.rightHand=[26,-42];p.leftFoot=[-23,-1];p.rightFoot=[25,-1];p.hip[0]=Math.sin(index)*3}
+  if(id==='rook'){p.leftHand=[-12,-45];p.rightHand=[30,-43];p.rightElbow=[20,-38]}
+  if(id==='haze'){p.head[0]=5;p.shoulder[0]=4;p.rightHand=[24,-56];p.leftHand=[-14,-43];p.leftFoot=[-22,-1]}
+  if(id==='goldie'){p.leftHand=[-25,-48];p.rightHand=[23,-43];p.head[0]=-4;p.rightFoot=[24,-1]}
+ }
+ for(const [knee,foot] of [[p.leftKnee,p.leftFoot],[p.rightKnee,p.rightFoot]]){const w=id==='goldie'?14:id==='brick'?13:10;line(p.hip,knee,w,b.pants);line(knee,foot,w-1,b.pants);fill(foot[0]-5,foot[1]-2,id==='brick'?17:15,id==='brick'?7:5,id==='jade'?skin:id==='brick'?'#222a30':'#e8e0ca');if(id!=='jade')fill(foot[0]-5,foot[1]+2,16,2,'#131c23');if(id==='jade')fill(foot[0]-5,foot[1]-6,9,3,'#e9e2ce');if(id==='goldie')fill(knee[0]-4,knee[1]-1,8,2,'#597084')}
+ const sleeveless=['boxer','hoodvest','wrestler','capoeira'].includes(b.fit);
+ line(p.shoulder,p.leftElbow,id==='brick'?12:9,sleeveless?skin:b.fit==='varsity'?'#e2d9b9':color);line(p.leftElbow,p.leftHand,id==='brick'?10:7,skin);
+ if(b.fit==='coat'){line([p.shoulder[0]-5,p.shoulder[1]],[p.hip[0]-8,p.hip[1]+13],12,color);line([p.shoulder[0]+5,p.shoulder[1]],[p.hip[0]+10,p.hip[1]+12],10,color)}
+ line(p.shoulder,p.hip,id==='brick'?25:22,'#111c25');line([p.shoulder[0]-2,p.shoulder[1]],[p.hip[0]-2,p.hip[1]],id==='brick'?21:17,color);
+ if(b.fit==='bomber'){line([p.shoulder[0]-7,p.shoulder[1]],[p.hip[0]+6,p.hip[1]],4,'#182532');fill(p.hip[0]-13,p.hip[1]-2,27,5,'#d9c9aa')}
+ else if(b.fit==='wrestler'){fill(p.hip[0]-13,p.hip[1]-1,27,6,'#181d23');fill(p.hip[0]-5,p.hip[1]-1,11,6,'#b9b1a0');line([p.shoulder[0]-4,p.shoulder[1]-2],[p.hip[0]-4,p.hip[1]-4],3,'#e4d4aa')}
+ else if(b.fit==='capoeira'){fill(p.hip[0]-11,p.hip[1]-2,24,4,'#e9b849');fill(p.hip[0]+5,p.hip[1]+1,3,14,'#e9b849')}
+ else{fill(p.hip[0]-11,p.hip[1]-1,23,5,'#17212a');if(b.fit==='hoodie')fill(p.hip[0]-6,p.hip[1]-9,14,4,'#262838');if(b.fit==='varsity'){fill(p.shoulder[0]-8,p.shoulder[1]+5,5,8,'#eee2bf');fill(p.hip[0]-12,p.hip[1]-2,25,3,'#e3dbc2')}}
+ line(p.shoulder,p.rightElbow,id==='brick'?13:10,sleeveless?skin:b.fit==='varsity'?'#e2d9b9':color);line(p.rightElbow,p.rightHand,id==='brick'?10:7,skin);
+ for(const hand of [p.leftHand,p.rightHand]){if(b.fit==='boxer'){fill(hand[0]-6,hand[1]-6,13,12,'#172330');fill(hand[0]-5,hand[1]+3,12,4,'#eee6ce');fill(hand[0],hand[1]-5,6,2,color)}else{fill(hand[0]-4,hand[1]-4,9,8,skin);if(['hoodvest','wrestler','bomber'].includes(b.fit))fill(hand[0]-4,hand[1]+1,9,4,'#e2d9c2')}}
+ const hx=p.head[0],hy=p.head[1];if(['hoodvest','hoodie'].includes(b.fit)){fill(hx-11,hy-12,22,24,b.fit==='hoodie'?color:'#263533');fill(hx-7,hy-9,16,19,'#15242b')}
+ fill(hx-7,hy-8,15,17,skin);fill(hx-8,hy-11,17,b.fit==='wrestler'?4:7,'#18242b');
+ if(b.fit==='boxer'){fill(hx-7,hy-14,14,5,'#17202b');fill(hx-7,hy-8,15,2,'#eee0b8')}
+ if(b.fit==='capoeira'){fill(hx-10,hy-10,20,7,'#272323');fill(hx-12,hy-16,9,9,'#272323');fill(hx-9,hy-8,17,3,color)}
+ if(b.fit==='varsity'){fill(hx-9,hy-12,20,7,color);fill(hx-18,hy-7,12,3,color);fill(hx+4,hy-12,3,5,'#f4e2a2')}
+ if(b.fit==='coat'){fill(hx-11,hy-6,4,13,'#1d2430');fill(hx-10,hy-13,18,3,'#55546b');fill(hx+1,hy-2,11,4,'#202531');fill(hx+4,hy-2,4,1,'#b1dded')}
+ if(b.fit==='hoodie'){fill(hx-8,hy+3,17,7,'#262735');fill(hx-7,hy+5,15,2,color)}
+ if(b.fit==='wrestler'){fill(hx-7,hy+5,15,5,'#292323');fill(hx-4,hy-10,10,3,'#3a2921')}
+ if(b.fit==='bomber')fill(hx+2,hy-9,7,3,'#a3a49b');
+ fill(hx+4,hy-1,3,2,'#171d24');
+ if(b.fit==='varsity'||b.fit==='coat'){line([p.shoulder[0]-5,p.shoulder[1]-1],[p.shoulder[0],p.shoulder[1]+8],b.fit==='varsity'?3:1,'#e8bd52');line([p.shoulder[0],p.shoulder[1]+8],[p.shoulder[0]+5,p.shoulder[1]-1],b.fit==='varsity'?3:1,'#e8bd52');if(b.fit==='varsity')fill(p.shoulder[0]-3,p.shoulder[1]+7,7,5,'#f4cf55')}
+ return c;
+}
 function rigFrames(id,state){const key=id+':'+state;if(!poseCache.has(key)){const count=state==='guard'?1:state.startsWith('special:')?8:state==='run'?8:6;poseCache.set(key,Array.from({length:count},(_,i)=>makeRigFrame(id,state,i,count)))}return poseCache.get(key)}
 function renderStreetFighter(g,f,scale=2.1){const id=f.character;if(!fighterRoster[id])return;let state=f.animState||'idle',progress=0;if(f.attack?.move?.cooldown){const a=attackProgress(f.attack);state=`special:${f.attack.type}:${a.phase}`;progress=a.p}else progress=['death','take-hit','jump','fall'].includes(state)?Math.min(1,(f.animTime||0)*2):((f.animTime||0)*(state==='run'?1.7:1))%1;const frames=rigFrames(id,state),frame=frames[Math.min(frames.length-1,Math.floor(progress*frames.length))];g.save();g.translate(f.x,f.y);g.scale(f.face||1,1);g.imageSmoothingEnabled=false;g.drawImage(frame,-60*scale,-112*scale,128*scale,128*scale);g.restore()}
 // Both previews and in-match fighters use the same original rig.
