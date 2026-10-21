@@ -88,3 +88,7 @@ Training includes live hit/guard/whiff feedback, input-buffer expiry guidance, l
 
 ### Faster combat and smooth motion
 Combat runs at 1.08× speed through fixed simulation steps. The round clock, rival openings and super cinematic retain their normal pace. Runtime pixel animation adds continuous walk cycles, breathing idle, air/landing transitions and subtle attack anticipation/follow-through, with interpolated movement between simulation steps. Large hit/throw corrections remain immediate.
+
+
+### Detailed effects
+Layered impact sparks, blue guard shards, landing dust, short special-move afterimages and fighter-specific energy/flame/wind/gold/speed/quake effects run entirely on Canvas. Projectile trails have character palettes and distinct fire or energy details. Effects use a separate random generator and never change hitboxes or damage. Particle counts are capped at 180 in full effects and 28 in FX LOW; low mode removes afterimages. Effects freeze during pause and super cinematics.
