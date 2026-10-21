@@ -181,3 +181,9 @@ Each has original reach/lift/release rig poses and a distinct launch trajectory.
 Successful dedicated throws now show both fighters together through a half-second grab/lift/release sequence. Sweep, toss, suplex and spin trajectories differ by character, with a landing burst. These are visual sequences over the existing damage/collision simulation; no additional damage is applied. They freeze on pause and clear on reset or interruption. Each fighter has a 24-frame victory routine that blends into a signature pose and continues with subtle movement, plus a named victory caption.
 
 Audio now defaults to enabled and unlocks automatically on the first tap or keypress, including START. Android/browser autoplay rules prevent audible playback before a gesture. The AUDIO button still mutes, and that preference saves locally alongside existing volume settings. No microphone permission is required.
+
+
+### Eight signature projectiles
+Tap PROJECTILE or press F; Training includes Signature projectile demonstrations. These are additional moves and preserve all existing specials. Volt fires Neon Bolt (fast lightning); Ember casts Backdraft Flame (slower, heavier flame); Cipher sends Cipher Pulse (energy ring); Brick launches Concrete Quake (short ground eruption); Jade throws Ginga Wind Disc (fast wind ring); Rook sends Crosswalk Shockwave (longer low wave); Haze fires Afterimage Dart (fastest, lightest hit); Goldie throws Platinum Disc (spinning record). Each has its own speed, range, damage, cooldown, launch pose and swept collision dimensions.
+
+Ground use only, one projectile per owner across all projectile moves, and no repeated firing from holding F. Brick/Rook waves require low guard or a jump; the others use normal guard. Existing special projectiles and supers retain their behavior. CPU fighters occasionally use signature shots at range based on delayed observations. Low FX removes extra signature trails.

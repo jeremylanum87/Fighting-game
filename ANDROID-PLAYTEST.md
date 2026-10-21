@@ -40,3 +40,5 @@ If a check fails, record phone model, Chrome version, orientation, control mode,
 24. Try THROW with all eight fighters and WATCH DEMO → Character throw in Training. Confirm it beats close guard, misses jumps/out-of-range opponents, cannot chain into hitstun, and respects wake-up protection. Hold move and tap THROW together; verify no repeated throws while held and no new horizontal overflow in portrait/landscape.
 
 25. Clear only the saved audio-enabled preference or use a fresh browser profile. Tap START and confirm music begins without a separate AUDIO tap. Mute, reload, tap START and confirm mute persists. Check paired throw lift/release and KO throws for all eight fighters, then pause and reset during the sequence. Watch each winner transition into their animated pose without a stuck attack.
+
+26. Fire PROJECTILE with every fighter, and try its Training demonstration. Check distinct art, speeds, hitboxes, block rules and cooldowns. Brick/Rook should require low guard. Hold F/PROJECTILE to verify no repeated firing, try jump evasion, and confirm the expanded attack pad fits in portrait/landscape. Test offline and Low FX.

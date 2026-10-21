@@ -53,7 +53,7 @@ stepFighter=function(f,other,dt){
  if(a.type==='uppercut'&&!m.grab&&!m.projectile&&m.launch!==0&&a.frame===m.startup)f.vy=-530;
  if(a.frame>=m.startup&&a.frame<m.startup+m.active){const drive=m.dash!==undefined?m.dash:a.type==='spinKick'?6:0;f.x=Math.max(50,Math.min(1050,f.x+f.face*drive));}
  if(a.frame>=m.startup&&a.frame<m.startup+m.active){
-  if((m.projectile||(a.type==='fireball'&&!f.character))&&!a.spawned){a.spawned=true;projectiles.push({owner:f,x:f.x+f.face*48,y:f.y-70,dir:f.face,life:2,move:m})}
+  if((m.projectile||(a.type==='fireball'&&!f.character))&&!a.spawned){a.spawned=true;projectiles.push({owner:f,x:f.x+f.face*48,y:f.y-(m.signature?(m.offset||70):70),dir:f.face,life:m.signature?m.life:2,age:0,move:m})}
   if((!a.hit||(m.multi&&a.frame-a.lastHit>=m.multi))&&!m.counter&&!m.dodge&&!m.projectile&&!(a.type==='fireball'&&!f.character)&&meleeConnects(f,other)){
    a.connected=applyCombatHit(f,other,m,f.face);a.hit=a.connected;if(a.connected)a.lastHit=a.frame;
   }
@@ -75,12 +75,12 @@ update=function(dt){
  }
  stepFighter(player,enemy,dt);stepFighter(enemy,player,dt);
  if(boxesOverlap(pushbox(player),pushbox(enemy))){const mid=(player.x+enemy.x)/2,dir=player.x<enemy.x?-1:1,half=(pushbox(player).w+pushbox(enemy).w)/4,left=Math.max(50,Math.min(1050-half*2,mid-half));player.x=dir<0?left:left+half*2;enemy.x=dir<0?left+half*2:left}
- for(const p of projectiles){const previousX=p.x;p.x+=p.dir*440*dt;p.life-=dt;const target=p.owner===player?enemy:player;if(projectileConnects(p,target,previousX)){if(applyCombatHit(p.owner,target,p.move||MOVES.fireball,p.dir))p.life=0}}
+ for(const p of projectiles){const previousX=p.x;p.x+=p.dir*(p.move?.signature?p.move.speed:440)*dt;p.life-=dt;p.age=(p.age||0)+dt;const target=p.owner===player?enemy:player;if(projectileConnects(p,target,previousX)){if(applyCombatHit(p.owner,target,p.move||MOVES.fireball,p.dir))p.life=0}}
  projectiles=projectiles.filter(p=>p.life>0&&p.x>0&&p.x<1100);
  particles.forEach(p=>{p.x+=p.vx*dt;p.y+=p.vy*dt;p.t-=dt});particles=particles.filter(p=>p.t>0);updateHud();updateCombatHud();if(player.hp<=0||enemy.hp<=0||remaining<=0){projectiles=[];endRound()}
 };
 const originalClearInput=clearInput;clearInput=function(){originalClearInput();previousKeys=new Set();inputQueue=[];directionHistory=[]};
-const originalDraw=draw;draw=function(){originalDraw();for(const p of projectiles){ctx.save();ctx.translate(p.x,p.y);ctx.scale(p.dir,1);ctx.shadowColor=p.owner.color;ctx.shadowBlur=24;ctx.fillStyle=p.owner.color;ctx.beginPath();ctx.ellipse(0,0,22,15,0,0,Math.PI*2);ctx.fill();ctx.fillStyle='#fff';ctx.beginPath();ctx.ellipse(5,-2,11,7,0,0,Math.PI*2);ctx.fill();ctx.restore()}};
+const originalDraw=draw;draw=function(){originalDraw();for(const p of projectiles){if(p.move?.signature)continue;ctx.save();ctx.translate(p.x,p.y);ctx.scale(p.dir,1);ctx.shadowColor=p.owner.color;ctx.shadowBlur=24;ctx.fillStyle=p.owner.color;ctx.beginPath();ctx.ellipse(0,0,22,15,0,0,Math.PI*2);ctx.fill();ctx.fillStyle='#fff';ctx.beginPath();ctx.ellipse(5,-2,11,7,0,0,Math.PI*2);ctx.fill();ctx.restore()}};
 animationState=function(f){return f.hp<=0?'death':f.stun>0?'take-hit':f.attack?(['kick','lowKick','jumpKick','spinKick'].includes(f.attack.type)?'attack2':'attack1'):f.block?'guard':f.y<ground?(f.vy<0?'jump':'fall'):Math.abs(f.vx)>0?'run':'idle'};
 const originalDrawFighter=drawFighter;drawFighter=function(f){if(f.crouch){ctx.save();ctx.translate(0,f.y*.28);ctx.scale(1,.72);originalDrawFighter(f);ctx.restore()}else originalDrawFighter(f)};
 spriteFrame=function(f,sprite){if(f.attack&&f.animState.startsWith('attack')){const m=f.attack.move||getMove(f,f.attack.type),a=f.attack.frame;const ratio=a<m.startup?.25*a/m.startup:a<m.startup+m.active?.25+.4*(a-m.startup)/m.active:.65+.35*(a-m.startup-m.active)/m.recovery;return Math.min(sprite.frames-1,Math.floor(ratio*sprite.frames))}if(f.animState==='guard')return 0;if(f.animState==='take-hit')return Math.min(sprite.frames-1,Math.floor((1-f.stun/Math.max(.01,f.hitDuration))*sprite.frames));const n=Math.floor(f.animTime*(f.animState==='run'?12:f.animState==='death'?9:8));return ['death','jump','fall'].includes(f.animState)?Math.min(sprite.frames-1,n):n%sprite.frames};
