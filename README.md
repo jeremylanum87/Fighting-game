@@ -155,3 +155,7 @@ RIVAL SET is a best-of-three series of normal first-to-two-round matches. Betwee
 CHARACTER MASTERY tracks each fighter separately through Rookie, Contender, Regular, Headliner and Block Legend. Competitive wins, named combo routes and recovery punishes earn XP; Training does not. Headliner unlocks the cyan Master outfit for that fighter. Rewards are cosmetic and saved on this device.
 
 Post-match highlights show the best combo, biggest recovery punish, finishing move and mastery earned. These are actual match statistics, not video recordings. Continue advances the selected mode or starts a Quick Match rematch; close returns to the result options. Survival does not advance daily challenges. Clearing browser data removes local records and unlocks.
+
+
+### Colorful special-move spectacle
+All three specials and supers now launch bounded multicolor comic rays and signature lightning, flame ribbons, cosmic rings, angular shockwaves, wind halos, speed ribbons or gold rings. Successful unblocked special hits add larger bursts; projectile impacts retain their owner palette. Cosmetic effects never change damage or hitboxes, freeze during pause/super cut-ins and simplify to four launch particles in Low FX.

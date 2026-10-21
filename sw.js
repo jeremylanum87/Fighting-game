@@ -1,6 +1,7 @@
 'use strict';
-const CACHE='block-cypher-offline-v33';
+const CACHE='block-cypher-offline-v34';
 const FILES=[
+  "./special-fx.js",
   "./",
   "./index.html",
   "./style.css",

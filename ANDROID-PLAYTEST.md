@@ -28,3 +28,5 @@ If a check fails, record phone model, Chrome version, orientation, control mode,
 16. Start Survival, win a wave and verify health recovers by 18% of maximum and meter carries over. Lose, retry, and verify fresh health/meter. Reload and check best wave/score persist.
 17. Play a Rival Set through three matches. Check set score persists between matches, round scores reset, and the displayed adaptation follows repeated lows/projectiles/throws/jumps.
 18. Finish a match and inspect combo/punish/finisher highlights. Continue into the next match, or close to result options. Open Character Mastery, change fighters, reload to confirm saved XP, and check Master outfit unlocks at Headliner. Training must award no XP.
+
+19. Try all three specials with each fighter. Check launch/impact colors remain readable, pause freezes the bursts, and Low FX reduces detail. Compare several rapid specials in Full and Auto effects on the phone.
