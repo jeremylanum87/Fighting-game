@@ -163,3 +163,9 @@ All three specials and supers now launch bounded multicolor comic rays and signa
 
 ### Fighter personality update
 Eight original twelve-frame rig routines add signature stage entrances, taunts and victory celebrations: Volt glove-check/salute, Ember shoulder-roll, Cipher thoughtful finish, Brick power pose, Jade ginga dance, Rook knuckle-check/bow, Haze shadowboxing and Goldie cap-tip/crowd conducting. Versus cards use arrival animations and rival replies; stage introductions name each routine. Normal strikes have additional phase-based anticipation and follow-through without changes to timing, damage or hitboxes. Heavy hits, combos and supers trigger crowd phone lights and brief stage-edge lighting. Low FX removes extra light beams and reduced-motion settings disable card movement.
+
+
+### Combat feel and mobile polish
+Input buffering keeps the latest action for twelve combat frames (about 185 ms at current pace). A successful attack consumes pending inputs, preventing older taps firing later. Light and heavy hits have distinct cosmetic recoil; existing knockdown falls remain separate. At a corner, blocked melee pressure pushes the attacker back 24 pixels. Both fighters receive ten simulation frames of invulnerability after a complete knockdown ends, allowing movement or a buffered escape. Normal standing hitstun/combo rules remain intact.
+
+Arcade CPU guard, combo decisions, movement and delayed observations interpolate across the eight-rival ladder according to selected difficulty. Quick Match and Rival Set difficulty choices retain their existing settings. Backgrounding cancels held inputs; touch pads suppress selection/browser gestures, and narrow-screen footer buttons wrap with larger targets. Automated simulation, Canvas-render and offline-cache checks cover these changes; physical Android frame rate and touch latency still require device testing.

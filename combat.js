@@ -66,7 +66,7 @@ update=function(dt){
  remaining=Math.max(0,remaining-dt);comboTime=Math.max(0,comboTime-dt);
  player.crouch=keys.has('s')&&player.y===ground&&!player.attack;
  player.block=(keys.has('l')||player.blockstun>0)&&!player.attack&&!player.stun;
- for(let i=inputQueue.length-1;i>=0;i--){const q=inputQueue[i];let used=false;if(q.type==='jump'){if(player.y===ground&&!player.stun&&!player.blockstun&&!player.attack&&!player.block){player.vy=-(player.jumpStrength||580);used=true}}else used=attack(player,q.type);if(used){inputQueue.splice(i,1);break}}
+ for(let i=inputQueue.length-1;i>=0;i--){const q=inputQueue[i];let used=false;if(q.type==='jump'){if(player.y===ground&&!player.stun&&!player.blockstun&&!player.attack&&!player.block){player.vy=-(player.jumpStrength||580);used=true}}else used=attack(player,q.type);if(used){inputQueue=[];break}}
  const h=(keys.has('d')?1:0)-(keys.has('a')?1:0);player.vx=player.stun||player.blockstun||player.block||player.attack||player.crouch?0:h*(h===player.face?260:205)*(player.y<ground?(player.airControl||.55):1);
  if(typeof updateCpuFighter==='function'){updateCpuFighter(enemy,player,dt)}else{
  const dist=Math.abs(player.x-enemy.x);aiWait-=dt;enemy.crouch=player.attack?.type==='lowKick'&&dist<140;enemy.block=!enemy.attack&&!enemy.stun&&(enemy.blockstun>0||(dist<150&&!!player.attack&&aiWait>.15));

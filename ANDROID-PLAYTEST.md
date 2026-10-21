@@ -32,3 +32,7 @@ If a check fails, record phone model, Chrome version, orientation, control mode,
 19. Try all three specials with each fighter. Check launch/impact colors remain readable, pause freezes the bursts, and Low FX reduces detail. Compare several rapid specials in Full and Auto effects on the phone.
 
 20. Preview all eight fighters through stage entrance, taunt and victory. Check paired dialogue and that attacks still align with hitboxes. Test pause during celebrations, outfit colors, Low FX crowd lights and reduced-motion versus cards.
+
+21. Tap a heavy near the end of a missed light attack: it should execute after recovery. Rapidly tap different attacks and verify only the newest pending action follows; pause/background must clear queued attacks and held touches.
+22. Block melee attacks at each wall; the attacker should move back. After a full knockdown, test movement/jump or a buffered attack during the brief wake-up protection. Repeat as both fighters.
+23. Compare early/late Arcade opponents at each difficulty. Check light/heavy hit recoil, rapid supers in Auto/Low FX, narrow-screen footer wrapping, rotation and simultaneous move/attack input. Record actual phone FPS using PHONE CHECK.

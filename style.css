@@ -102,3 +102,5 @@ body.selecting .intro{display:none}#characterSelect.arcade-select{--select-accen
 @keyframes personality-swing{from{opacity:0;transform:translateY(25px) rotate(-14deg)}65%{opacity:1;transform:translateY(-5px) rotate(5deg)}to{opacity:1;transform:translateY(0) rotate(0)}}
 .opening-low-motion .opening-fighter img{animation:none}
 @media(prefers-reduced-motion:reduce){.opening-fighter[data-routine] img{animation:none}}
+.touch button,.thumbstick{touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+@media(max-width:600px){.arena-footer{flex-wrap:wrap;height:auto;min-height:39px;gap:2px;padding:4px 6px}.arena-footer button{min-height:40px;padding:6px}.attack-pad button,.move-pad button{min-width:44px;min-height:44px}}
