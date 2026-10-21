@@ -92,3 +92,9 @@ Combat runs at 1.08× speed through fixed simulation steps. The round clock, riv
 
 ### Detailed effects
 Layered impact sparks, blue guard shards, landing dust, short special-move afterimages and fighter-specific energy/flame/wind/gold/speed/quake effects run entirely on Canvas. Projectile trails have character palettes and distinct fire or energy details. Effects use a separate random generator and never change hitboxes or damage. Particle counts are capped at 180 in full effects and 28 in FX LOW; low mode removes afterimages. Effects freeze during pause and super cinematics.
+
+
+### Balance, CPU fairness and adaptive effects
+Brick has 120 HP and a 36-base-damage super; Haze has 84 HP. Rook’s normal reaps stagger, leaving knockdowns to his specials. Super chip is one point per multi-hit strike or three for a single hit. CPUs observe attack/position snapshots delayed by 260/190/140 ms on Easy/Normal/Hard, adjusted for combat pace.
+
+Effects quality defaults to Auto and can be changed in Controls or via the arena FX button (Auto → Full → Low). Auto reduces detail after sustained slow frames and restores it only after a longer stable period; pauses and hidden tabs are excluded. Quick Match results include a same-fighter, same-stage, same-difficulty rematch with a fresh score/meter and short round opening.

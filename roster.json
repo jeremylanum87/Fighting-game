@@ -48,7 +48,7 @@
     "tag": "THE HEAVY HITTER",
     "style": "Power Wrestler",
     "signature": "Ground-shaking Power Slam",
-    "health": 125,
+    "health": 120,
     "jump": 440
   },
   "jade": {
@@ -87,7 +87,7 @@
     "tag": "THE LATE NIGHT",
     "style": "Speed Striker",
     "signature": "Lightning-fast Barrage",
-    "health": 80,
+    "health": 84,
     "jump": 610
   },
   "goldie": {

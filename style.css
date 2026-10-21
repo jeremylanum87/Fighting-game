@@ -78,3 +78,7 @@ body.selecting .intro{display:none}#characterSelect.arcade-select{--select-accen
 
 .training-coach{grid-column:1/-1;background:#12261f;border-left:4px solid #e5c675;padding:18px;min-width:0}.training-coach>strong{display:block;font:900 clamp(20px,4vw,30px) Impact,sans-serif;color:#f2ce72;letter-spacing:1px}.training-coach p{font-size:12px;line-height:1.6;overflow-wrap:anywhere;margin:8px 0}.training-coach .coach-timing{display:inline-block;background:#304639;padding:6px 10px;color:#e8f2cf;font:700 11px monospace}#coachHistory{color:#9fbaa7;font:11px/1.7 monospace}.training-panel .training-actions{flex-wrap:wrap}.training-panel .training-actions button{flex:1;min-width:120px}
 .coach-toast{position:absolute;bottom:60px;left:50%;transform:translateX(-50%);z-index:3;max-width:90%;padding:7px 12px;background:#12261fe8;border:1px solid #dfbe6c;color:#f1ce79;font:800 12px monospace;letter-spacing:1px;text-align:center;pointer-events:none}
+
+.overlay .rematch-button{margin-top:10px;min-height:44px;background:#e9c77b;color:#16281f}.overlay .rematch-button[hidden]{display:none!important}#effectsPerformance{color:#d7c088}
+
+.overlay.has-rematch #message{font-size:clamp(24px,4vw,48px);margin:6px 0}.overlay.has-rematch #submessage{display:none}.overlay.has-rematch button{margin-top:6px;padding:8px 16px;min-height:44px}.overlay.has-rematch #messageTag{margin:4px 0}
