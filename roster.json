@@ -7,7 +7,8 @@
     "speed": 1,
     "power": 1,
     "tag": "THE LIVE WIRE",
-    "style": "Balanced / clean all-rounder"
+    "style": "Electric Boxer",
+    "signature": "Lightning Uppercut"
   },
   "ember": {
     "name": "EMBER",
@@ -17,7 +18,8 @@
     "speed": 1,
     "power": 1,
     "tag": "THE NIGHT SHIFT",
-    "style": "Balanced / patient pressure"
+    "style": "Counter Fighter",
+    "signature": "Explosive Fire Counter"
   },
   "cipher": {
     "name": "CIPHER",
@@ -27,7 +29,8 @@
     "speed": 1.14,
     "power": 0.92,
     "tag": "THE WORDSMITH",
-    "style": "Fast footwork / lighter hits"
+    "style": "Technical Striker",
+    "signature": "Energy Palm Strike"
   },
   "brick": {
     "name": "BRICK",
@@ -37,7 +40,8 @@
     "speed": 0.88,
     "power": 1.12,
     "tag": "THE HEAVY HITTER",
-    "style": "Heavy damage / slower steps"
+    "style": "Power Wrestler",
+    "signature": "Ground-shaking Power Slam"
   },
   "jade": {
     "name": "JADE",
@@ -47,7 +51,8 @@
     "speed": 1.08,
     "power": 0.96,
     "tag": "THE GROOVE",
-    "style": "Quick movement / precise pressure"
+    "style": "Capoeira Fighter",
+    "signature": "Whirlwind Finisher"
   },
   "rook": {
     "name": "ROOK",
@@ -57,7 +62,8 @@
     "speed": 0.94,
     "power": 1.06,
     "tag": "THE CORNERSTONE",
-    "style": "Steady pace / stronger strikes"
+    "style": "Judo Specialist",
+    "signature": "Crushing Takedown"
   },
   "haze": {
     "name": "HAZE",
@@ -67,7 +73,8 @@
     "speed": 1.12,
     "power": 0.94,
     "tag": "THE LATE NIGHT",
-    "style": "Fast approach / light damage"
+    "style": "Speed Striker",
+    "signature": "Lightning-fast Barrage"
   },
   "goldie": {
     "name": "GOLDIE",
@@ -77,6 +84,7 @@
     "speed": 0.96,
     "power": 1.04,
     "tag": "THE HEADLINER",
-    "style": "Measured footwork / solid impact"
+    "style": "Breakdance Brawler",
+    "signature": "Golden Windmill"
   }
 }

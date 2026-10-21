@@ -20,3 +20,19 @@ Summer-2010 hip-hop art direction: original brick/graffiti basketball-court back
 
 ## Title screen and expanded roster
 The game opens on Start / How to Play / Beat controls. Choose from Volt, Ember, Cipher, Brick, Jade, Rook, Haze and Goldie, then choose a CPU opponent. New fighters use color variants of the existing CC0 animation sets and slightly different movement/damage profiles. HOME returns to the opening screen; confirming a selection starts a fresh match.
+
+## Individual movesets
+Each character now has unique light/heavy tuning and three specials, accessible through U/I/O or the named mobile buttons. Motion inputs select the same slots. Specials have individual cooldowns; failed attempts do not spend them.
+
+| Fighter | Style | U | I | O |
+|---|---|---|---|---|
+| Volt | Electric boxer | Spark Counter | Lightning Uppercut | Electric Rush |
+| Ember | Counter fighter | Fire Counter | Punishing Elbow | Flame Burst |
+| Cipher | Technical striker | Feint Step | Energy Palm | Precision Chain |
+| Brick | Power wrestler | Clinch Throw | Power Slam | Heavy Lariat |
+| Jade | Capoeira | Ginga Dodge | Handstand Kick | Whirlwind |
+| Rook | Judo | Redirect Throw | Crushing Takedown | Reaping Trip |
+| Haze | Speed striker | Dash Strike | Speed Barrage | Quick Step |
+| Goldie | Breakdance | Floor Sweep | Rhythm Combo | Golden Windmill |
+
+Counters only work during their active window against nearby strikes/projectiles and trigger once; throws defeat guarding but need close range and grounded targets. Armor prevents hit interruption but still takes damage. Dodges have a short invulnerability window. Throws launch opponents, and knockdowns extend recovery. Multi-hit specials use combo scaling. Existing licensed sprite animations are reused with rotations, movement, trails and elemental effects; no new hand-drawn attack sheets were added.
