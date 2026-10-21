@@ -22,3 +22,5 @@ If a check fails, record phone model, Chrome version, orientation, control mode,
 13. In Match Setup select each new stage, including Cleveland / Cuyahoga Cypher. Verify the preview and fight background agree, fighters stand on the same ground line, and movement stays responsive with Full and Low effects. Try the five new stages offline after updating the app cache.
 
 14. Enable AUDIO and wait for the combat pack status in Controls. Compare light/heavy/kick/block/throw/landing sounds, including rapid combos. Confirm sounds vary without harsh peaks, music softens during announcements, volume sliders stay independent, and mute/pause/background stops active sounds. Repeat offline after cache setup.
+
+15. In Controls, enable the DJ announcer and try DJ VOICE → TEST DJ VOICE. Check saved voice selection after reload, music ducking during calls, and that mute/pause/background stops the speech cue. Test local voices offline if supported on the phone.

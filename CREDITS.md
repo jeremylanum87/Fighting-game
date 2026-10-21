@@ -42,3 +42,6 @@ Cuyahoga Cypher, Concrete Echo, Spin Cycle, Level Seven and Summer on the Block 
 
 ## Original impact pack
 The 19 OGG sounds in `assets/audio/` were created for Block Cypher using original layered waveform/noise synthesis, filtering and short room reflections. They contain no third-party recordings or sampled commercial audio. `audio-pack.json` documents categories, durations and source peaks.
+
+
+DJ announcer phrases and the synthesized vinyl-style cue are original project material. Speech uses the user-selected device/browser voice service.

@@ -90,3 +90,4 @@ body.selecting .intro{display:none}#characterSelect.arcade-select{--select-accen
 @media(pointer:coarse) and (orientation:landscape) and (max-height:600px) and (min-width:640px){.in-tutorial .tutorial-card{max-height:96px;overflow:auto}.in-tutorial .battle-shell #game{height:calc(100dvh - 198px)}}
 
 .stage-preview{max-width:440px;margin:14px auto}.stage-preview canvas{width:100%;height:auto!important;min-height:0!important;border:2px solid #b39964;image-rendering:pixelated}.stage-preview figcaption{font:700 10px/1.5 monospace;color:#d5bf8d;margin-top:6px}
+#testDj{min-height:44px;margin:6px 0}#djVoice{width:100%}#djVoiceStatus{font-size:11px;color:#d8c28e;line-height:1.6}
