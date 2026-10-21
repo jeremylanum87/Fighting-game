@@ -38,3 +38,5 @@ If a check fails, record phone model, Chrome version, orientation, control mode,
 23. Compare early/late Arcade opponents at each difficulty. Check light/heavy hit recoil, rapid supers in Auto/Low FX, narrow-screen footer wrapping, rotation and simultaneous move/attack input. Record actual phone FPS using PHONE CHECK.
 
 24. Try THROW with all eight fighters and WATCH DEMO → Character throw in Training. Confirm it beats close guard, misses jumps/out-of-range opponents, cannot chain into hitstun, and respects wake-up protection. Hold move and tap THROW together; verify no repeated throws while held and no new horizontal overflow in portrait/landscape.
+
+25. Clear only the saved audio-enabled preference or use a fresh browser profile. Tap START and confirm music begins without a separate AUDIO tap. Mute, reload, tap START and confirm mute persists. Check paired throw lift/release and KO throws for all eight fighters, then pause and reset during the sequence. Watch each winner transition into their animated pose without a stuck attack.

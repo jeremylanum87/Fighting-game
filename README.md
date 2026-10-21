@@ -175,3 +175,9 @@ Arcade CPU guard, combo decisions, movement and delayed observations interpolate
 Tap THROW on the touch pad or press G. All eight fighters have a dedicated ground throw, separate from existing command-grab specials. Volt: Live Wire Toss (15 base damage); Ember: Backdraft Clinch (17); Cipher: Checkmate Flip (15); Brick: Concrete Drop (22); Jade: Ginga Sweep (15); Rook: Crosswalk Suplex (20); Haze: Quick Switch (13); Goldie: Platinum Spin (16). Fighter power modifies actual damage.
 
 Each has original reach/lift/release rig poses and a distinct launch trajectory. Throws beat standing/crouching guard at close range, miss jumping opponents, cannot cancel a normal attack, and cannot grab hitstun, blockstun, knockdowns or invulnerability. Startup is 6–11 frames, with three active frames, punishable whiff recovery and a 1.1-second cooldown. G uses the same latest-action buffer as other attacks. Training includes a throw demonstration. CPU rivals can occasionally throw a nearby blocking opponent based on delayed observations.
+
+
+### Paired throws, victory routines and startup audio
+Successful dedicated throws now show both fighters together through a half-second grab/lift/release sequence. Sweep, toss, suplex and spin trajectories differ by character, with a landing burst. These are visual sequences over the existing damage/collision simulation; no additional damage is applied. They freeze on pause and clear on reset or interruption. Each fighter has a 24-frame victory routine that blends into a signature pose and continues with subtle movement, plus a named victory caption.
+
+Audio now defaults to enabled and unlocks automatically on the first tap or keypress, including START. Android/browser autoplay rules prevent audible playback before a gesture. The AUDIO button still mutes, and that preference saves locally alongside existing volume settings. No microphone permission is required.
