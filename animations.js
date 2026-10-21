@@ -29,7 +29,7 @@ function rigPose(id,state,t){
   if(id==='goldie'){if(u){p.offset=24;p.head[0]=-8;p.leftHand=[-18,-26];p.rightFoot=[46,-3];p.rightKnee=[25,-8]}else if(i){p.offset=wave*3;p.rightHand=[35+wave*10,-48];p.rightFoot=[25+Math.max(0,wave)*17,-4-Math.max(0,wave)*22];p.leftHand=[-23,-58]}else{p.offset=24;p.angle=active?t*Math.PI*4:Math.PI*.25;p.leftFoot=[-41,-12];p.rightFoot=[41,-22];p.leftHand=[-22,-57];p.rightHand=[17,-62]}}
   if(!active&&recover){p.offset*=1-t;p.angle*=1-t}
  }
- return p;
+ return typeof normalAttackPose==='function'?normalAttackPose(id,state,t,p):p;
 }
 const BODY_STYLES={
  volt:{width:.96,height:1,skin:'#c08a62',pants:'#253342',fit:'boxer',stance:1},
@@ -41,7 +41,7 @@ const BODY_STYLES={
  haze:{width:.88,height:.98,skin:'#ca9b72',pants:'#212c37',fit:'hoodie',stance:7},
  goldie:{width:1.08,height:1,skin:'#ad734b',pants:'#314357',fit:'varsity',stance:8}
 };
-function makeRigFrame(id,state,index,count){const c=document.createElement('canvas');c.width=128;c.height=128;const g=c.getContext('2d'),p=rigPose(id,state,index/Math.max(1,count-1)),color=fighterRoster[id].color,b=BODY_STYLES[id],skin=b.skin;g.imageSmoothingEnabled=false;g.translate(60,112+p.offset);g.scale(b.width,b.height);if(p.angle){g.translate(0,-29);g.rotate(p.angle);g.translate(0,29)}
+function makeRigFrame(id,state,index,count){const c=document.createElement('canvas');c.width=160;c.height=160;const g=c.getContext('2d'),p=rigPose(id,state,index/Math.max(1,count-1)),color=fighterRoster[id].color,b=BODY_STYLES[id],skin=b.skin;g.imageSmoothingEnabled=false;g.translate(80,144+p.offset);g.scale(b.width,b.height);if(p.angle){g.translate(0,-29);g.rotate(p.angle);g.translate(0,29)}
  const fill=(x,y,w,h,color)=>{g.fillStyle=color;g.fillRect(Math.round(x),Math.round(y),w,h)};
  function line(a,b,w,c){g.strokeStyle=c;g.lineWidth=w;g.lineCap='square';g.beginPath();g.moveTo(Math.round(a[0]),Math.round(a[1]));g.lineTo(Math.round(b[0]),Math.round(b[1]));g.stroke()}
  if(state==='idle'||state==='guard'){
@@ -79,7 +79,7 @@ function makeRigFrame(id,state,index,count){const c=document.createElement('canv
  return c;
 }
 function rigFrames(id,state){const key=id+':'+state;if(!poseCache.has(key)){const count=state==='guard'?1:state.startsWith('special:')?8:state==='run'?8:6;poseCache.set(key,Array.from({length:count},(_,i)=>makeRigFrame(id,state,i,count)))}return poseCache.get(key)}
-function renderStreetFighter(g,f,scale=2.1){const id=f.character;if(!fighterRoster[id])return;let state=f.animState||'idle',progress=0;if(f.attack?.move?.cooldown){const a=attackProgress(f.attack);state=`special:${f.attack.type}:${a.phase}`;progress=a.p}else progress=['death','take-hit','jump','fall'].includes(state)?Math.min(1,(f.animTime||0)*2):((f.animTime||0)*(state==='run'?1.7:1))%1;const frames=rigFrames(id,state),frame=frames[Math.min(frames.length-1,Math.floor(progress*frames.length))];g.save();g.translate(f.x,f.y);g.scale(f.face||1,1);g.imageSmoothingEnabled=false;g.drawImage(frame,-60*scale,-112*scale,128*scale,128*scale);g.restore()}
+function renderStreetFighter(g,f,scale=2.1){const id=f.character;if(!fighterRoster[id])return;let state=f.animState||'idle',progress=0;if(f.attack?.move?.cooldown){const a=attackProgress(f.attack);state=`special:${f.attack.type}:${a.phase}`;progress=a.p}else if(f.attack){const m=f.attack.move||getMove(f,f.attack.type);progress=Math.min(1,f.attack.frame/(m.startup+m.active+m.recovery))}else progress=['death','take-hit','jump','fall'].includes(state)?Math.min(1,(f.animTime||0)*2):((f.animTime||0)*(state==='run'?1.7:1))%1;const frames=rigFrames(id,state),frame=frames[Math.min(frames.length-1,Math.floor(progress*frames.length))];g.save();g.translate(f.x,f.y);g.scale(f.face||1,1);g.imageSmoothingEnabled=false;g.drawImage(frame,-80*scale,-144*scale,160*scale,160*scale);g.restore()}
 // Both previews and in-match fighters use the same original rig.
 drawFighter=function(f){if(!fighterRoster[f.character])return;ctx.save();ctx.fillStyle='#0007';ctx.beginPath();ctx.ellipse(f.x,f.y+2,39,8,0,0,Math.PI*2);ctx.fill();if(f.crouch){ctx.translate(0,f.y*.25);ctx.scale(1,.75)}if(f.attack?.move?.dash){for(let i=3;i>0;i--){ctx.globalAlpha=.1+(3-i)*.07;renderStreetFighter(ctx,{...f,x:f.x-f.face*i*18},2.1)}}ctx.globalAlpha=1;if(f.knockedDown&&f.stun>0){ctx.translate(f.x,f.y-35);ctx.rotate(-f.face*Math.min(1,(f.hitDuration-f.stun)*4)*Math.PI/2);ctx.translate(-f.x,-(f.y-35))}renderStreetFighter(ctx,f);ctx.restore()};
 const hitBeforeAnimation=applyCombatHit;applyCombatHit=function(attacker,target,m,dir){const before=target.hp,source=attacker.attack?.move;const result=hitBeforeAnimation(attacker,target,m,dir);if(result&&target.hp<before){specialEffects.push({x:target.x,y:target.y-55,age:0,duration:(m.knockdown||m.grab)? .65 : .3,color:source?.element==='fire'?'#ff7839':attacker.color,kind:m.grab||m.knockdown?'slam':source?.element==='electric'?'electric':'burst'});if(specialEffects.length>24)specialEffects.shift()}return result};

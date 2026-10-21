@@ -4,87 +4,103 @@
     "color": "#e9b849",
     "base": "volt",
     "filter": "none",
-    "speed": 1,
+    "speed": 1.08,
     "power": 1,
     "tag": "THE LIVE WIRE",
     "style": "Electric Boxer",
-    "signature": "Lightning Uppercut"
+    "signature": "Lightning Uppercut",
+    "health": 100,
+    "jump": 555
   },
   "ember": {
     "name": "EMBER",
     "color": "#72a69b",
     "base": "ember",
     "filter": "none",
-    "speed": 1,
+    "speed": 0.96,
     "power": 1,
     "tag": "THE NIGHT SHIFT",
     "style": "Counter Fighter",
-    "signature": "Explosive Fire Counter"
+    "signature": "Explosive Fire Counter",
+    "health": 105,
+    "jump": 540
   },
   "cipher": {
     "name": "CIPHER",
     "color": "#b1a0ef",
     "base": "volt",
     "filter": "hue-rotate(65deg) saturate(1.4)",
-    "speed": 1.14,
-    "power": 0.92,
+    "speed": 0.94,
+    "power": 0.98,
     "tag": "THE WORDSMITH",
     "style": "Technical Striker",
-    "signature": "Energy Palm Strike"
+    "signature": "Energy Palm Strike",
+    "health": 90,
+    "jump": 565
   },
   "brick": {
     "name": "BRICK",
     "color": "#cf7852",
     "base": "ember",
     "filter": "hue-rotate(145deg) saturate(.85)",
-    "speed": 0.88,
-    "power": 1.12,
+    "speed": 0.72,
+    "power": 1.08,
     "tag": "THE HEAVY HITTER",
     "style": "Power Wrestler",
-    "signature": "Ground-shaking Power Slam"
+    "signature": "Ground-shaking Power Slam",
+    "health": 125,
+    "jump": 440
   },
   "jade": {
     "name": "JADE",
     "color": "#88c38e",
     "base": "volt",
     "filter": "hue-rotate(170deg) saturate(1.2)",
-    "speed": 1.08,
-    "power": 0.96,
+    "speed": 1.12,
+    "power": 0.94,
     "tag": "THE GROOVE",
     "style": "Capoeira Fighter",
-    "signature": "Whirlwind Finisher"
+    "signature": "Whirlwind Finisher",
+    "health": 95,
+    "jump": 670
   },
   "rook": {
     "name": "ROOK",
     "color": "#b8c5ce",
     "base": "ember",
     "filter": "grayscale(.85) brightness(1.3)",
-    "speed": 0.94,
-    "power": 1.06,
+    "speed": 0.84,
+    "power": 1.02,
     "tag": "THE CORNERSTONE",
     "style": "Judo Specialist",
-    "signature": "Crushing Takedown"
+    "signature": "Crushing Takedown",
+    "health": 115,
+    "jump": 475
   },
   "haze": {
     "name": "HAZE",
     "color": "#da8fc7",
     "base": "ember",
     "filter": "hue-rotate(65deg) saturate(1.6)",
-    "speed": 1.12,
-    "power": 0.94,
+    "speed": 1.3,
+    "power": 0.9,
     "tag": "THE LATE NIGHT",
     "style": "Speed Striker",
-    "signature": "Lightning-fast Barrage"
+    "signature": "Lightning-fast Barrage",
+    "health": 80,
+    "jump": 610
   },
   "goldie": {
     "name": "GOLDIE",
     "color": "#efd16c",
     "base": "volt",
     "filter": "hue-rotate(290deg) saturate(1.6) brightness(1.15)",
-    "speed": 0.96,
-    "power": 1.04,
+    "speed": 1.02,
+    "power": 1,
     "tag": "THE HEADLINER",
     "style": "Breakdance Brawler",
-    "signature": "Golden Windmill"
+    "signature": "Golden Windmill",
+    "health": 100,
+    "jump": 590
   }
 }

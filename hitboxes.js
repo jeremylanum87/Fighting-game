@@ -4,6 +4,7 @@ function boxesOverlap(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h
 function worldBox(f,b){return {x:f.face<0?f.x-b.x-b.w:f.x+b.x,y:f.y+b.y,w:b.w,h:b.h}}
 function hurtboxes(f){if(f.hp<=0)return [];if(f.y===ground&&f.knockedDown&&f.stun>0)return [{x:f.x-46,y:f.y-38,w:92,h:38}];if(f.crouch&&f.y===ground)return [{x:f.x-27,y:f.y-102,w:54,h:102}];if(f.y<ground)return [{x:f.x-23,y:f.y-137,w:46,h:58},{x:f.x-26,y:f.y-79,w:52,h:70}];return [{x:f.x-18,y:f.y-145,w:36,h:42},{x:f.x-26,y:f.y-103,w:52,h:103}]}
 function attackHitboxes(f){const a=f.attack;if(!a)return [];const m=a.move||getMove(f,a.type);if(a.frame<m.startup||a.frame>=m.startup+m.active||m.projectile||m.counter||m.dodge||(a.type==='fireball'&&!f.character))return [];
+ if(m.box)return [worldBox(f,m.box)];
  const reach=Math.max(28,(m.range||100)-24);let box;
  if(m.grab)box={x:12,y:-119,w:Math.max(18,reach-12),h:105};
  else if(m.rotate)box={x:-reach*.7,y:-95,w:reach*1.4,h:88};
