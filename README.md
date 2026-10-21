@@ -159,3 +159,7 @@ Post-match highlights show the best combo, biggest recovery punish, finishing mo
 
 ### Colorful special-move spectacle
 All three specials and supers now launch bounded multicolor comic rays and signature lightning, flame ribbons, cosmic rings, angular shockwaves, wind halos, speed ribbons or gold rings. Successful unblocked special hits add larger bursts; projectile impacts retain their owner palette. Cosmetic effects never change damage or hitboxes, freeze during pause/super cut-ins and simplify to four launch particles in Low FX.
+
+
+### Fighter personality update
+Eight original twelve-frame rig routines add signature stage entrances, taunts and victory celebrations: Volt glove-check/salute, Ember shoulder-roll, Cipher thoughtful finish, Brick power pose, Jade ginga dance, Rook knuckle-check/bow, Haze shadowboxing and Goldie cap-tip/crowd conducting. Versus cards use arrival animations and rival replies; stage introductions name each routine. Normal strikes have additional phase-based anticipation and follow-through without changes to timing, damage or hitboxes. Heavy hits, combos and supers trigger crowd phone lights and brief stage-edge lighting. Low FX removes extra light beams and reduced-motion settings disable card movement.

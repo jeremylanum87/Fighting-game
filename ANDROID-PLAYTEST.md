@@ -30,3 +30,5 @@ If a check fails, record phone model, Chrome version, orientation, control mode,
 18. Finish a match and inspect combo/punish/finisher highlights. Continue into the next match, or close to result options. Open Character Mastery, change fighters, reload to confirm saved XP, and check Master outfit unlocks at Headliner. Training must award no XP.
 
 19. Try all three specials with each fighter. Check launch/impact colors remain readable, pause freezes the bursts, and Low FX reduces detail. Compare several rapid specials in Full and Auto effects on the phone.
+
+20. Preview all eight fighters through stage entrance, taunt and victory. Check paired dialogue and that attacks still align with hitboxes. Test pause during celebrations, outfit colors, Low FX crowd lights and reduced-motion versus cards.

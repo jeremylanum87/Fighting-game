@@ -93,3 +93,12 @@ body.selecting .intro{display:none}#characterSelect.arcade-select{--select-accen
 #testDj{min-height:44px;margin:6px 0}#djVoice{width:100%}#djVoiceStatus{font-size:11px;color:#d8c28e;line-height:1.6}
 
 .highlight-list{margin:20px 0}.highlight-list dt{font:700 10px monospace;color:#bea776;letter-spacing:1px;margin-top:18px}.highlight-list dd{margin:7px 0;font-size:15px;line-height:1.5;color:#f0dfad}.highlight-actions{display:flex;gap:8px;flex-wrap:wrap}.highlight-actions button,#closeMastery{min-height:48px}#highlightsContinue{background:#e4c476;color:#183126}#selectMastery,.survival-record{font:700 10px/1.5 monospace;color:#d6bd7e}#masteryRank{color:#efd38a}
+/* Each rival walks into the versus card with their own pace and attitude. */
+.opening-fighter[data-routine] img{animation:personality-arrive .85s cubic-bezier(.2,.8,.3,1) both}
+.opening-fighter[data-routine="brick"] img,.opening-fighter[data-routine="rook"] img{animation-duration:1.1s}
+.opening-fighter[data-routine="haze"] img{animation-duration:.38s}
+.opening-fighter[data-routine="jade"] img,.opening-fighter[data-routine="goldie"] img{animation-name:personality-swing}
+@keyframes personality-arrive{from{opacity:0;transform:translateX(-38px) rotate(-5deg)}to{opacity:1;transform:translateX(0) rotate(0)}}
+@keyframes personality-swing{from{opacity:0;transform:translateY(25px) rotate(-14deg)}65%{opacity:1;transform:translateY(-5px) rotate(5deg)}to{opacity:1;transform:translateY(0) rotate(0)}}
+.opening-low-motion .opening-fighter img{animation:none}
+@media(prefers-reduced-motion:reduce){.opening-fighter[data-routine] img{animation:none}}
