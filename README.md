@@ -145,3 +145,13 @@ Music and effects share one Web Audio context and an output chain with low-cut E
 
 ### Hip-hop DJ announcer
 The announcer uses concise original DJ-style round, fight, super and victory calls, faster delivery, a lower voice pitch and a short original vinyl-style cue when speech starts. Controls includes an English device-voice selector and TEST DJ VOICE; the choice saves locally. Automatic selection prefers local US English, then other available English voices, and updates when the browser’s voice list loads. Music ducking, mute/volume gates and the announcer toggle remain active. The spoken voice is the phone/browser speech engine rather than a prerecorded human DJ, so its character and offline availability vary by device.
+
+
+### Survival, Rival Sets, mastery and highlights
+SURVIVAL is an endless sequence of single-round opponents. Health and super meter carry forward, with 18% maximum-health recovery after each win. Rival health and power gradually increase within caps. Best wave and score save locally; an active run does not resume after leaving or reloading.
+
+RIVAL SET is a best-of-three series of normal first-to-two-round matches. Between matches the rival adapts to repeated lows, projectiles, throws or jumps. Adaptation uses the existing delayed CPU observations, with no extra reaction-speed or damage boost.
+
+CHARACTER MASTERY tracks each fighter separately through Rookie, Contender, Regular, Headliner and Block Legend. Competitive wins, named combo routes and recovery punishes earn XP; Training does not. Headliner unlocks the cyan Master outfit for that fighter. Rewards are cosmetic and saved on this device.
+
+Post-match highlights show the best combo, biggest recovery punish, finishing move and mastery earned. These are actual match statistics, not video recordings. Continue advances the selected mode or starts a Quick Match rematch; close returns to the result options. Survival does not advance daily challenges. Clearing browser data removes local records and unlocks.

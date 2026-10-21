@@ -24,3 +24,7 @@ If a check fails, record phone model, Chrome version, orientation, control mode,
 14. Enable AUDIO and wait for the combat pack status in Controls. Compare light/heavy/kick/block/throw/landing sounds, including rapid combos. Confirm sounds vary without harsh peaks, music softens during announcements, volume sliders stay independent, and mute/pause/background stops active sounds. Repeat offline after cache setup.
 
 15. In Controls, enable the DJ announcer and try DJ VOICE → TEST DJ VOICE. Check saved voice selection after reload, music ducking during calls, and that mute/pause/background stops the speech cue. Test local voices offline if supported on the phone.
+
+16. Start Survival, win a wave and verify health recovers by 18% of maximum and meter carries over. Lose, retry, and verify fresh health/meter. Reload and check best wave/score persist.
+17. Play a Rival Set through three matches. Check set score persists between matches, round scores reset, and the displayed adaptation follows repeated lows/projectiles/throws/jumps.
+18. Finish a match and inspect combo/punish/finisher highlights. Continue into the next match, or close to result options. Open Character Mastery, change fighters, reload to confirm saved XP, and check Master outfit unlocks at Headliner. Training must award no XP.
