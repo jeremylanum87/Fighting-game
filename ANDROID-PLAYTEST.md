@@ -15,3 +15,6 @@ If a check fails, record phone model, Chrome version, orientation, control mode,
 8. Enable AUDIO, adjust Music and Effects / voice independently, and test the announcer toggle. Switch stages and listen for different grooves. Mute audio and background the browser; music and voice should stop.
 9. Open DAILY CHALLENGES, complete an offered goal in Quick Match or Arcade, reload, and verify saved progress. Training should not count.
 10. Load online until the title reports offline files ready, then use INSTALL / OFFLINE (or Chrome ⋮ → Install app). Close the old browser tab, enable airplane mode, and launch from the home screen. Test Quick Match, Training and character artwork. Browser voices may require an installed offline voice.
+
+11. Complete LEARN TO PLAY using the buttons, then repeat movement/jump with the stick. Check that the lesson card, arena and controls fit together in landscape. Pick Midnight on fighter selection and confirm the outfit changes without affecting stats.
+12. Win one arcade round, return to the title, close/reopen the app and use CONTINUE ARCADE. Confirm rival, difficulty and round score survive, while health and timer restart. Repeat after winning a whole match and after a loss.
