@@ -44,3 +44,5 @@ If a check fails, record phone model, Chrome version, orientation, control mode,
 26. Fire PROJECTILE with every fighter, and try its Training demonstration. Check distinct art, speeds, hitboxes, block rules and cooldowns. Brick/Rook should require low guard. Hold F/PROJECTILE to verify no repeated firing, try jump evasion, and confirm the expanded attack pad fits in portrait/landscape. Test offline and Low FX.
 
 27. Preview and play every stage after the graphics update. Compare Full/Low effects and reduced motion, especially Cleveland, neon laundry and daylight Block Party. Confirm fighter silhouettes and low projectiles stay readable, no lights cover HUD text, and repeated stage changes remain stable. Test offline after cache update and inspect PHONE CHECK FPS.
+
+28. After fighter images load, check all eight fighters through idle, guard, each attack, throws as attacker/victim, projectile launches and victories. Clothing/faces/proportions should remain detailed throughout. Check unlocked outfit colors on normal moves, throws and celebrations; pause during animations; test Low FX and offline. Note any foot sliding, cropped head/limbs or incorrect facing.
