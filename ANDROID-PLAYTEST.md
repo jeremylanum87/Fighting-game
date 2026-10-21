@@ -42,3 +42,5 @@ If a check fails, record phone model, Chrome version, orientation, control mode,
 25. Clear only the saved audio-enabled preference or use a fresh browser profile. Tap START and confirm music begins without a separate AUDIO tap. Mute, reload, tap START and confirm mute persists. Check paired throw lift/release and KO throws for all eight fighters, then pause and reset during the sequence. Watch each winner transition into their animated pose without a stuck attack.
 
 26. Fire PROJECTILE with every fighter, and try its Training demonstration. Check distinct art, speeds, hitboxes, block rules and cooldowns. Brick/Rook should require low guard. Hold F/PROJECTILE to verify no repeated firing, try jump evasion, and confirm the expanded attack pad fits in portrait/landscape. Test offline and Low FX.
+
+27. Preview and play every stage after the graphics update. Compare Full/Low effects and reduced motion, especially Cleveland, neon laundry and daylight Block Party. Confirm fighter silhouettes and low projectiles stay readable, no lights cover HUD text, and repeated stage changes remain stable. Test offline after cache update and inspect PHONE CHECK FPS.
