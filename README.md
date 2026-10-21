@@ -205,3 +205,9 @@ Throws retain paired lift/release paths; victories use per-fighter detailed pose
 The Subway gets one fast train rush when a normal match reaches its deciding 1–1 round. Cleveland bridge rails and river reflections light up for three seconds after a KO. Rooftop spectators gather behind the winner. Supers energize scene lighting, graffiti outlines and boombox speakers. Two stage-specific crates, bottles or boomboxes can break after nearby confirmed heavy/special hits, with capped debris and a single break per prop per round.
 
 All events are cosmetic: no collision, damage, score or timing changes. They freeze on pause/hidden tabs and during super cut-ins, and reset each round. Low FX uses static train/crowd placement and fewer debris pieces, with no extra light beams. Stage selection previews show intact props.
+
+
+### First neighborhood boss: Rivet / Iron 216
+CLEVELAND CREW BOSS on the title screen opens character selection for a separate first-to-two challenge on Cuyahoga Cypher. Rivet is a heavy boxer with silver/cyan sprite colors, his own introduction, Rivet Jab, Foundry Hook, Steel Overhand, body shots, Steel Shockwave and 216 Ton Finish. Existing detailed boxing artwork is recolored for his appearance; he is separate from the Arcade Promoter. Easy/Normal/Hard select 130/145/155 HP and decision spacing.
+
+At 40% HP he enters Forged Steel: a visible cyan ground ring/phase message, a more varied attack order and faster waves. Phase changes do not heal, cancel ongoing moves, boost damage or reduce delayed observation fairness. Low waves require crouch guard or a jump; overhands require standing guard. Long recoveries have punish prompts. Win the full match to unlock the local Iron 216 cosmetic emblem, shown on the title and arena. A single round win does not unlock it. The challenge restarts phase/health each round; no active-match resume. This is the first neighborhood boss, with other crew bosses still to come.
