@@ -38,7 +38,7 @@ function applyCombatHit(attacker,target,m,dir){
  if(target.hp<=0||target.invulnerable>0)return false;
  const blocked=target.block&&target.y===ground&&(m.height==='low'?target.crouch:m.height==='overhead'?!target.crouch:true);
  if(blocked){target.hp=Math.max(0,target.hp-m.chip);target.blockstun=m.blockstun;target.combo=0;tone(230)}
- else{const chain=target.stun>0?attacker.combo+1:1;attacker.combo=chain;attacker.comboTimer=1.2;const scale=[1,1,.9,.8,.7,.6,.5,.45,.4,.35,.3][Math.min(chain-1,10)];target.hp=Math.max(0,target.hp-Math.max(1,Math.round(m.damage*scale)));target.hitDuration=m.hitstun/60;target.stun=target.hitDuration;target.attack=null;target.block=false;if(m===MOVES.uppercut)target.vy=-500;comboText=chain>1?`${fighterName(attacker)} · ${chain} HIT COMBO`:'CLEAN HIT';comboTime=1.2;tone(70)}
+ else{const chain=target.stun>0?attacker.combo+1:1;attacker.combo=chain;attacker.comboTimer=1.2;const scale=[1,1,.9,.8,.7,.6,.5,.45,.4,.35,.3][Math.min(chain-1,10)];target.hp=Math.max(0,target.hp-Math.max(1,Math.round(m.damage*scale*(attacker.power||1))));target.hitDuration=m.hitstun/60;target.stun=target.hitDuration;target.attack=null;target.block=false;if(m===MOVES.uppercut)target.vy=-500;comboText=chain>1?`${fighterName(attacker)} · ${chain} HIT COMBO`:'CLEAN HIT';comboTime=1.2;tone(70)}
  target.x=Math.max(50,Math.min(1050,target.x+dir*(blocked?9:m.damage>10?24:12)));hitstop=blocked?3:5;
  for(let i=0;i<12;i++)particles.push({x:target.x-dir*12,y:target.y-65,vx:(Math.random()-.5)*350,vy:(Math.random()-.7)*300,t:.3,color:blocked?'#a9bfff':attacker.color});return true;
 }
@@ -46,7 +46,7 @@ stepFighter=function(f,other,dt){
  f.cooldown=Math.max(0,f.cooldown-dt);f.stun=Math.max(0,f.stun-dt);f.blockstun=Math.max(0,f.blockstun-1);f.invulnerable=Math.max(0,f.invulnerable-1);f.comboTimer=Math.max(0,f.comboTimer-dt);if(!f.comboTimer)f.combo=0;
  if(!f.attack)f.face=other.x>=f.x?1:-1;
  if(f.stun>0||f.blockstun>0)f.vx=0;
- f.x=Math.max(50,Math.min(1050,f.x+f.vx*dt));f.vy+=1250*dt;f.y=Math.min(ground,f.y+f.vy*dt);if(f.y===ground)f.vy=0;
+ f.x=Math.max(50,Math.min(1050,f.x+f.vx*dt*(f.moveSpeed||1)));f.vy+=1250*dt;f.y=Math.min(ground,f.y+f.vy*dt);if(f.y===ground)f.vy=0;
  if(!f.attack)return;const a=f.attack,m=MOVES[a.type];a.frame++;a.t=a.frame/60;
  if(a.type==='uppercut'&&a.frame===m.startup)f.vy=-530;
  if(a.type==='spinKick'&&a.frame>=m.startup&&a.frame<m.startup+m.active)f.x=Math.max(50,Math.min(1050,f.x+f.face*6));

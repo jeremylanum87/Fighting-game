@@ -13,9 +13,9 @@ check('hitstop, reset and paused simulation',`applyCombatHit(player,enemy,MOVES.
 check('all special animations and drawing',`for(const name of ['uppercut','spinKick','lowKick','jumpKick','fireball']){player.attack=null;player.cooldown=0;player.stun=0;player.y=ground;attack(player,name);animateFighter(player,STEP);draw()} `);
 // Exercise selection against the same game state and mocked DOM.
 env.document.body={classList:{add(){},remove(){}}};const previousQuery=env.document.querySelector;env.document.querySelector=s=>{const e=previousQuery(s);e.focus=()=>{};return e};
-vm.runInContext(fs.readFileSync(__dirname+'/selection.js','utf8'),env);
+vm.runInContext(fs.readFileSync(__dirname+'/selection.js','utf8'),env);vm.runInContext(fs.readFileSync(__dirname+'/title.js','utf8'),env);
 vm.runInContext(`
-if(mode!=='selecting')throw Error('Initial selection missing');selectCharacter('ember');document.querySelector('#confirmFighter').onclick();
+if(mode!=='title')throw Error('Initial title missing');document.querySelector('#titleStart').onclick();if(mode!=='selecting')throw Error('Start to selection');selectCharacter('ember');document.querySelector('#confirmFighter').onclick();
 if(player.character!=='ember'||enemy.character!=='volt'||mode!=='playing')throw Error('Character choice not applied');
 if(fighterName(player)!=='EMBER'||!document.querySelector('#score').textContent.startsWith('EMBER'))throw Error('Selected HUD');
 wins=[1,0];round=2;resetRound();if(player.character!=='ember'||wins[0]!==1)throw Error('Round persistence');
@@ -23,3 +23,8 @@ enemy.hp=0;endRound();if(!resultReveal.args[1].includes('EMBER'))throw Error('Wi
 openCharacterSelection();selectCharacter('volt');closeCharacterSelection();if(chosenCharacter!=='ember')throw Error('Cancel changed fighter');
 openCharacterSelection();selectCharacter('volt');document.querySelector('#confirmFighter').onclick();if(player.character!=='volt'||wins[0]!==0||round!==1)throw Error('New match reset');
 `,env);console.log('PASS character selection, HUD, round persistence, winner identity, cancel and new-match reset');
+
+vm.runInContext(`
+for(const id of Object.keys(fighterRoster)){openCharacterSelection();selectCharacter(id);document.querySelector('#confirmFighter').onclick();if(player.character!==id||fighterName(player)!==fighterRoster[id].name||player.character===enemy.character)throw Error('Roster selection '+id);animateFighter(player,STEP);draw();if(player.moveSpeed!==fighterRoster[id].speed||player.power!==fighterRoster[id].power)throw Error('Stats '+id);wins=[1,0];resetRound();if(player.character!==id)throw Error('Lost identity '+id)}
+showTitleScreen();if(mode!=='title'||document.querySelector('#titleScreen').hidden)throw Error('Home');document.querySelector('#titleStart').onclick();document.querySelector('#selectionBack').onclick();if(mode!=='title')throw Error('Back to title');if(Object.keys(fighterRoster).length!==8)throw Error('Roster size');
+`,env);console.log('PASS opening title, all eight fighters and tuning, opponent validation, home/back navigation');

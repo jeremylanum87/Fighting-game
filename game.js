@@ -4,7 +4,7 @@ const ground=430; let mode='ready',round=1,wins=[0,0],remaining=60,last=0,aiWait
 const make=(x,color)=>({x,y:ground,vx:0,vy:0,hp:100,color,face:1,attack:null,cooldown:0,stun:0,block:false,animState:"idle",animTime:0,hitDuration:0});
 let player=make(330,'#d8ff3e'),enemy=make(770,'#ff6b56'); enemy.face=-1;
 function tone(freq){if(!sound)return;try{audio??=new AudioContext();const o=audio.createOscillator(),g=audio.createGain();o.connect(g);g.connect(audio.destination);o.frequency.value=freq;g.gain.setValueAtTime(.07,audio.currentTime);g.gain.exponentialRampToValueAtTime(.001,audio.currentTime+.12);o.start();o.stop(audio.currentTime+.12)}catch{}}
-function fighterName(f){return f.character==='ember'?'EMBER':f.character==='volt'?'VOLT':f===player?'VOLT':'EMBER'}
+function fighterName(f){if(f.name)return f.name;return f.character==='ember'?'EMBER':f.character==='volt'?'VOLT':f===player?'VOLT':'EMBER'}
 function updateHud(){$('#pHealth').style.width=player.hp+'%';$('#eHealth').style.width=enemy.hp+'%';$('#timer').textContent=Math.ceil(remaining).toString().padStart(2,'0');$('#round').textContent=round;$('#score').textContent=`${fighterName(player)} ${wins[0]} : ${wins[1]} ${fighterName(enemy)}`}
 function show(tag,title,sub,label){$('#messageTag').textContent=tag;$('#message').textContent=title;$('#submessage').textContent=sub;$('#start').innerHTML=label+' <span>↗</span>';$('#overlay').classList.remove('hidden')}
 function resetRound(){player=make(330,'#d8ff3e');enemy=make(770,'#ff6b56');enemy.face=-1;remaining=60;particles=[];resultReveal=null;aiWait=.5;clearInput();mode='playing';$('#overlay').classList.add('hidden');$('#pause').textContent='PAUSE / P';updateHud()}
@@ -33,12 +33,12 @@ function revealResult(dt){if(!resultReveal)return;resultReveal.time-=dt;if(resul
 
 function spriteFrame(f,sprite){const state=f.animState;if(f.attack&&state.startsWith('attack'))return Math.min(sprite.frames-1,Math.floor(f.attack.t/(f.attack.type==='kick'?.36:.24)*sprite.frames));if(state==='guard')return 0;if(state==='take-hit')return Math.min(sprite.frames-1,Math.floor((1-f.stun/Math.max(.01,f.hitDuration))*sprite.frames));const frame=Math.floor(f.animTime*(state==='run'?12:state==='idle'?8:state==='death'?9:10));return ['death','take-hit','jump','fall'].includes(state)?Math.min(sprite.frames-1,frame):frame%sprite.frames;}
 function drawFighter(f){
- const who=f.character||(f===player?'volt':'ember'),state=f.animState==='guard'?'idle':f.animState,sprite=spriteSets[who][state];
+ const who=f.spriteSet||f.character||(f===player?'volt':'ember'),state=f.animState==='guard'?'idle':f.animState,sprite=spriteSets[who][state];
  if(!sprite||!sprite.image.complete||!sprite.image.naturalWidth){drawFallbackFighter(f);return}
  ctx.save();ctx.translate(Math.round(f.x),Math.round(f.y));
  ctx.fillStyle='#0008';ctx.beginPath();ctx.ellipse(0,2,43,9,0,0,Math.PI*2);ctx.fill();
  const glow=ctx.createRadialGradient(0,0,2,0,0,64);glow.addColorStop(0,who==='volt'?'#d8ff3e55':'#ff6b5655');glow.addColorStop(1,'#0000');ctx.fillStyle=glow;ctx.fillRect(-64,-13,128,26);
- ctx.scale(f.face*(who==='ember'?-1:1),1);ctx.imageSmoothingEnabled=false;
+ ctx.scale(f.face*(who==='ember'?-1:1),1);ctx.imageSmoothingEnabled=false;ctx.filter=f.spriteFilter||'none';
  ctx.shadowColor=f.color;ctx.shadowBlur=f.stun>0?18:7;
  const scale=2.6,baseline=who==='volt'?122:128;
  ctx.drawImage(sprite.image,spriteFrame(f,sprite)*200,0,200,200,-100*scale,-baseline*scale,200*scale,200*scale);

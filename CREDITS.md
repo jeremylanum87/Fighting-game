@@ -13,3 +13,6 @@ Original sprite artwork is unchanged. Neon glow, ground reflections, shield effe
 Adapted move frame data, motion recognition approach, input buffering, combo cancel routes, and damage scaling from Neon Fist by Rutu (developerrutu), MIT license.
 Source: https://github.com/developerrutu/neon-fist (c28ffb7e7e81ed8f9cec274772c43c30d2876d42)
 Full license: NEON-FIST-LICENSE.txt.
+
+## Expanded roster
+Cipher, Brick, Jade, Rook, Haze and Goldie use runtime color variants of the two CC0 LuizMelo animated sprite sets, with separate names and movement/damage tuning. They are not six additional original sprite packs.

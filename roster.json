@@ -1,0 +1,82 @@
+{
+  "volt": {
+    "name": "VOLT",
+    "color": "#e9b849",
+    "base": "volt",
+    "filter": "none",
+    "speed": 1,
+    "power": 1,
+    "tag": "THE LIVE WIRE",
+    "style": "Balanced / clean all-rounder"
+  },
+  "ember": {
+    "name": "EMBER",
+    "color": "#72a69b",
+    "base": "ember",
+    "filter": "none",
+    "speed": 1,
+    "power": 1,
+    "tag": "THE NIGHT SHIFT",
+    "style": "Balanced / patient pressure"
+  },
+  "cipher": {
+    "name": "CIPHER",
+    "color": "#b1a0ef",
+    "base": "volt",
+    "filter": "hue-rotate(65deg) saturate(1.4)",
+    "speed": 1.14,
+    "power": 0.92,
+    "tag": "THE WORDSMITH",
+    "style": "Fast footwork / lighter hits"
+  },
+  "brick": {
+    "name": "BRICK",
+    "color": "#cf7852",
+    "base": "ember",
+    "filter": "hue-rotate(145deg) saturate(.85)",
+    "speed": 0.88,
+    "power": 1.12,
+    "tag": "THE HEAVY HITTER",
+    "style": "Heavy damage / slower steps"
+  },
+  "jade": {
+    "name": "JADE",
+    "color": "#88c38e",
+    "base": "volt",
+    "filter": "hue-rotate(170deg) saturate(1.2)",
+    "speed": 1.08,
+    "power": 0.96,
+    "tag": "THE GROOVE",
+    "style": "Quick movement / precise pressure"
+  },
+  "rook": {
+    "name": "ROOK",
+    "color": "#b8c5ce",
+    "base": "ember",
+    "filter": "grayscale(.85) brightness(1.3)",
+    "speed": 0.94,
+    "power": 1.06,
+    "tag": "THE CORNERSTONE",
+    "style": "Steady pace / stronger strikes"
+  },
+  "haze": {
+    "name": "HAZE",
+    "color": "#da8fc7",
+    "base": "ember",
+    "filter": "hue-rotate(65deg) saturate(1.6)",
+    "speed": 1.12,
+    "power": 0.94,
+    "tag": "THE LATE NIGHT",
+    "style": "Fast approach / light damage"
+  },
+  "goldie": {
+    "name": "GOLDIE",
+    "color": "#efd16c",
+    "base": "volt",
+    "filter": "hue-rotate(290deg) saturate(1.6) brightness(1.15)",
+    "speed": 0.96,
+    "power": 1.04,
+    "tag": "THE HEADLINER",
+    "style": "Measured footwork / solid impact"
+  }
+}
