@@ -76,3 +76,7 @@ Selection now uses one large animated fighter showcase, eight portrait tiles in 
 Each CPU uses a character-specific spacing and attack strategy. Extra movement, guard, crouch, hurt and knockdown frames are generated locally from the original arcade atlas. Entrances and victory poses reuse each fighter’s signature pose; taunts are cosmetic, available with T or the touch button, and have a six-second cooldown.
 
 Controls includes an optional diagonal movement thumbstick and horizontal/vertical pad offsets. Personal Records on the title screen tracks match wins/losses, rounds won, best combo hits/damage and arcade clears in local storage (`block-cypher-records-v1`). Training is excluded. Clearing browser data removes saved records.
+
+
+### Super moves
+Land hits and block attacks to charge a 100-point meter. Press R or tap SUPER to spend a full meter on the selected fighter’s signature super. Supers are grounded, blockable mid attacks, with long recovery and no invulnerability; they can cancel hit-confirmed light/heavy/low normals. The short cinematic freezes both fighters and the round timer, respecting pause and hidden tabs. Supers do not generate meter. Meter carries between rounds and resets for a new match. Training starts with full player meter and has a FILL SUPER METER button.
