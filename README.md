@@ -67,3 +67,6 @@ Each fighter has an on-screen named route: Live Wire, Burn Notice, Word Perfect,
 - **Mobile controls:** adjust button size, spacing, movement/attack pad height, opacity and left-handed layout. Preferences save locally on the device. Optional short vibration plays on heavy hits where supported. Open controls with the gear button during a fight; the game pauses while settings are open. Fullscreen and landscape locking are attempted only after pressing the button, with a browser-support fallback.
 
 No account is required. Clearing browser storage removes saved controls and endings. The new progression and training features remain offline/local play; online multiplayer is not included.
+
+## Character-select redesign
+Selection now uses one large animated fighter showcase, eight portrait tiles in a 4×2 grid, a live profile with health/speed/heavy-damage/reach bars, a VS matchup strip and a LOCK IN button. Detailed mode/opponent/stage/difficulty settings live in a collapsible setup row. Mobile stacks the showcase above the roster and keeps confirmation sticky. Arrow keys navigate the grid; Enter/Space select a fighter. Selection sounds respect sound settings and reveal animations respect reduced-motion preferences. Existing Quick/Training/Arcade choices and match confirmation are preserved.
