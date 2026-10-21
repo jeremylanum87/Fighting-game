@@ -104,3 +104,5 @@ body.selecting .intro{display:none}#characterSelect.arcade-select{--select-accen
 @media(prefers-reduced-motion:reduce){.opening-fighter[data-routine] img{animation:none}}
 .touch button,.thumbstick{touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 @media(max-width:600px){.arena-footer{flex-wrap:wrap;height:auto;min-height:39px;gap:2px;padding:4px 6px}.arena-footer button{min-height:40px;padding:6px}.attack-pad button,.move-pad button{min-width:44px;min-height:44px}}
+
+.skip-last-bar{position:absolute;right:12px;bottom:48px;z-index:4;background:#132333ed;color:#f8e1a1;min-height:44px;border:1px solid #e7ca78;font-size:10px}.skip-last-bar[hidden]{display:none}
