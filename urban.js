@@ -25,7 +25,7 @@ function buildCourt(){
  g.fillStyle='#dfd3b5';g.font='bold 11px monospace';g.fillText('THE BLOCK / AFTER HOURS',22,499);
 }
 buildCourt();
-draw=function(){ctx.drawImage(court,0,0);drawFighter(player);drawFighter(enemy);for(const p of particles){ctx.globalAlpha=p.t/.3;rect(p.x,p.y,5,5,p.color)}ctx.globalAlpha=1;updateBeat()};
+draw=function(){ctx.drawImage(court,0,0);if(typeof drawArcadeCrowd==='function')drawArcadeCrowd();drawFighter(player);drawFighter(enemy);for(const p of particles){ctx.globalAlpha=p.t/.3;rect(p.x,p.y,5,5,p.color)}ctx.globalAlpha=1;updateBeat()};
 // 92 BPM swung sixteenth-note groove, synthesized with Web Audio.
 let beatAudio=null,beatBus=null,beatTime=0,beatStep=0,beatNoise=null;
 function initBeat(){if(beatAudio)return;beatAudio=new AudioContext();beatBus=beatAudio.createGain();beatBus.gain.value=0;beatBus.connect(beatAudio.destination);beatNoise=beatAudio.createBuffer(1,beatAudio.sampleRate*.2,beatAudio.sampleRate);const data=beatNoise.getChannelData(0);for(let i=0;i<data.length;i++)data[i]=Math.random()*2-1;}

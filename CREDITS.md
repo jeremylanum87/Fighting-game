@@ -21,3 +21,6 @@ Cipher, Brick, Jade, Rook, Haze and Goldie use runtime color variants of the two
 The active fighters, title art and roster previews now use original procedural pixel-art streetwear rigs, with eight-frame special animation phases and original effects. The earlier LuizMelo assets remain in the repository with their CC0 credits, but the current rendering uses the new rigs.
 
 The silhouette/outfit refinements and impact sounds are original procedural artwork and synthesis. No sampled music or commercial character likenesses are used.
+
+## Arcade-edition artwork
+The current detailed fighter sprite strips and portraits are AI-generated original artwork made for Block Cypher, then separated, normalized and integrated as game assets. They depict the original roster and do not use Street Fighter character artwork. Each fighter has eight illustrated source poses; animation timing, pose selection, transforms and combat effects provide the in-game motion. Earlier procedural rigs are retained as a loading fallback.

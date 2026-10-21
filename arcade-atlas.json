@@ -1,0 +1,58 @@
+{
+  "volt": {
+    "file": "assets/arcade/volt.png",
+    "frameWidth": 160,
+    "frameHeight": 160,
+    "frames": 8,
+    "baseline": 144
+  },
+  "ember": {
+    "file": "assets/arcade/ember.png",
+    "frameWidth": 160,
+    "frameHeight": 160,
+    "frames": 8,
+    "baseline": 144
+  },
+  "cipher": {
+    "file": "assets/arcade/cipher.png",
+    "frameWidth": 160,
+    "frameHeight": 160,
+    "frames": 8,
+    "baseline": 144
+  },
+  "brick": {
+    "file": "assets/arcade/brick.png",
+    "frameWidth": 160,
+    "frameHeight": 160,
+    "frames": 8,
+    "baseline": 144
+  },
+  "jade": {
+    "file": "assets/arcade/jade.png",
+    "frameWidth": 160,
+    "frameHeight": 160,
+    "frames": 8,
+    "baseline": 144
+  },
+  "rook": {
+    "file": "assets/arcade/rook.png",
+    "frameWidth": 160,
+    "frameHeight": 160,
+    "frames": 8,
+    "baseline": 144
+  },
+  "haze": {
+    "file": "assets/arcade/haze.png",
+    "frameWidth": 160,
+    "frameHeight": 160,
+    "frames": 8,
+    "baseline": 144
+  },
+  "goldie": {
+    "file": "assets/arcade/goldie.png",
+    "frameWidth": 160,
+    "frameHeight": 160,
+    "frames": 8,
+    "baseline": 144
+  }
+}
