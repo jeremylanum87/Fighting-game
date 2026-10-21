@@ -82,3 +82,4 @@ body.selecting .intro{display:none}#characterSelect.arcade-select{--select-accen
 .overlay .rematch-button{margin-top:10px;min-height:44px;background:#e9c77b;color:#16281f}.overlay .rematch-button[hidden]{display:none!important}#effectsPerformance{color:#d7c088}
 
 .overlay.has-rematch #message{font-size:clamp(24px,4vw,48px);margin:6px 0}.overlay.has-rematch #submessage{display:none}.overlay.has-rematch button{margin-top:6px;padding:8px 16px;min-height:44px}.overlay.has-rematch #messageTag{margin:4px 0}
+.device-test-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.device-test-pad button{min-height:64px;font:700 10px monospace;border:2px solid #c5a965;touch-action:none;user-select:none}.device-test-pad button.pressed{background:#e7c67c;color:#15261f}#closeDeviceCheck{min-height:48px;margin-top:12px}#deviceFps,#deviceFit{color:#e2c778}

@@ -1,0 +1,146 @@
+{
+  "volt": {
+    "file": "assets/arcade-motion/volt.png",
+    "frames": 8,
+    "width": 160,
+    "height": 160,
+    "poses": [
+      "idle",
+      "walk-left",
+      "walk-right",
+      "light-windup",
+      "light-hit",
+      "heavy-windup",
+      "heavy-hit",
+      "recovery"
+    ]
+  },
+  "ember": {
+    "file": "assets/arcade-motion/ember.png",
+    "frames": 8,
+    "width": 160,
+    "height": 160,
+    "poses": [
+      "idle",
+      "walk-left",
+      "walk-right",
+      "light-windup",
+      "light-hit",
+      "heavy-windup",
+      "heavy-hit",
+      "recovery"
+    ]
+  },
+  "cipher": {
+    "file": "assets/arcade-motion/cipher.png",
+    "frames": 8,
+    "width": 160,
+    "height": 160,
+    "poses": [
+      "idle",
+      "walk-left",
+      "walk-right",
+      "light-windup",
+      "light-hit",
+      "heavy-windup",
+      "heavy-hit",
+      "recovery"
+    ]
+  },
+  "brick": {
+    "file": "assets/arcade-motion/brick.png",
+    "frames": 8,
+    "width": 160,
+    "height": 160,
+    "poses": [
+      "idle",
+      "walk-left",
+      "walk-right",
+      "light-windup",
+      "light-hit",
+      "heavy-windup",
+      "heavy-hit",
+      "recovery"
+    ]
+  },
+  "jade": {
+    "file": "assets/arcade-motion/jade.png",
+    "frames": 8,
+    "width": 160,
+    "height": 160,
+    "poses": [
+      "idle",
+      "walk-left",
+      "walk-right",
+      "light-windup",
+      "light-hit",
+      "heavy-windup",
+      "heavy-hit",
+      "recovery"
+    ]
+  },
+  "rook": {
+    "file": "assets/arcade-motion/rook.png",
+    "frames": 8,
+    "width": 160,
+    "height": 160,
+    "poses": [
+      "idle",
+      "walk-left",
+      "walk-right",
+      "light-windup",
+      "light-hit",
+      "heavy-windup",
+      "heavy-hit",
+      "recovery"
+    ]
+  },
+  "haze": {
+    "file": "assets/arcade-motion/haze.png",
+    "frames": 8,
+    "width": 160,
+    "height": 160,
+    "poses": [
+      "idle",
+      "walk-left",
+      "walk-right",
+      "light-windup",
+      "light-hit",
+      "heavy-windup",
+      "heavy-hit",
+      "recovery"
+    ]
+  },
+  "goldie": {
+    "file": "assets/arcade-motion/goldie.png",
+    "frames": 8,
+    "width": 160,
+    "height": 160,
+    "poses": [
+      "idle",
+      "walk-left",
+      "walk-right",
+      "light-windup",
+      "light-hit",
+      "heavy-windup",
+      "heavy-hit",
+      "recovery"
+    ]
+  },
+  "promoter": {
+    "file": "assets/arcade-motion/promoter.png",
+    "frames": 8,
+    "width": 160,
+    "height": 160,
+    "poses": [
+      "idle",
+      "walk-left",
+      "walk-right",
+      "light-windup",
+      "light-hit",
+      "heavy-windup",
+      "heavy-hit",
+      "recovery"
+    ]
+  }
+}

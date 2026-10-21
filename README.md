@@ -19,7 +19,7 @@ Fixed 60 Hz combat with startup/active/recovery phases, 10-frame input buffering
 Summer-2010 hip-hop art direction: original brick/graffiti basketball-court backdrop, apartment fire escapes, chain-link fencing, wheatpaste flyers, boombox and warm lamps. Optional original 92 BPM synthesized boom-bap beat follows the BEAT toggle and mutes when paused or hidden. No music samples or recordings. Combat and licensed fighter sprite sheets are retained.
 
 ## Title screen and expanded roster
-The game opens on Start / How to Play / Beat controls. Choose from Volt, Ember, Cipher, Brick, Jade, Rook, Haze and Goldie, then choose a CPU opponent. New fighters use color variants of the existing CC0 animation sets and slightly different movement/damage profiles. HOME returns to the opening screen; confirming a selection starts a fresh match.
+The game opens on Start / How to Play / Beat controls. Choose from Volt, Ember, Cipher, Brick, Jade, Rook, Haze and Goldie, then choose a CPU opponent. The fighters use original detailed arcade artwork with distinct movement and damage profiles. HOME returns to the opening screen; confirming a selection starts a fresh match.
 
 ## Individual movesets
 Each character now has unique light/heavy tuning and three specials, accessible through U/I/O or the named mobile buttons. Motion inputs select the same slots. Specials have individual cooldowns; failed attempts do not spend them.
@@ -61,7 +61,7 @@ Each fighter has an on-screen named route: Live Wire, Burn Notice, Word Perfect,
 
 - **Quick Match:** choose opponent, one of five stages, and Easy/Normal/Hard CPU difficulty. Rival introductions precede the first round; victory dialogue follows a match.
 - **Training:** no timer; dummy health refills between attempts and after KOs. Dummy options: stand, guard, low guard, jump, or CPU. Watch individual move and character-combo demonstrations, reset practice, and toggle hitboxes. Manual input stops a demo.
-- **Arcade:** seven roster rivals followed by The Promoter, a gold-tinted heavyweight boss variant using Brick's artwork/moves with boss tuning. Each match is first-to-two rounds. Losing offers a retry at the same opponent. Clearing the ladder unlocks the chosen character's original ending in the title-screen gallery. Endings save locally; an in-progress ladder currently lasts for the page session.
+- **Arcade:** seven roster rivals followed by The Promoter, a black-and-gold boss with dedicated artwork, portrait and readable signature attacks. Each match is first-to-two rounds. Losing offers a retry at the same opponent. Clearing the ladder unlocks the chosen character's original ending in the title-screen gallery. Endings save locally; an in-progress ladder currently lasts for the page session.
 - **Stages:** Basketball Court, Subway Platform, Corner Store, Rooftop Cypher, and Warehouse. All new backdrops and animated elements are original Canvas artwork; collision dimensions remain consistent.
 - **CPU difficulty:** changes reaction delays, guarding, movement, combo choices, and projectile evasion. Normal opponents receive no health/damage bonus from difficulty. The final boss is explicitly stronger.
 - **Mobile controls:** adjust button size, spacing, movement/attack pad height, opacity and left-handed layout. Preferences save locally on the device. Optional short vibration plays on heavy hits where supported. Open controls with the gear button during a fight; the game pauses while settings are open. Fullscreen and landscape locking are attempted only after pressing the button, with a browser-support fallback.
@@ -101,3 +101,9 @@ Effects quality defaults to Auto and can be changed in Controls or via the arena
 
 
 Arena fighters render 15% larger, with matching melee/hurt/counter/push geometry. Portraits and selection previews retain their original framing. Body separation derives from pushbox widths and respects arena corners. Projectile dimensions remain tied to their own artwork.
+
+
+### Director update: animation, readability and final boss
+Nine new motion sheets add 72 original illustrated poses. Normal attacks now show dedicated windup, extension and recovery, and walking uses alternate strides. Heavy/special windups display LOW, OVERHEAD, HEAVY, COUNTER, EVADE or SUPER cues. The Promoter has Velvet Rope (projectile), Hostile Takeover (overhead), Floor Tax (low), Venue Crusher and Final Contract (super), with long visible recovery openings. His AI follows delayed observations and rotates attacks rather than simply using Brick’s tactics.
+
+PHONE CHECK on the title screen shows recent in-game FPS, viewport fit and a safe independent multi-touch test. See ANDROID-PLAYTEST.md for the physical-device checklist. Automated input/render/combat checks were run in the workspace; a physical Android playtest remains required.

@@ -25,4 +25,8 @@ The silhouette/outfit refinements and impact sounds are original procedural artw
 ## Arcade-edition artwork
 The current detailed fighter sprite strips and portraits are AI-generated original artwork made for Block Cypher, then separated, normalized and integrated as game assets. They depict the original roster and do not use Street Fighter character artwork. Each fighter has eight illustrated source poses; animation timing, pose selection, transforms and combat effects provide the in-game motion. Earlier procedural rigs are retained as a loading fallback.
 
-Neighborhood-stage illustrations, rival dialogue, character endings, training demonstrations and The Promoter boss tuning are original project material. The Promoter is an explicitly labeled variant of the existing Brick artwork, not a separately illustrated ninth roster fighter.
+Neighborhood-stage illustrations, rival dialogue, character endings, training demonstrations and The Promoter boss tuning are original project material. The original boss version used Brick artwork. The current director update gives The Promoter separately illustrated black-and-gold artwork, a dedicated portrait and original signature attacks. He remains an arcade boss rather than a selectable ninth fighter.
+
+
+## Dedicated motion artwork
+The `assets/arcade-motion/` sheets add 72 AI-generated original poses across the eight fighters and The Promoter: idle, two walking strides, light/heavy windups and strikes, and recovery. These extend the existing illustrated poses; they are not fully hand-drawn interpolated animation sheets. Runtime timing, stance motion and existing guard/air/hurt poses complete the animation. The new sheets and boss portrait total about 205 KB.
