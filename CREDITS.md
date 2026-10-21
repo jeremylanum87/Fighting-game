@@ -16,3 +16,6 @@ Full license: NEON-FIST-LICENSE.txt.
 
 ## Expanded roster
 Cipher, Brick, Jade, Rook, Haze and Goldie use runtime color variants of the two CC0 LuizMelo animated sprite sets, with separate names and movement/damage tuning. They are not six additional original sprite packs.
+
+## Street-rig animation update
+The active fighters, title art and roster previews now use original procedural pixel-art streetwear rigs, with eight-frame special animation phases and original effects. The earlier LuizMelo assets remain in the repository with their CC0 credits, but the current rendering uses the new rigs.
