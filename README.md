@@ -84,3 +84,7 @@ Land hits and block attacks to charge a 100-point meter. Press R or tap SUPER to
 
 ### Training coach
 Training includes live hit/guard/whiff feedback, input-buffer expiry guidance, late-link detection, a recent successful-input history and the next move in the character combo route. Feedback stays out of competitive matches and is suppressed while a demonstration runs. Compact in-arena notices remain visible in landscape; detailed coaching and training settings sit below the battle area.
+
+
+### Faster combat and smooth motion
+Combat runs at 1.08× speed through fixed simulation steps. The round clock, rival openings and super cinematic retain their normal pace. Runtime pixel animation adds continuous walk cycles, breathing idle, air/landing transitions and subtle attack anticipation/follow-through, with interpolated movement between simulation steps. Large hit/throw corrections remain immediate.
