@@ -8,3 +8,8 @@ Pixel Art / Character Assets by Luiz Melo.
 - Download mirror: https://github.com/chriscourses/fighting-game/tree/e39c1c59ac5b133468da25ee2251f8062416ebdc/img
 
 Original sprite artwork is unchanged. Neon glow, ground reflections, shield effects, and animation integration are game rendering effects. The two attack buttons select the sprites' two sword attack animations; the underlying light/heavy damage values are retained.
+
+## Combat mechanics
+Adapted move frame data, motion recognition approach, input buffering, combo cancel routes, and damage scaling from Neon Fist by Rutu (developerrutu), MIT license.
+Source: https://github.com/developerrutu/neon-fist (c28ffb7e7e81ed8f9cec274772c43c30d2876d42)
+Full license: NEON-FIST-LICENSE.txt.
