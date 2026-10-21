@@ -145,3 +145,13 @@ gameMode='quick';player.superMeter=64;enemy.superMeter=37;round=2;resetRound();i
 player.superMeter=100;player.x=400;enemy.x=470;enemy.hp=100;enemy.stun=0;enemy.invulnerable=0;player.attack=null;player.stun=0;player.blockstun=0;player.crouch=false;player.block=false;player.invulnerable=0;player.cooldown=0;attack(player,'punch');player.attack.connected=true;player.attack.blocked=false;if(!attack(player,'super'))throw Error('Hit-confirm cancel');superCinema=null;
 player.attack=null;enemy.character='brick';enemy.superMeter=100;enemy.attack=null;enemy.stun=0;enemy.blockstun=0;enemy.invulnerable=0;enemy.block=false;enemy.crouch=false;enemy.y=ground;enemy.cooldown=0;enemy.moveCooldowns={};difficulty='hard';aiWait=0;updateCpuFighter(enemy,player,STEP);if(enemy.attack?.type!=='super'||meter(enemy)!==0)throw Error('CPU super');showTitleScreen();if(superCinema)throw Error('Cinema navigation cleanup');
 `,env);console.log('PASS all eight supers: damage, recovery, no meter feedback, guard/punish, grounded/meter gating, cinema freeze/pause/visibility, normal cancel, CPU use and round/match meter rules');
+vm.runInContext(`
+dismissFightOpening();superCinema=null;mode='playing';clearInput();stickPointer=22;
+moveStick({pointerId:22,clientX:112,clientY:35});if(keys.has('w')||!keys.has('d'))throw Error('Shallow diagonal jumped');
+moveStick({pointerId:22,clientX:95,clientY:8});if(!keys.has('w')||!keys.has('d'))throw Error('Deliberate diagonal missing');
+moveStick({pointerId:22,clientX:96,clientY:7});if(!keys.has('w'))throw Error('Jump dropped before next frame');
+moveStick({pointerId:22,clientX:113,clientY:35});moveStick({pointerId:22,clientX:95,clientY:8});if(keys.has('w'))throw Error('Jump retriggered without neutral');
+moveStick({pointerId:22,clientX:60,clientY:60});moveStick({pointerId:22,clientX:60,clientY:5});if(!keys.has('w'))throw Error('Neutral did not rearm jump');
+keys.add('j');handleTouchOrientation();if(keys.size||stickPointer!==null||mode!=='paused')throw Error('Rotation held input');
+`,env);
+const mobileHtml=fs.readFileSync(__dirname+'/index.html','utf8');assert.match(mobileHtml,/<div class="battle-shell">/);const attackSection=mobileHtml.split('<div class="attack-pad">')[1].split('</div>')[0];assert.ok(attackSection.includes('id="superButton"'));assert.equal((mobileHtml.match(/id="superButton"/g)||[]).length,1);console.log('PASS Android shallow-diagonal rejection, deliberate/held jump, neutral rearm, rotation release/pause and SUPER grouped with attacks');
