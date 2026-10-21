@@ -199,3 +199,9 @@ Base color grading runs once per stage build. Transparent detail layers use a fo
 A final shared renderer now uses the existing detailed original/motion sprite atlases for idle, movement, guard, normal/special attacks, dedicated throws, thrown victims, projectile launches, taunts and victories. Normal gameplay no longer switches to the simpler procedural body rig when those images are ready. It preserves the roster’s detailed faces, clothing and distinctive silhouettes, with one baseline and body scale across states. The procedural renderer remains a loading/unavailable-image fallback.
 
 Throws retain paired lift/release paths; victories use per-fighter detailed poses with salute, shoulder, composure, power, dance, bow, shuffle or swagger motion. Projectile launch frame choices follow each character. Phase-based anticipation/recovery, fixed-step position interpolation and subtle breathing smooth transitions without blended duplicate silhouettes. Outfit recoloring and hit flashes still apply. This update reuses existing sprite artwork rather than downloading new assets, and changes no move timing, damage, collision or unlock rules.
+
+
+### Interactive stage moments
+The Subway gets one fast train rush when a normal match reaches its deciding 1–1 round. Cleveland bridge rails and river reflections light up for three seconds after a KO. Rooftop spectators gather behind the winner. Supers energize scene lighting, graffiti outlines and boombox speakers. Two stage-specific crates, bottles or boomboxes can break after nearby confirmed heavy/special hits, with capped debris and a single break per prop per round.
+
+All events are cosmetic: no collision, damage, score or timing changes. They freeze on pause/hidden tabs and during super cut-ins, and reset each round. Low FX uses static train/crowd placement and fewer debris pieces, with no extra light beams. Stage selection previews show intact props.
