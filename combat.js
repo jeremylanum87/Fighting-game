@@ -38,7 +38,7 @@ function applyCombatHit(attacker,target,m,dir){
  if(target.hp<=0||target.invulnerable>0)return false;
  const blocked=target.block&&target.y===ground&&(m.height==='low'?target.crouch:m.height==='overhead'?!target.crouch:true);
  if(blocked){target.hp=Math.max(0,target.hp-m.chip);target.blockstun=m.blockstun;target.combo=0;tone(230)}
- else{const chain=target.stun>0?attacker.combo+1:1;attacker.combo=chain;attacker.comboTimer=1.2;const scale=[1,1,.9,.8,.7,.6,.5,.45,.4,.35,.3][Math.min(chain-1,10)];target.hp=Math.max(0,target.hp-Math.max(1,Math.round(m.damage*scale)));target.hitDuration=m.hitstun/60;target.stun=target.hitDuration;target.attack=null;target.block=false;if(m===MOVES.uppercut)target.vy=-500;comboText=chain>1?`${attacker===player?'VOLT':'EMBER'} · ${chain} HIT COMBO`:'CLEAN HIT';comboTime=1.2;tone(70)}
+ else{const chain=target.stun>0?attacker.combo+1:1;attacker.combo=chain;attacker.comboTimer=1.2;const scale=[1,1,.9,.8,.7,.6,.5,.45,.4,.35,.3][Math.min(chain-1,10)];target.hp=Math.max(0,target.hp-Math.max(1,Math.round(m.damage*scale)));target.hitDuration=m.hitstun/60;target.stun=target.hitDuration;target.attack=null;target.block=false;if(m===MOVES.uppercut)target.vy=-500;comboText=chain>1?`${fighterName(attacker)} · ${chain} HIT COMBO`:'CLEAN HIT';comboTime=1.2;tone(70)}
  target.x=Math.max(50,Math.min(1050,target.x+dir*(blocked?9:m.damage>10?24:12)));hitstop=blocked?3:5;
  for(let i=0;i<12;i++)particles.push({x:target.x-dir*12,y:target.y-65,vx:(Math.random()-.5)*350,vy:(Math.random()-.7)*300,t:.3,color:blocked?'#a9bfff':attacker.color});return true;
 }

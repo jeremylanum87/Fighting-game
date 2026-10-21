@@ -11,3 +11,15 @@ check('special motion and mirrored facing',`directionHistory=[2,3,6];keys.add('j
 check('buffered action and held-input prevention',`keys.add('j');update(STEP);if(!player.attack)throw Error('input');for(let i=0;i<40;i++)update(STEP);if(player.attack)throw Error('held auto-repeat');`);
 check('hitstop, reset and paused simulation',`applyCombatHit(player,enemy,MOVES.punch,1);const t=remaining;update(STEP);if(remaining!==t)throw Error('hitstop timer');resetRound();if(projectiles.length||hitstop||inputQueue.length)throw Error('reset');pause();const x=player.x;update(STEP);if(player.x!==x)throw Error('pause');`);
 check('all special animations and drawing',`for(const name of ['uppercut','spinKick','lowKick','jumpKick','fireball']){player.attack=null;player.cooldown=0;player.stun=0;player.y=ground;attack(player,name);animateFighter(player,STEP);draw()} `);
+// Exercise selection against the same game state and mocked DOM.
+env.document.body={classList:{add(){},remove(){}}};const previousQuery=env.document.querySelector;env.document.querySelector=s=>{const e=previousQuery(s);e.focus=()=>{};return e};
+vm.runInContext(fs.readFileSync(__dirname+'/selection.js','utf8'),env);
+vm.runInContext(`
+if(mode!=='selecting')throw Error('Initial selection missing');selectCharacter('ember');document.querySelector('#confirmFighter').onclick();
+if(player.character!=='ember'||enemy.character!=='volt'||mode!=='playing')throw Error('Character choice not applied');
+if(fighterName(player)!=='EMBER'||!document.querySelector('#score').textContent.startsWith('EMBER'))throw Error('Selected HUD');
+wins=[1,0];round=2;resetRound();if(player.character!=='ember'||wins[0]!==1)throw Error('Round persistence');
+enemy.hp=0;endRound();if(!resultReveal.args[1].includes('EMBER'))throw Error('Winner identity');
+openCharacterSelection();selectCharacter('volt');closeCharacterSelection();if(chosenCharacter!=='ember')throw Error('Cancel changed fighter');
+openCharacterSelection();selectCharacter('volt');document.querySelector('#confirmFighter').onclick();if(player.character!=='volt'||wins[0]!==0||round!==1)throw Error('New match reset');
+`,env);console.log('PASS character selection, HUD, round persistence, winner identity, cancel and new-match reset');
