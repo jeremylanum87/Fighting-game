@@ -18,3 +18,5 @@ If a check fails, record phone model, Chrome version, orientation, control mode,
 
 11. Complete LEARN TO PLAY using the buttons, then repeat movement/jump with the stick. Check that the lesson card, arena and controls fit together in landscape. Pick Midnight on fighter selection and confirm the outfit changes without affecting stats.
 12. Win one arcade round, return to the title, close/reopen the app and use CONTINUE ARCADE. Confirm rival, difficulty and round score survive, while health and timer restart. Repeat after winning a whole match and after a loss.
+
+13. In Match Setup select each new stage, including Cleveland / Cuyahoga Cypher. Verify the preview and fight background agree, fighters stand on the same ground line, and movement stays responsive with Full and Low effects. Try the five new stages offline after updating the app cache.

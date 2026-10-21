@@ -59,7 +59,7 @@ Each fighter has an on-screen named route: Live Wire, Burn Notice, Word Perfect,
 
 ## Neighborhood expansion
 
-- **Quick Match:** choose opponent, one of five stages, and Easy/Normal/Hard CPU difficulty. Rival introductions precede the first round; victory dialogue follows a match.
+- **Quick Match:** choose opponent, one of ten stages, and Easy/Normal/Hard CPU difficulty. Rival introductions precede the first round; victory dialogue follows a match.
 - **Training:** no timer; dummy health refills between attempts and after KOs. Dummy options: stand, guard, low guard, jump, or CPU. Watch individual move and character-combo demonstrations, reset practice, and toggle hitboxes. Manual input stops a demo.
 - **Arcade:** seven roster rivals followed by The Promoter, a black-and-gold boss with dedicated artwork, portrait and readable signature attacks. Each match is first-to-two rounds. Losing offers a retry at the same opponent. Clearing the ladder unlocks the chosen character's original ending in the title-screen gallery. Endings and the current arcade checkpoint save locally. Continue Arcade resumes the saved rival and round score with fresh round health/time.
 - **Stages:** Basketball Court, Subway Platform, Corner Store, Rooftop Cypher, and Warehouse. All new backdrops and animated elements are original Canvas artwork; collision dimensions remain consistent.
@@ -110,7 +110,7 @@ PHONE CHECK on the title screen shows recent in-game FPS, viewport fit and a saf
 
 
 ### Neighborhood event update
-Five original synthesized hip-hop compositions add bass, minor chords, melody and drums per stage. Enable AUDIO on the title screen; Music and Effects / voice volumes save separately in Controls. Optional announcer calls use the browser’s speech voice, preferring a locally installed English voice. Voice availability offline depends on the device; the game’s text cues remain visible. No sampled or commercial music is included.
+Ten original synthesized hip-hop stage profiles add bass, minor chords, melody and drums per stage. Enable AUDIO on the title screen; Music and Effects / voice volumes save separately in Controls. Optional announcer calls use the browser’s speech voice, preferring a locally installed English voice. Voice availability offline depends on the device; the game’s text cues remain visible. No sampled or commercial music is included.
 
 Stage life includes passing corner-store traffic, subway trains, rooftop DJ movement, court boombox activity and warehouse light beams. Spectators raise their arms for heavy hits, combos, supers and round results. Low effects reduces ambient motion and detail.
 
@@ -125,3 +125,13 @@ LEARN TO PLAY on the title screen starts nine interactive lessons: movement, jum
 Fighter selection includes Street (original), Midnight (tutorial completion), Neon (a match win with that fighter), and Champion (that fighter’s Arcade clear). Recolors target clothing pixels and preserve the original source images. Outfit choices save locally and do not change stats.
 
 CONTINUE ARCADE restores the chosen fighter, difficulty, rival order/index, round and round score. Closing mid-round restarts that round at full health and a fresh timer; individual positions/HP are not saved. Winning a match checkpoints the next rival; a loss checkpoints a retry. Clearing the boss removes the active checkpoint. Starting a new arcade ladder replaces the previous checkpoint. Saves live only on this device and are removed by clearing browser data.
+
+
+### Five new city stages
+- Cleveland, Ohio / Cuyahoga Cypher: original riverfront promenade with a Terminal Tower-inspired crown, downtown skyline, steel truss bridge, river reflections and passing barge. This is a themed illustration rather than a geographic reconstruction.
+- Concrete Echo: a graffiti-covered underpass with concrete pillars and traffic above.
+- Spin Cycle: a neon laundry storefront with moving machine drums and pavement reflections.
+- Level Seven: a rooftop parking deck with skyline, parked car and lighting.
+- Summer on the Block: a daylight street festival with bunting, vendors, DJ and speakers.
+
+All five are selectable in Fighter Select → Match Setup → Stage, with a preview and their own music profile. Cleveland is the initial Quick Match stage, and Arcade visits the five new locations before Subway, Rooftop and the Warehouse boss. The original stages remain available. Stage geometry shares the same ground/collision rules, and the backgrounds are cached procedural Canvas artwork available offline.
