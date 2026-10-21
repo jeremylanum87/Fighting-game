@@ -135,3 +135,9 @@ CONTINUE ARCADE restores the chosen fighter, difficulty, rival order/index, roun
 - Summer on the Block: a daylight street festival with bunting, vendors, DJ and speakers.
 
 All five are selectable in Fighter Select → Match Setup → Stage, with a preview and their own music profile. Cleveland is the initial Quick Match stage, and Arcade visits the five new locations before Subway, Rooftop and the Warehouse boss. The original stages remain available. Stage geometry shares the same ground/collision rules, and the backgrounds are cached procedural Canvas artwork available offline.
+
+
+### Combat audio quality pass
+Nineteen original mono 44.1 kHz OGG impact variants cover light/heavy hits, kicks, guards, throws, landings, swing whooshes and KOs (about 130 KB compressed). These are layered original synthesis with filtered transients, body thumps and short room reflections, not recorded foley or third-party samples. Decode/preload starts when AUDIO is enabled; synthesized fallback remains available if a file cannot decode. Variants rotate with small playback-rate differences and restrained stereo positioning.
+
+Music and effects share one Web Audio context and an output chain with low-cut EQ, dynamic compression and soft peak shaping. Old combat beeps are suppressed while hit/swing/landing sounds play. The sample-voice budget is capped at twelve. Music ducks under browser announcements and briefly under heavy impacts; voice end/error handlers and a timeout restore it. Muting, pausing or hiding the page stops active sample voices. All OGG files are included in the offline cache. Browser announcer speech remains the device’s own voice service and is controlled by the existing toggle.

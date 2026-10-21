@@ -1,0 +1,118 @@
+{
+  "sampleRate": 44100,
+  "channels": 1,
+  "source": "Original layered synthesis with short room reflections; no third-party recordings.",
+  "sounds": {
+    "light": [
+      {
+        "file": "assets/audio/light-1.ogg",
+        "duration": 0.24,
+        "peak": 0.45
+      },
+      {
+        "file": "assets/audio/light-2.ogg",
+        "duration": 0.24,
+        "peak": 0.45
+      },
+      {
+        "file": "assets/audio/light-3.ogg",
+        "duration": 0.24,
+        "peak": 0.45
+      }
+    ],
+    "heavy": [
+      {
+        "file": "assets/audio/heavy-1.ogg",
+        "duration": 0.38,
+        "peak": 0.66
+      },
+      {
+        "file": "assets/audio/heavy-2.ogg",
+        "duration": 0.38,
+        "peak": 0.66
+      },
+      {
+        "file": "assets/audio/heavy-3.ogg",
+        "duration": 0.38,
+        "peak": 0.66
+      }
+    ],
+    "kick": [
+      {
+        "file": "assets/audio/kick-1.ogg",
+        "duration": 0.31,
+        "peak": 0.61
+      },
+      {
+        "file": "assets/audio/kick-2.ogg",
+        "duration": 0.31,
+        "peak": 0.61
+      },
+      {
+        "file": "assets/audio/kick-3.ogg",
+        "duration": 0.31,
+        "peak": 0.61
+      }
+    ],
+    "block": [
+      {
+        "file": "assets/audio/block-1.ogg",
+        "duration": 0.22,
+        "peak": 0.38
+      },
+      {
+        "file": "assets/audio/block-2.ogg",
+        "duration": 0.22,
+        "peak": 0.38
+      },
+      {
+        "file": "assets/audio/block-3.ogg",
+        "duration": 0.22,
+        "peak": 0.38
+      }
+    ],
+    "throw": [
+      {
+        "file": "assets/audio/throw-1.ogg",
+        "duration": 0.48,
+        "peak": 0.65
+      },
+      {
+        "file": "assets/audio/throw-2.ogg",
+        "duration": 0.48,
+        "peak": 0.65
+      }
+    ],
+    "land": [
+      {
+        "file": "assets/audio/land-1.ogg",
+        "duration": 0.4,
+        "peak": 0.54
+      },
+      {
+        "file": "assets/audio/land-2.ogg",
+        "duration": 0.4,
+        "peak": 0.54
+      }
+    ],
+    "whoosh": [
+      {
+        "file": "assets/audio/whoosh-1.ogg",
+        "duration": 0.2,
+        "peak": 0.22
+      },
+      {
+        "file": "assets/audio/whoosh-2.ogg",
+        "duration": 0.2,
+        "peak": 0.22
+      }
+    ],
+    "ko": [
+      {
+        "file": "assets/audio/ko-1.ogg",
+        "duration": 0.8,
+        "peak": 0.7
+      }
+    ]
+  }
+}

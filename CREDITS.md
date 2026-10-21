@@ -38,3 +38,7 @@ All stage music is original procedural Web Audio synthesis: no sampled records, 
 
 ## Expanded stage artwork
 Cuyahoga Cypher, Concrete Echo, Spin Cycle, Level Seven and Summer on the Block are original procedural Canvas illustrations. Cleveland’s riverfront and downtown landmarks inspire its theme; no photographs, map tiles, commercial logos or third-party background art are used. Each new stage has an original synthesized music profile.
+
+
+## Original impact pack
+The 19 OGG sounds in `assets/audio/` were created for Block Cypher using original layered waveform/noise synthesis, filtering and short room reflections. They contain no third-party recordings or sampled commercial audio. `audio-pack.json` documents categories, durations and source peaks.

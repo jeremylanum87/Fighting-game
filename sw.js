@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='block-cypher-offline-v30';
+const CACHE='block-cypher-offline-v31';
 const FILES=[
   "./",
   "./index.html",
@@ -23,6 +23,8 @@ const FILES=[
   "./progression.js",
   "./tutorial.js",
   "./city-stages.js",
+  "./audio-quality.js",
+  "./audio-pack.json",
   "./modes.js",
   "./motion-art.js",
   "./movesets.js",
@@ -82,7 +84,26 @@ const FILES=[
   "./assets/volt-idle.png",
   "./assets/volt-jump.png",
   "./assets/volt-run.png",
-  "./assets/volt-take-hit.png"
+  "./assets/volt-take-hit.png",
+  "./assets/audio/block-1.ogg",
+  "./assets/audio/block-2.ogg",
+  "./assets/audio/block-3.ogg",
+  "./assets/audio/heavy-1.ogg",
+  "./assets/audio/heavy-2.ogg",
+  "./assets/audio/heavy-3.ogg",
+  "./assets/audio/kick-1.ogg",
+  "./assets/audio/kick-2.ogg",
+  "./assets/audio/kick-3.ogg",
+  "./assets/audio/ko-1.ogg",
+  "./assets/audio/land-1.ogg",
+  "./assets/audio/land-2.ogg",
+  "./assets/audio/light-1.ogg",
+  "./assets/audio/light-2.ogg",
+  "./assets/audio/light-3.ogg",
+  "./assets/audio/throw-1.ogg",
+  "./assets/audio/throw-2.ogg",
+  "./assets/audio/whoosh-1.ogg",
+  "./assets/audio/whoosh-2.ogg"
 ];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES.map(url=>new Request(url,{cache:'reload'}))))) });
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('block-cypher-offline-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
