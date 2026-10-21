@@ -70,3 +70,9 @@ No account is required. Clearing browser storage removes saved controls and endi
 
 ## Character-select redesign
 Selection now uses one large animated fighter showcase, eight portrait tiles in a 4×2 grid, a live profile with health/speed/heavy-damage/reach bars, a VS matchup strip and a LOCK IN button. Detailed mode/opponent/stage/difficulty settings live in a collapsible setup row. Mobile stacks the showcase above the roster and keeps confirmation sticky. Arrow keys navigate the grid; Enter/Space select a fighter. Selection sounds respect sound settings and reveal animations respect reduced-motion preferences. Existing Quick/Training/Arcade choices and match confirmation are preserved.
+
+
+### Fighter polish and personal records
+Each CPU uses a character-specific spacing and attack strategy. Extra movement, guard, crouch, hurt and knockdown frames are generated locally from the original arcade atlas. Entrances and victory poses reuse each fighter’s signature pose; taunts are cosmetic, available with T or the touch button, and have a six-second cooldown.
+
+Controls includes an optional diagonal movement thumbstick and horizontal/vertical pad offsets. Personal Records on the title screen tracks match wins/losses, rounds won, best combo hits/damage and arcade clears in local storage (`block-cypher-records-v1`). Training is excluded. Clearing browser data removes saved records.
