@@ -80,3 +80,7 @@ Controls includes an optional diagonal movement thumbstick and horizontal/vertic
 
 ### Super moves
 Land hits and block attacks to charge a 100-point meter. Press R or tap SUPER to spend a full meter on the selected fighter’s signature super. Supers are grounded, blockable mid attacks, with long recovery and no invulnerability; they can cancel hit-confirmed light/heavy/low normals. The short cinematic freezes both fighters and the round timer, respecting pause and hidden tabs. Supers do not generate meter. Meter carries between rounds and resets for a new match. Training starts with full player meter and has a FILL SUPER METER button.
+
+
+### Training coach
+Training includes live hit/guard/whiff feedback, input-buffer expiry guidance, late-link detection, a recent successful-input history and the next move in the character combo route. Feedback stays out of competitive matches and is suppressed while a demonstration runs. Compact in-arena notices remain visible in landscape; detailed coaching and training settings sit below the battle area.
