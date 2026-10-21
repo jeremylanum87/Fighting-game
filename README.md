@@ -98,3 +98,6 @@ Layered impact sparks, blue guard shards, landing dust, short special-move after
 Brick has 120 HP and a 36-base-damage super; Haze has 84 HP. Rook’s normal reaps stagger, leaving knockdowns to his specials. Super chip is one point per multi-hit strike or three for a single hit. CPUs observe attack/position snapshots delayed by 260/190/140 ms on Easy/Normal/Hard, adjusted for combat pace.
 
 Effects quality defaults to Auto and can be changed in Controls or via the arena FX button (Auto → Full → Low). Auto reduces detail after sustained slow frames and restores it only after a longer stable period; pauses and hidden tabs are excluded. Quick Match results include a same-fighter, same-stage, same-difficulty rematch with a fresh score/meter and short round opening.
+
+
+Arena fighters render 15% larger, with matching melee/hurt/counter/push geometry. Portraits and selection previews retain their original framing. Body separation derives from pushbox widths and respects arena corners. Projectile dimensions remain tied to their own artwork.
