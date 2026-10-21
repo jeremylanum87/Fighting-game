@@ -24,3 +24,5 @@ The silhouette/outfit refinements and impact sounds are original procedural artw
 
 ## Arcade-edition artwork
 The current detailed fighter sprite strips and portraits are AI-generated original artwork made for Block Cypher, then separated, normalized and integrated as game assets. They depict the original roster and do not use Street Fighter character artwork. Each fighter has eight illustrated source poses; animation timing, pose selection, transforms and combat effects provide the in-game motion. Earlier procedural rigs are retained as a loading fallback.
+
+Neighborhood-stage illustrations, rival dialogue, character endings, training demonstrations and The Promoter boss tuning are original project material. The Promoter is an explicitly labeled variant of the existing Brick artwork, not a separately illustrated ninth roster fighter.

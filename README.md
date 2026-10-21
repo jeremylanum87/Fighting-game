@@ -56,3 +56,14 @@ Eight new detailed pixel-art strips (64 source poses) replace the simple procedu
 ## Named combo system
 Tap attacks to chain connected normals into specials. Two connected lights can chain together, then cancel into heavy and a compatible special. Whiffs cannot cancel; a third light cannot loop the chain. Fourteen-frame input buffering makes follow-ups easier on touch controls.
 Each fighter has an on-screen named route: Live Wire, Burn Notice, Word Perfect, Block Rocker, Ginga Flow, Checkmate, Fast Forward, and Gold Record. The guide uses the selected fighter’s move names. The HUD tracks actual health damage and hit count, counts a multi-hit special as one route input, and marks combos complete/blocked/interrupted when the defender recovers, guards, or turns the fight around. Existing progressive damage scaling and special cooldowns still apply.
+
+## Neighborhood expansion
+
+- **Quick Match:** choose opponent, one of five stages, and Easy/Normal/Hard CPU difficulty. Rival introductions precede the first round; victory dialogue follows a match.
+- **Training:** no timer; dummy health refills between attempts and after KOs. Dummy options: stand, guard, low guard, jump, or CPU. Watch individual move and character-combo demonstrations, reset practice, and toggle hitboxes. Manual input stops a demo.
+- **Arcade:** seven roster rivals followed by The Promoter, a gold-tinted heavyweight boss variant using Brick's artwork/moves with boss tuning. Each match is first-to-two rounds. Losing offers a retry at the same opponent. Clearing the ladder unlocks the chosen character's original ending in the title-screen gallery. Endings save locally; an in-progress ladder currently lasts for the page session.
+- **Stages:** Basketball Court, Subway Platform, Corner Store, Rooftop Cypher, and Warehouse. All new backdrops and animated elements are original Canvas artwork; collision dimensions remain consistent.
+- **CPU difficulty:** changes reaction delays, guarding, movement, combo choices, and projectile evasion. Normal opponents receive no health/damage bonus from difficulty. The final boss is explicitly stronger.
+- **Mobile controls:** adjust button size, spacing, movement/attack pad height, opacity and left-handed layout. Preferences save locally on the device. Optional short vibration plays on heavy hits where supported. Open controls with the gear button during a fight; the game pauses while settings are open. Fullscreen and landscape locking are attempted only after pressing the button, with a browser-support fallback.
+
+No account is required. Clearing browser storage removes saved controls and endings. The new progression and training features remain offline/local play; online multiplayer is not included.
