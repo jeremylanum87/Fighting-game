@@ -11,3 +11,7 @@ Automated checks cover combat timing, guard rules, boss windup/recovery, motion-
 7. Finish a Quick Match and rematch. Confirm fighters, stage and difficulty stay selected and score/meters reset.
 
 If a check fails, record phone model, Chrome version, orientation, control mode, effects mode and the action that failed.
+
+8. Enable AUDIO, adjust Music and Effects / voice independently, and test the announcer toggle. Switch stages and listen for different grooves. Mute audio and background the browser; music and voice should stop.
+9. Open DAILY CHALLENGES, complete an offered goal in Quick Match or Arcade, reload, and verify saved progress. Training should not count.
+10. Load online until the title reports offline files ready, then use INSTALL / OFFLINE (or Chrome ⋮ → Install app). Close the old browser tab, enable airplane mode, and launch from the home screen. Test Quick Match, Training and character artwork. Browser voices may require an installed offline voice.

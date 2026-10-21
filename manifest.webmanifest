@@ -1,0 +1,25 @@
+{
+  "id": "./",
+  "name": "Block Cypher \u2014 Street Fight",
+  "short_name": "Block Cypher",
+  "description": "An original urban arcade fighter. Play Quick Match, Arcade and Training offline.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#172b24",
+  "theme_color": "#172b24",
+  "icons": [
+    {
+      "src": "assets/app/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/app/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

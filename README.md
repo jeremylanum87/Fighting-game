@@ -107,3 +107,13 @@ Arena fighters render 15% larger, with matching melee/hurt/counter/push geometry
 Nine new motion sheets add 72 original illustrated poses. Normal attacks now show dedicated windup, extension and recovery, and walking uses alternate strides. Heavy/special windups display LOW, OVERHEAD, HEAVY, COUNTER, EVADE or SUPER cues. The Promoter has Velvet Rope (projectile), Hostile Takeover (overhead), Floor Tax (low), Venue Crusher and Final Contract (super), with long visible recovery openings. His AI follows delayed observations and rotates attacks rather than simply using Brick’s tactics.
 
 PHONE CHECK on the title screen shows recent in-game FPS, viewport fit and a safe independent multi-touch test. See ANDROID-PLAYTEST.md for the physical-device checklist. Automated input/render/combat checks were run in the workspace; a physical Android playtest remains required.
+
+
+### Neighborhood event update
+Five original synthesized hip-hop compositions add bass, minor chords, melody and drums per stage. Enable AUDIO on the title screen; Music and Effects / voice volumes save separately in Controls. Optional announcer calls use the browser’s speech voice, preferring a locally installed English voice. Voice availability offline depends on the device; the game’s text cues remain visible. No sampled or commercial music is included.
+
+Stage life includes passing corner-store traffic, subway trains, rooftop DJ movement, court boombox activity and warehouse light beams. Spectators raise their arms for heavy hits, combos, supers and round results. Low effects reduces ambient motion and detail.
+
+DAILY CHALLENGES rotates three goals at 00:00 UTC across six challenge types. Quick Match and Arcade count; Training is excluded. Badges, progress and full-clear streak save locally. There is no online leaderboard or account sync.
+
+The app manifest and service worker support Android home-screen installation and offline play after the first successful online cache. INSTALL / OFFLINE opens the browser installation prompt when available, or shows Chrome menu instructions. All local game code and PNG artwork are precached; external web fonts fall back to system fonts offline. Existing app caches update on normal service-worker activation, usually after old tabs close. Run `node offline.test.cjs` for cache/install checks.
