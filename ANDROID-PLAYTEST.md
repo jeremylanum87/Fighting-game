@@ -36,3 +36,5 @@ If a check fails, record phone model, Chrome version, orientation, control mode,
 21. Tap a heavy near the end of a missed light attack: it should execute after recovery. Rapidly tap different attacks and verify only the newest pending action follows; pause/background must clear queued attacks and held touches.
 22. Block melee attacks at each wall; the attacker should move back. After a full knockdown, test movement/jump or a buffered attack during the brief wake-up protection. Repeat as both fighters.
 23. Compare early/late Arcade opponents at each difficulty. Check light/heavy hit recoil, rapid supers in Auto/Low FX, narrow-screen footer wrapping, rotation and simultaneous move/attack input. Record actual phone FPS using PHONE CHECK.
+
+24. Try THROW with all eight fighters and WATCH DEMO → Character throw in Training. Confirm it beats close guard, misses jumps/out-of-range opponents, cannot chain into hitstun, and respects wake-up protection. Hold move and tap THROW together; verify no repeated throws while held and no new horizontal overflow in portrait/landscape.
