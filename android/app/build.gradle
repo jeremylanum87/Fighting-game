@@ -1,0 +1,36 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'com.blockcypher.game'
+    compileSdk 35
+    buildFeatures { buildConfig true }
+    defaultConfig {
+        applicationId 'com.blockcypher.game'
+        minSdk 26
+        targetSdk 35
+        versionCode 1
+        versionName '0.1-preview'
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    sourceSets.main.assets.srcDir layout.buildDirectory.dir('generated/gameAssets')
+}
+dependencies {
+    implementation 'androidx.webkit:webkit:1.12.1'
+    implementation 'androidx.activity:activity:1.9.3'
+}
+tasks.register('bundleGame', Sync) {
+    from(rootProject.projectDir.parentFile) {
+        include '*.html', '*.css', '*.js', '*.json', '*.webmanifest', 'assets/**', 'CREDITS.md', '*LICENSE*'
+        exclude '*.test.cjs', 'install.js'
+    }
+    into layout.buildDirectory.dir('generated/gameAssets/www')
+    doLast {
+        def install = new File(destinationDir, 'install.js')
+        install.text = """'use strict';
+const nativeInstallButton=document.querySelector('#installGame');
+if(nativeInstallButton){nativeInstallButton.textContent='ANDROID APP / INSTALLED';nativeInstallButton.disabled=true;}
+const nativeInstallStatus=document.querySelector('#installStatus');
+if(nativeInstallStatus)nativeInstallStatus.textContent='Game files are bundled for offline play. Progress is saved on this device.';
+"""
+    }
+}
+tasks.named('preBuild').configure { dependsOn 'bundleGame' }
