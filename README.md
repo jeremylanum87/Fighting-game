@@ -217,3 +217,9 @@ At 40% HP he enters Forged Steel: a visible cyan ground ring/phase message, a mo
 An unblocked KO from a special, signature projectile, super or special counter can trigger a 1.65-second Last Bar sequence. It briefly slows post-KO animation/effects, holds the detailed impact pose, colors the stage and presents the winner’s graffiti tag with a character motif: lightning, flame mural, cosmic rings, shock rings, wind, speed lines or a platinum record. Ordinary strikes, dedicated throws, chip KOs and Training do not trigger it. Special command grabs remain eligible. No extra damage, round wins, XP or rewards are applied.
 
 Controls → Skip Last Bar finishers saves a device preference. The on-screen SKIP FINISHER button or Escape skips the current sequence. Results/highlights appear afterward. Hidden tabs and open Controls freeze it; navigation/reset clears it. Low FX uses simpler motifs and straight text, with restrained stage tint and no flashing screen. Browser/device visual and touch checks remain on the Android checklist.
+
+
+### Dedicated stage selection
+Fighter confirmation now opens a dedicated stage-selection screen before any match setup/reset occurs. Choose among ten stage cards, inspect the large arena preview, then START FIGHT (or START TRAINING). Back to Fighters preserves fighter/opponent/difficulty and the selected location. Arrow keys navigate stage cards; Escape returns to fighter selection. Preview drawing does not commit the active stage or change combat state.
+
+Quick Match, Training and Rival Sets use the chosen stage. Survival uses it as the opening location. Arcade displays its assigned first stage and follows its route afterward; Cleveland Crew displays its fixed Cleveland arena. Saved Arcade continuation and tutorial entry keep their direct flows. The former stage dropdown/preview in Match Setup are hidden in favor of this screen, while their internal selection value remains synchronized.
