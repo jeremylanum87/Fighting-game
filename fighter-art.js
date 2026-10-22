@@ -60,4 +60,35 @@ renderStreetFighter=function(g,f,scale=2.1){if(!fighterRoster[f.character])retur
  g.shadowColor=guard?'#65eaff':'#ff684f';g.shadowBlur=strongEffects?12:4;
  if(strongEffects)g.filter='brightness('+(1+flash*.85)+') saturate(1.35)';
  }g.drawImage(image,pose.col*160,0,160,160,-80*size,-144*size,160*size,160*size);g.restore();
+ if(g===ctx)drawVictimImpact(g,f);
 };
+
+
+// Small, deterministic marks follow the victim; no extra gameplay RNG or timers.
+function drawVictimImpact(g,f){
+ const r=reactions.get(f),guard=f.blockstun>0,flash=f.hitFlash||0;
+ if(f.celebrating||(!flash&&(!r||guard))||throwSequences.some(e=>e.t===f))return;
+ const life=guard?.16:r?.kind==='heavy'?.26:.19;
+ const age=guard?Math.max(0,.07-flash):r?.age||0;
+ if(age>=life)return;
+ const p=Math.max(0,age/life),heavy=r?.kind==='heavy'||r?.kind==='down';
+ const x=f.x-(r?.dir||-f.face)*15,y=f.y-(f.crouch?65:105);
+ g.save();g.translate(x,y);g.globalAlpha=(1-p)*(strongEffects?.95:.7);
+ g.strokeStyle=guard?'#72edff':'#ffe59a';g.lineWidth=guard?3:heavy?4:3;
+ g.lineCap='round';
+ if(guard){
+ // Shield arc sits in front of the defender, facing the incoming attack.
+ g.scale(f.face||1,1);g.beginPath();
+ g.arc(0,0,22+(strongEffects?p*13:0),-.95,.95);g.stroke();
+ g.strokeStyle='#d9fbff';g.lineWidth=2;g.beginPath();g.moveTo(12,-8);g.lineTo(18,0);g.lineTo(12,8);g.stroke();
+ }else{
+ const count=strongEffects?(heavy?8:6):4,spread=strongEffects?p*(heavy?25:16):0;
+ for(let i=0;i<count;i++){
+ const a=i*Math.PI*2/count+.22,inside=5+spread,outside=inside+(heavy?17:11)*(1-p*.5);
+ g.beginPath();g.moveTo(Math.cos(a)*inside,Math.sin(a)*inside);
+ g.lineTo(Math.cos(a)*outside,Math.sin(a)*outside);g.stroke();
+ }
+ if(heavy&&strongEffects){g.strokeStyle='#ff7955';g.lineWidth=2;g.beginPath();g.ellipse(0,0,15+p*29,9+p*18,-.35,0,Math.PI*2);g.stroke()}
+ }
+ g.restore();
+}
