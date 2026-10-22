@@ -159,3 +159,15 @@ button:focus-visible,select:focus-visible,summary:focus-visible{outline:3px soli
 @media(max-width:700px){.hud .fighter-info{padding:5px 6px}.hud .health{height:8px}.round-pips{font-size:11px;min-height:13px;margin-top:3px}.hud .clock{min-width:45px;padding:4px 6px}.release-match-badge{font-size:7px;bottom:48px}.release-demo-panel .settings-card{padding:18px}.release-fighter-picks{gap:8px}}
 @media(orientation:landscape) and (max-height:500px){.release-demo-panel .settings-card{max-height:94dvh}.release-fighter-picks{margin:8px 0}.release-fighter-picks img{width:72px}.release-match-badge{bottom:39px}}
 @media(prefers-reduced-motion:reduce){.hud .health .health-trail{transition:none}}
+
+/* Detailed sprites share the arena's art direction during rival face-offs. */
+.rival-faceoff{display:none;width:min(100%,360px);height:auto;aspect-ratio:6/5;margin:0 auto;image-rendering:pixelated;background:radial-gradient(ellipse at 50% 90%,var(--opening-color),transparent 65%)}
+.rival-art-ready .rival-faceoff{display:block}.rival-art-ready>img{display:none}
+.opening-fighter.rival-speaking p{color:#fff4cf;border-bottom:2px solid var(--opening-color);padding-bottom:8px}
+.opening-fighter p{min-height:3em}
+#rivalIntroStatus{font-size:10px;line-height:1.6;max-width:48ch}
+#rivalSkipIntro{min-height:44px;background:#152632;color:#e4e7de;border-color:#687476}
+.opening-bottom button{flex-shrink:0}
+.opening-low-motion .rival-faceoff{animation:none}
+@media(max-width:600px){.rival-faceoff{max-height:220px;object-fit:contain}.opening-fighter p{font-size:12px;line-height:1.5}#rivalIntroStatus{font-size:9px}.opening-bottom{gap:8px}}
+@media(orientation:landscape) and (max-height:480px){.rival-faceoff{max-height:130px;width:auto;max-width:100%}.opening-fighter p{min-height:2.5em}.opening-bottom{flex-direction:row;gap:8px}#rivalIntroStatus{font-size:8px}.opening-bottom button{padding:8px 10px;font-size:10px}}

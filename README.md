@@ -283,3 +283,10 @@ Run `node defense-training.test.cjs` to check drill scoring and isolation alongs
 Choose **Featured Fight / Cleveland** on the main menu for Volt versus Ember on Cuyahoga Cypher. Both fighter choices are available; leaving the showcase restores your previous setup. The HUD includes round-win markers, delayed health-loss bars and readable high/low startup cues. Arena Audio Mix is optional and respects mute.
 
 Run `node release-demo.test.cjs` for the showcase and combat regressions. See [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) for remaining browser, physical-device, balance and licensing release gates.
+
+
+### Rival face-offs
+
+All 28 distinct roster pairings have two-sided exchanges (56 directed matchups). Animated entrances use the same detailed sprites as combat, with portrait fallback while art loads and still poses under Low FX. The most recent completed match in the same mode supplies winner/loser rematch reactions for this browser session. Bosses have special exchanges.
+
+Use **Skip to Fight / Esc** to jump to the short Fight countdown. Regular rounds keep their brief round announcement. Run `node rival-intros.test.cjs` for dialogue, skip, rematch and isolation checks.

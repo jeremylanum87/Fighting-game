@@ -38,7 +38,7 @@ const updateBeforeOpening=update;update=function(dt){
  if(mode!=='intro'&&mode!=='countdown'){dismissFightOpening();updateBeforeOpening(dt);return}
  if(document.hidden)return;
  clearInput();fightOpening.time+=dt;
- const phase=fightOpening.phase,duration={versus:5,stage:1.15,round:1.05,fight:.65}[phase];
+ const phase=fightOpening.phase,duration={versus:fightOpening.versusDuration||5,stage:1.15,round:1.05,fight:.65}[phase];
  if(fightOpening.time>=duration){
  if(phase==='versus')openingPhase('stage');else if(phase==='stage')openingPhase('round');else if(phase==='round')openingPhase('fight');
  else{dismissFightOpening();clearInput();mode='playing';$('#pause').textContent='PAUSE / P'}
