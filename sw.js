@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='block-cypher-offline-v50';
+const CACHE='block-cypher-offline-v51';
 const FILES=[
   "./mixtape-menu.js",
   "./visual-quality.js",

@@ -24,7 +24,17 @@ function detailedArtPose(f){
  if(v.kind==='swagger'){dx=wave*3;angle=wave*.04;sy=1+wave*.012}
  sy*=1+Math.sin(age*2.5)*.004;return {image,col,x:f.x+dx,y:f.y+dy,angle,sx,sy,kind:'victory'};
  }
- if(f.hp<=0||f.stun>0){image=base;col=7;angle=f.hp>0?-.05:0;const r=reactions.get(f);if(r&&!f.knockedDown){const p=Math.min(1,r.age/r.life),k=Math.sin(p*Math.PI)*(1-p);angle+=r.dir*k*(strongEffects?.1:.025)}return {image,col,x:f.x,y:f.y,angle,sx,sy,kind:'hurt'}}
+ if(f.hp<=0||f.stun>0){
+ image=base;col=7;const r=reactions.get(f);
+ // Visual displacement only: combat position, hurtboxes and stun stay unchanged.
+ if(r&&!f.knockedDown&&f.hp>0){
+ const p=Math.min(1,r.age/r.life),kick=Math.pow(1-p,2),heavy=r.kind==='heavy',amount=strongEffects?1:.35;
+ dx=r.dir*(heavy?16:9)*kick*amount;
+ angle=r.dir*(f.face||1)*(heavy?.22:.13)*kick*amount;
+ sx=1-(heavy?.12:.07)*kick*amount;sy=1+(heavy?.06:.035)*kick*amount;
+ }
+ return {image,col,x:f.x+dx,y:f.y,angle,sx,sy,kind:'hurt'};
+ }
  if(a){const m=a.move||getMove(f,a.type),phase=attackProgress(a),p=Math.max(0,Math.min(1,phase.p));
  if(a.type==='throw'){col=phase.phase==='charge'?3:phase.phase==='strike'?5:7}
  else if(a.type==='signature'){const frames=ART_SIGNATURE_POSES[f.character];col=frames[phase.phase==='charge'?0:phase.phase==='strike'?1:2]}
@@ -44,5 +54,10 @@ renderStreetFighter=function(g,f,scale=2.1){if(!fighterRoster[f.character])retur
  const own=!f.isBoss&&(f===player||f!==enemy&&f.character===chosenCharacter||g!==ctx&&f.character===pendingCharacter);if(own)image=recolorOutfit(image,f.character,chosenOutfit(f.character));
  const b=BODY_STYLES[f.character],size=scale*(g===ctx?ARENA_FIGHTER_SCALE:1)*.7*b.height;let x=pose.x,y=pose.y;const history=flowState.get(f);
  if(history&&mode==='playing'&&!superCinema&&!hitstop&&!['throw','throw-victim'].includes(pose.kind)){const alpha=Math.min(1,(flowAccumulator+simulationAccumulator*FIGHT_PACE)/STEP);if(Math.abs(f.x-history.x)<24)x+=(history.x-f.x)*(1-alpha);if(Math.abs(f.y-history.y)<30)y+=(history.y-f.y)*(1-alpha)}
- g.save();g.translate(x,y);g.scale((f.face||1)*.78*Math.sqrt(b.width)*pose.sx,pose.sy);if(pose.angle){g.translate(0,-50*size);g.rotate(pose.angle);g.translate(0,50*size)}g.imageSmoothingEnabled=false;if(f.hitFlash>0&&strongEffects)g.filter='brightness(1.65)';g.drawImage(image,pose.col*160,0,160,160,-80*size,-144*size,160*size,160*size);g.restore();
+ g.save();g.translate(x,y);g.scale((f.face||1)*.78*Math.sqrt(b.width)*pose.sx,pose.sy);if(pose.angle){g.translate(0,-50*size);g.rotate(pose.angle);g.translate(0,50*size)}g.imageSmoothingEnabled=false;if(f.hitFlash>0){
+ const guard=f.blockstun>0,flash=Math.min(1,f.hitFlash/.09);
+ // A colored silhouette edge identifies the victim without flashing the screen.
+ g.shadowColor=guard?'#65eaff':'#ff684f';g.shadowBlur=strongEffects?12:4;
+ if(strongEffects)g.filter='brightness('+(1+flash*.85)+') saturate(1.35)';
+ }g.drawImage(image,pose.col*160,0,160,160,-80*size,-144*size,160*size,160*size);g.restore();
 };
