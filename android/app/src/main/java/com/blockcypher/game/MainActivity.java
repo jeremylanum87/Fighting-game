@@ -55,6 +55,7 @@ public final class MainActivity extends ComponentActivity {
                 pauseGame();
                 new AlertDialog.Builder(MainActivity.this).setTitle("Block Cypher")
                     .setItems(new String[]{"Resume", "Main menu", "Exit"}, (dialog, choice) -> {
+                        if (choice == 0) game.evaluateJavascript("if(typeof mode!=='undefined'&&mode==='paused'&&typeof pause==='function')pause();", null);
                         if (choice == 1) game.evaluateJavascript("if(typeof showTitleScreen==='function')showTitleScreen();", null);
                         if (choice == 2) finish();
                     }).show();
