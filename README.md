@@ -290,3 +290,8 @@ Run `node release-demo.test.cjs` for the showcase and combat regressions. See [R
 All 28 distinct roster pairings have two-sided exchanges (56 directed matchups). Animated entrances use the same detailed sprites as combat, with portrait fallback while art loads and still poses under Low FX. The most recent completed match in the same mode supplies winner/loser rematch reactions for this browser session. Bosses have special exchanges.
 
 Use **Skip to Fight / Esc** to jump to the short Fight countdown. Regular rounds keep their brief round announcement. Run `node rival-intros.test.cjs` for dialogue, skip, rematch and isolation checks.
+
+
+### Unreal Engine rebuild
+
+The [UE5 source prototype](Unreal/BlockCypher/README.md) targets an installable Android app. It contains a tested standalone C++ combat core and UE runtime source. Unreal compilation, map generation, rendering and Android packaging require an installed UE5 toolchain. Approved new lore is preserved in [STORY-BIBLE.md](Unreal/BlockCypher/STORY-BIBLE.md).
