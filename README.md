@@ -295,3 +295,21 @@ Use **Skip to Fight / Esc** to jump to the short Fight countdown. Regular rounds
 ### Unreal Engine rebuild
 
 The [UE5 source prototype](Unreal/BlockCypher/README.md) targets an installable Android app. It contains a tested standalone C++ combat core and UE runtime source. Unreal compilation, map generation, rendering and Android packaging require an installed UE5 toolchain. Approved new lore is preserved in [STORY-BIBLE.md](Unreal/BlockCypher/STORY-BIBLE.md).
+
+
+### Physical Xbox controller — web game
+
+Open the live game in Xbox Microsoft Edge (or a browser exposing the standard Gamepad API), then press a controller button to connect.
+
+- Left stick / D-pad: move; down ducks; up jumps.
+- A: jump, B: throw / throw escape, X: light, Y: heavy.
+- LB: hold guard; RB: signature projectile; LT: Special 1; RT: Super.
+- Left/right stick clicks: Special 2 / Special 3.
+- LB + tap away: backdash. LB + Y during blockstun: Breakaway.
+- Start: pause/resume; on the title, start Quick Match.
+- Menus: D-pad/stick moves focus, A activates, B goes back. On a select field use left/right to change its value.
+- Disconnecting during a fight pauses it. Release all controls after resuming or changing screens to rearm gameplay input.
+
+A standard-mapped controller and browser permission/exposure are required. Actual Xbox Edge hardware testing remains; automated tests simulate the browser Gamepad API. The Xbox-style touch layout is a separate preference.
+
+Run node gamepad.test.cjs for mappings, input edges, deadzone, coexistence, pause, defensive chord, disconnect and menu checks.
