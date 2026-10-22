@@ -223,3 +223,9 @@ Controls → Skip Last Bar finishers saves a device preference. The on-screen SK
 Fighter confirmation now opens a dedicated stage-selection screen before any match setup/reset occurs. Choose among ten stage cards, inspect the large arena preview, then START FIGHT (or START TRAINING). Back to Fighters preserves fighter/opponent/difficulty and the selected location. Arrow keys navigate stage cards; Escape returns to fighter selection. Preview drawing does not commit the active stage or change combat state.
 
 Quick Match, Training and Rival Sets use the chosen stage. Survival uses it as the opening location. Arcade displays its assigned first stage and follows its route afterward; Cleveland Crew displays its fixed Cleveland arena. Saved Arcade continuation and tutorial entry keep their direct flows. The former stage dropdown/preview in Match Setup are hidden in favor of this screen, while their internal selection value remains synchronized.
+
+
+### Detailed background spectators
+A shared original pixel-art spectator renderer replaces the older block figures and overlapping crowd-arm overlays. Spectators now have shaded faces, eyes/brows/mouths, varied skin tones, caps, braids, curls, beanies, headphones, chains, sneaker details, denim folds and varsity/hoodie/jersey/jacket/coat/vest outfits. Each stage has its own clothing palette and look combinations. Idle, phone, dance and cheer poses animate at four frames per second; Low FX uses static poses.
+
+Rooftop victory gathering uses the same detailed spectators. Supers/big hits still prompt cheering, with smaller back rows at Rooftop and Block Party. The rooftop and festival DJs use detailed upper-body sprites; the former block DJ drawing is removed. Poses are generated locally and cached with a 128-entry cap; no additional downloads, collision or combat changes. All artwork works offline.
