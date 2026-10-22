@@ -259,3 +259,13 @@ The main menu now presents Fight, Arcade, Training and Respect Shop as primary a
 A graffiti-style logo reveal, rooftop DJ/turntables, skyline light accents and a large detailed fighter spotlight establish the mixtape-cover theme. Spotlight arrows browse the roster without changing the fighter chosen for a match. A small warmup animation plays between idle poses. The neighborhood ticker shows an actual daily goal/progress, Respect balance, Rivet status and Survival best; NEXT cycles manually. Reduced motion freezes the art, disables the logo reveal and leaves ticker changes manual. Muted audio stays muted; user-triggered mode choices add the existing original vinyl cue and a short hi-hat accent without switching the stage music track.
 
 The existing title animation loop is reused, capped at about 30 FPS, and skips hidden pages/non-title screens. Auto title art caps at 1.5× and 4K title art at 2× to limit menu cost. Native Canvas art previews and automated navigation/state/audio checks passed; browser layout and physical Android touch/performance remain on the playtest checklist.
+
+
+### Defensive options
+
+- **Perfect Block:** begin guarding within 120 ms before contact for no chip damage, 15 meter and shorter blockstun; ordinary blocks grant 7 meter.
+- **Backdash:** hold Block and tap the direction away from the opponent (Xbox touch layout: LB + back). Brief invulnerability, then vulnerable recovery; 0.7-second cooldown.
+- **Breakaway:** during blockstun, Block + Heavy (LB + Y) spends 50 meter to push away a nearby opponent and clear nearby hostile projectiles. Deals no damage and leaves recovery.
+- **Throw escape:** tap Throw (B / G) within 150 ms before a normal throw connects. Requires a grounded, unstunned fighter; command grabs cannot be escaped this way. Repeated taps have a 0.6-second cooldown.
+
+Run `node defense.test.cjs` for the full combat regression suite plus defensive input, timing, cost and recovery checks. Android touch usability still needs device playtesting.
