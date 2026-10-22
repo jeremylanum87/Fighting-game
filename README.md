@@ -269,3 +269,10 @@ The existing title animation loop is reused, capped at about 30 FPS, and skips h
 - **Throw escape:** tap Throw (B / G) within 150 ms before a normal throw connects. Requires a grounded, unstunned fighter; command grabs cannot be escaped this way. Repeated taps have a 0.6-second cooldown.
 
 Run `node defense.test.cjs` for the full combat regression suite plus defensive input, timing, cost and recovery checks. Android touch usability still needs device playtesting.
+
+
+### Defense Lab
+
+Choose Training, then use Defense Lab to start Perfect Block, Throw Escape, Escape Pressure or Mixed Defense. The rival uses a visible 36-frame windup. Attempts show feedback, success counts and a session-best streak; pressure attempts refill meter. Free Practice stops the drill. Pause freezes attempts. Training does not grant competitive rewards.
+
+Run `node defense-training.test.cjs` to check drill scoring and isolation alongside the combat suite.
