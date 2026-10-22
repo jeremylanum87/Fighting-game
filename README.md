@@ -251,3 +251,11 @@ Controls → Visual resolution offers Auto / sharp arcade, Performance / classic
 Auto chooses 1100, 1650 or 2200 pixels of render width according to displayed arena size and device pixel ratio, then steps down after sustained slow frames. Manual 4K stays selected until changed and carries a higher graphics/memory load; use Auto/Performance on slower phones. Quality choice saves locally.
 
 Higher-resolution cached stage layers add fine pavement grain, water glints, bridge rivets, glass reflections, metal seams and architectural edge detail. Only two detail layers remain cached at once. World coordinates, hitboxes, damage and timing stay unchanged. Full-resolution native Canvas renders and automated simulation/cache checks passed; Android GPU speed and layout still require physical-device checks.
+
+
+### Block Radio mixtape main menu
+The main menu now presents Fight, Arcade, Training and Respect Shop as primary actions, with Continue Arcade visible when a checkpoint exists. More Modes contains Tutorial, Survival, Cleveland Crew and Rival Set. Challenges & Extras contains daily goals, mastery, records, endings, installation, diagnostics and help. Controls and Audio remain directly accessible. Existing mode/shop/install handlers and saved progression remain intact. Fight explicitly starts Quick Match selection.
+
+A graffiti-style logo reveal, rooftop DJ/turntables, skyline light accents and a large detailed fighter spotlight establish the mixtape-cover theme. Spotlight arrows browse the roster without changing the fighter chosen for a match. A small warmup animation plays between idle poses. The neighborhood ticker shows an actual daily goal/progress, Respect balance, Rivet status and Survival best; NEXT cycles manually. Reduced motion freezes the art, disables the logo reveal and leaves ticker changes manual. Muted audio stays muted; user-triggered mode choices add the existing original vinyl cue and a short hi-hat accent without switching the stage music track.
+
+The existing title animation loop is reused, capped at about 30 FPS, and skips hidden pages/non-title screens. Auto title art caps at 1.5× and 4K title art at 2× to limit menu cost. Native Canvas art previews and automated navigation/state/audio checks passed; browser layout and physical Android touch/performance remain on the playtest checklist.
