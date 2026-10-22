@@ -276,3 +276,10 @@ Run `node defense.test.cjs` for the full combat regression suite plus defensive 
 Choose Training, then use Defense Lab to start Perfect Block, Throw Escape, Escape Pressure or Mixed Defense. The rival uses a visible 36-frame windup. Attempts show feedback, success counts and a session-best streak; pressure attempts refill meter. Free Practice stops the drill. Pause freezes attempts. Training does not grant competitive rewards.
 
 Run `node defense-training.test.cjs` to check drill scoring and isolation alongside the combat suite.
+
+
+### Cleveland showcase
+
+Choose **Featured Fight / Cleveland** on the main menu for Volt versus Ember on Cuyahoga Cypher. Both fighter choices are available; leaving the showcase restores your previous setup. The HUD includes round-win markers, delayed health-loss bars and readable high/low startup cues. Arena Audio Mix is optional and respects mute.
+
+Run `node release-demo.test.cjs` for the showcase and combat regressions. See [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) for remaining browser, physical-device, balance and licensing release gates.
