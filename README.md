@@ -331,3 +331,12 @@ Run node story.test.cjs for progression, retry, strain, support and isolation ch
 ### Progressive battle damage
 
 Fighters show three cosmetic wear levels at 75%, 50% and 25% remaining health: bruises, small cuts and clothing scuffs. Damage is baked onto cached sprite sheets after outfit recoloring, follows all detailed poses, and clears when health is restored or the round resets. It does not change stats, silhouette alpha or collision. Menu previews at full health stay fresh. Run node battle-damage.test.cjs to check all eight fighters, tiers, caching and alpha preservation with actual art.
+
+
+### Character finishers
+
+Final-match knockouts now play a 2.4-second finisher for each roster fighter: a signature pose, camera focus, visual motif and closing line addressed to the opponent. Timeouts and ordinary round wins do not trigger it. Existing Last Bar highlights remain for ordinary special-finish rounds; a final-match cinematic replaces that highlight to avoid double playback.
+
+The last prologue encounter adds a power-disruption finish followed by the protagonist's strain reaction, then restores the chapter completion panel. Skip via the visible button, Esc/Enter/Space, or controller A/B/Start. The existing Skip Finishers preference also disables these sequences. Low FX removes zoom/shake and dynamic pose motion.
+
+Combat and rewards freeze during the cosmetic sequence; no additional hits or rewards are granted. Run node finishers.test.cjs for all eight profiles, skips, hidden-page behavior and story continuation. Chromium rendering and a real skip-button click were checked; physical Android/Xbox testing remains.
