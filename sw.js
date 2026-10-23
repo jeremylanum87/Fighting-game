@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='block-cypher-offline-v59';
+const CACHE='block-cypher-offline-v60';
 const FILES=[
   "./story.js",
   "./gamepad.js",
