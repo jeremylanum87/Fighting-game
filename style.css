@@ -177,3 +177,49 @@ button:focus-visible,select:focus-visible,summary:focus-visible{outline:3px soli
 #storyPanel .settings-card,#storyJournal .settings-card{max-height:88dvh;overflow:auto;width:min(650px,94vw);line-height:1.7;background:#111d2c}
 #storyPanel h2,#storyJournal h2{color:#e8d3ff}#storyPanel p{font-size:14px}
 #storyJournalEntries article{border-top:1px solid #62718a;padding:12px 0}#storyJournalEntries h3{font-size:16px}#storyJournalEntries p{font-size:13px}
+
+/* Keep permanent fight information outside the sprite canvas. */
+.battle-shell .arena{--fight-hud-height:94px}
+.battle-shell .arena>.hud{
+ position:relative;inset:auto;z-index:3;box-sizing:border-box;
+ height:var(--fight-hud-height);width:100%;margin:0;padding:8px 12px;
+ display:flex;align-items:center;gap:10px;
+ background:linear-gradient(180deg,#182a3c,#0b1625);
+ border-bottom:2px solid #b99b59;
+}
+.battle-shell .arena>.hud .fighter-info{flex:1;min-width:0;padding:5px 8px;background:transparent}
+.battle-shell .arena>.hud .clock{flex:none;min-width:56px}
+.battle-shell .arena>.hud .hud-portrait{width:50px;height:50px;min-height:0;object-fit:contain}
+.battle-shell .arena>#game{display:block;position:relative;z-index:0}
+.battle-shell .arena>.overlay,.battle-shell .arena>.round-opening{top:var(--fight-hud-height)}
+.battle-shell .arena>.combo-readout{top:calc(var(--fight-hud-height) + 12px)}
+.battle-shell .arena>.combat-status{top:calc(var(--fight-hud-height) + 37px)}
+@media(max-width:700px){
+ .battle-shell .arena{--fight-hud-height:76px}
+ .battle-shell .arena>.hud{padding:5px 7px;gap:6px}
+ .battle-shell .arena>.hud .hud-portrait{width:34px;height:34px}
+ .battle-shell .arena>.hud .fighter-info{padding:3px 4px}
+ .battle-shell .arena>.hud .fighter-info strong{font-size:17px}
+ .battle-shell .arena>.hud .clock{min-width:42px;padding:4px}
+ .battle-shell .arena>.hud .clock>span{font-size:25px}
+}
+@media(max-width:520px){
+ .battle-shell .arena>.hud .fighter-info>div:first-child{font-size:0}
+ .battle-shell .arena>.hud .fighter-info strong{font-size:15px}
+ .battle-shell .arena>.hud .hud-portrait{width:28px;height:28px;border-width:2px}
+}
+@media(pointer:coarse) and (orientation:landscape) and (max-height:600px){
+ .battle-shell .arena{--fight-hud-height:64px}
+ .battle-shell .arena>.hud{padding:3px 6px;gap:5px}
+ .battle-shell .arena>.hud .hud-portrait{width:30px;height:30px}
+ .battle-shell .arena>.hud .fighter-info strong{font-size:14px}
+ .battle-shell .arena>.hud .fighter-info>div:first-child{font-size:0}
+ .battle-shell .arena>.hud .clock>span{font-size:22px}
+ .battle-shell .arena>.hud .clock{min-width:38px;padding:3px}
+ .battle-shell .arena>.hud .round-pips{font-size:10px;margin-top:2px;min-height:11px}
+ .battle-shell #game{height:calc(100dvh - 155px - var(--fight-hud-height));min-height:100px}
+}
+@media(pointer:coarse) and (orientation:landscape) and (max-height:600px) and (min-width:640px){
+ .battle-shell #game{height:calc(100dvh - 94px - var(--fight-hud-height));min-height:0}
+ .in-tutorial .battle-shell #game{height:calc(100dvh - 198px - var(--fight-hud-height))}
+}
