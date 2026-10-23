@@ -8,6 +8,6 @@ function setControllerLayout(value,save=true){controllerLayout=value==='classic'
 const buttonsBeforeXbox=updateMovesetButtons;updateMovesetButtons=function(){buttonsBeforeXbox();updateXboxLabels()};
 const superHudBeforeXbox=updateSuperHud;updateSuperHud=function(){superHudBeforeXbox();updateXboxLabels()};
 $('#controllerLayout').onchange=()=>{setControllerLayout($('#controllerLayout').value);$('#settingsStatus').textContent='Controller layout saved on this device.'};
-const resetBeforeXbox=$('#resetControls').onclick;$('#resetControls').onclick=()=>{resetBeforeXbox();if(controllerLayout==='xbox'){controlPrefs.thumbstick=true;applyControlPrefs();syncControlFields();safeStorageSet('block-cypher-controls-v1',controlPrefs)}};
-if(savedControllerLayout===null){controlPrefs.thumbstick=true;applyControlPrefs();syncControlFields();safeStorageSet('block-cypher-controls-v1',controlPrefs)}
+const resetBeforeXbox=$('#resetControls').onclick;$('#resetControls').onclick=()=>{resetBeforeXbox();if(controllerLayout==='xbox'){controlPrefs.thumbstick=false;applyControlPrefs();syncControlFields();safeStorageSet('block-cypher-controls-v1',controlPrefs)}};
+if(savedControllerLayout===null){controlPrefs.thumbstick=false;applyControlPrefs();syncControlFields();safeStorageSet('block-cypher-controls-v1',controlPrefs)}
 setControllerLayout(controllerLayout,savedControllerLayout===null);

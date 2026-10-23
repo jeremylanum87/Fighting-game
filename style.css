@@ -223,3 +223,20 @@ button:focus-visible,select:focus-visible,summary:focus-visible{outline:3px soli
  .battle-shell #game{height:calc(100dvh - 94px - var(--fight-hud-height));min-height:0}
  .in-tutorial .battle-shell #game{height:calc(100dvh - 198px - var(--fight-hud-height))}
 }
+
+/* Four-way directional movement with the original multi-touch button handlers. */
+.battle-shell .touch .move-pad{display:grid;grid-template-columns:repeat(3,44px)!important;grid-template-rows:repeat(3,44px)!important;gap:3px!important;justify-content:center;align-content:center;flex:0 0 138px;max-width:138px}
+.battle-shell .touch .move-pad button{width:44px;min-width:44px;height:44px;min-height:44px!important;padding:4px!important;border-radius:7px;font-size:20px!important;line-height:1}
+.battle-shell .touch .move-pad [data-key="a"]{grid-column:1!important;grid-row:2!important}
+.battle-shell .touch .move-pad [data-key="d"]{grid-column:3!important;grid-row:2!important}
+.battle-shell .touch .move-pad [data-key="s"]{grid-column:2!important;grid-row:3!important}
+.battle-shell .touch .move-pad [data-key="w"]{grid-column:2!important;grid-row:1!important}
+.battle-shell .touch .move-pad:after{content:'';grid-column:2;grid-row:2;background:#283b45;border:1px solid #75888b;border-radius:7px;pointer-events:none}
+.use-thumbstick .battle-shell .touch .move-pad{display:none}
+@media(pointer:coarse) and (orientation:landscape) and (max-height:600px) and (min-width:640px){
+ .battle-shell{grid-template-columns:140px minmax(0,1fr) clamp(150px,22vw,220px)}
+ .left-handed .battle-shell{grid-template-columns:clamp(150px,22vw,220px) minmax(0,1fr) 140px}
+}
+body:not(.xbox-layout) #dpadUp{display:none}
+body:not(.use-thumbstick) .battle-shell .thumbstick{display:none!important}
+.use-thumbstick .battle-shell .thumbstick{display:block!important}

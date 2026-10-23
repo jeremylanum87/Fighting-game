@@ -340,3 +340,8 @@ Final-match knockouts now play a 2.4-second finisher for each roster fighter: a 
 The last prologue encounter adds a power-disruption finish followed by the protagonist's strain reaction, then restores the chapter completion panel. Skip via the visible button, Esc/Enter/Space, or controller A/B/Start. The existing Skip Finishers preference also disables these sequences. Low FX removes zoom/shake and dynamic pose motion.
 
 Combat and rewards freeze during the cosmetic sequence; no additional hits or rewards are granted. Run node finishers.test.cjs for all eight profiles, skips, hidden-page behavior and story continuation. Chromium rendering and a real skip-button click were checked; physical Android/Xbox testing remains.
+
+
+### D-pad movement
+
+Touch movement now defaults to a four-way D-pad: left/right move, down crouches and up jumps. A remains a second jump button on the Xbox face layout. Existing installations switch to D-pad once; the Controls thumbstick option remains available. Reset Controls returns to the D-pad. Touch jump/release and landscape placement were checked in Chromium emulation.
