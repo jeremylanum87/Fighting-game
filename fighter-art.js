@@ -52,6 +52,7 @@ function detailedArtPose(f){
 const renderBeforeUnifiedArt=renderStreetFighter;
 renderStreetFighter=function(g,f,scale=2.1){if(!fighterRoster[f.character])return;const pose=detailedArtPose(f);let image=pose.image;if(!image?.complete||image.naturalWidth<1280){renderBeforeUnifiedArt(g,f,scale);return}
  const own=!f.isBoss&&(f===player||f!==enemy&&f.character===chosenCharacter||g!==ctx&&f.character===pendingCharacter);if(own)image=recolorOutfit(image,f.character,chosenOutfit(f.character));
+ if(typeof battleDamageAtlas==='function')image=battleDamageAtlas(image,f);
  const b=BODY_STYLES[f.character],size=scale*(g===ctx?ARENA_FIGHTER_SCALE:1)*.7*b.height;let x=pose.x,y=pose.y;const history=flowState.get(f);
  if(history&&mode==='playing'&&!superCinema&&!hitstop&&!['throw','throw-victim'].includes(pose.kind)){const alpha=Math.min(1,(flowAccumulator+simulationAccumulator*FIGHT_PACE)/STEP);if(Math.abs(f.x-history.x)<24)x+=(history.x-f.x)*(1-alpha);if(Math.abs(f.y-history.y)<30)y+=(history.y-f.y)*(1-alpha)}
  g.save();g.translate(x,y);g.scale((f.face||1)*.78*Math.sqrt(b.width)*pose.sx,pose.sy);if(pose.angle){g.translate(0,-50*size);g.rotate(pose.angle);g.translate(0,50*size)}g.imageSmoothingEnabled=false;if(f.hitFlash>0){

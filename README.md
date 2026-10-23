@@ -326,3 +326,8 @@ In the last encounter, Rival Assist (button / V / controller View) calls a suppo
 Six journal records unlock through victories, with chapter checkpoints saved locally. Retries keep discovered clues. Normal modes retain their prior settings and do not use story strain or corruption. Completing the prologue does not invent the rival's motive or reveal the legend's eventual sacrifice to the player.
 
 Run node story.test.cjs for progression, retry, strain, support and isolation checks. Character art, enemy models and chapter presentation are prototype implementations; physical Android and Xbox testing remains.
+
+
+### Progressive battle damage
+
+Fighters show three cosmetic wear levels at 75%, 50% and 25% remaining health: bruises, small cuts and clothing scuffs. Damage is baked onto cached sprite sheets after outfit recoloring, follows all detailed poses, and clears when health is restored or the round resets. It does not change stats, silhouette alpha or collision. Menu previews at full health stay fresh. Run node battle-damage.test.cjs to check all eight fighters, tiers, caching and alpha preservation with actual art.
