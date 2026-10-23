@@ -216,7 +216,7 @@ At 40% HP he enters Forged Steel: a visible cyan ground ring/phase message, a mo
 ### Last Bar special finishers
 An unblocked KO from a special, signature projectile, super or special counter can trigger a 1.65-second Last Bar sequence. It briefly slows post-KO animation/effects, holds the detailed impact pose, colors the stage and presents the winner’s graffiti tag with a character motif: lightning, flame mural, cosmic rings, shock rings, wind, speed lines or a platinum record. Ordinary strikes, dedicated throws, chip KOs and Training do not trigger it. Special command grabs remain eligible. No extra damage, round wins, XP or rewards are applied.
 
-Controls → Skip Last Bar finishers saves a device preference. The on-screen SKIP FINISHER button or Escape skips the current sequence. Results/highlights appear afterward. Hidden tabs and open Controls freeze it; navigation/reset clears it. Low FX uses simpler motifs and straight text, with restrained stage tint and no flashing screen. Browser/device visual and touch checks remain on the Android checklist.
+Finishers complete automatically; the skip button, shortcuts and saved skip preference have been removed. Results/highlights appear afterward. Hidden tabs and open Controls freeze it; navigation/reset clears it. Low FX uses simpler motifs and straight text, with restrained stage tint and no flashing screen. Browser/device visual and touch checks remain on the Android checklist.
 
 
 ### Dedicated stage selection
@@ -289,7 +289,7 @@ Run `node release-demo.test.cjs` for the showcase and combat regressions. See [R
 
 All 28 distinct roster pairings have two-sided exchanges (56 directed matchups). Animated entrances use the same detailed sprites as combat, with portrait fallback while art loads and still poses under Low FX. The most recent completed match in the same mode supplies winner/loser rematch reactions for this browser session. Bosses have special exchanges.
 
-Use **Skip to Fight / Esc** to jump to the short Fight countdown. Regular rounds keep their brief round announcement. Run `node rival-intros.test.cjs` for dialogue, skip, rematch and isolation checks.
+Rival introductions now advance automatically without a skip control. Regular rounds keep their brief round announcement. Run `node rival-intros.test.cjs` for dialogue, skip, rematch and isolation checks.
 
 
 ### Unreal Engine rebuild
@@ -337,9 +337,9 @@ Fighters show three cosmetic wear levels at 75%, 50% and 25% remaining health: b
 
 Final-match knockouts now play a 2.4-second finisher for each roster fighter: a signature pose, camera focus, visual motif and closing line addressed to the opponent. Timeouts and ordinary round wins do not trigger it. Existing Last Bar highlights remain for ordinary special-finish rounds; a final-match cinematic replaces that highlight to avoid double playback.
 
-The last prologue encounter adds a power-disruption finish followed by the protagonist's strain reaction, then restores the chapter completion panel. Skip via the visible button, Esc/Enter/Space, or controller A/B/Start. The existing Skip Finishers preference also disables these sequences. Low FX removes zoom/shake and dynamic pose motion.
+The last prologue encounter adds a power-disruption finish followed by the protagonist's strain reaction, then restores the chapter completion panel. Sequences play through automatically; there is no skip button, shortcut or skip preference. Low FX removes zoom/shake and dynamic pose motion.
 
-Combat and rewards freeze during the cosmetic sequence; no additional hits or rewards are granted. Run node finishers.test.cjs for all eight profiles, skips, hidden-page behavior and story continuation. Chromium rendering and a real skip-button click were checked; physical Android/Xbox testing remains.
+Combat and rewards freeze during the cosmetic sequence; no additional hits or rewards are granted. Run node finishers.test.cjs for all eight profiles, skips, hidden-page behavior and story continuation. Chromium rendering and automatic completion were checked; physical Android/Xbox testing remains.
 
 
 ### D-pad movement
@@ -349,7 +349,7 @@ Touch movement now defaults to a four-way D-pad: left/right move, down crouches 
 
 ### In-arena pre-fight poses
 
-Each roster fighter now has a distinct ready routine during the 1.65-second stage entrance, then settles into guard before the Round/Fight countdown. The stage banner sits above the poses. Low FX keeps the poses with minimal movement. Skip Intro still bypasses this sequence. Training remains immediate.
+Each roster fighter now has a distinct ready routine during the 1.65-second stage entrance, then settles into guard before the Round/Fight countdown. The stage banner sits above the poses. Low FX keeps the poses with minimal movement. The entrance plays through automatically. Training remains immediate.
 
 All eight pose frames, guard settle, gameplay isolation and countdown progression were checked in Chromium. Physical device checks remain.
 
@@ -365,8 +365,10 @@ Run node victory-flow.test.cjs. The first-round pose and real-time final-finishe
 
 Unblocked damage now gives the victim a brighter warm glow and brief brightness boost; guard feedback remains blue. Every accepted knockout hit in a normal round starts a 1.5-second slow impact with attack-pose advancement at 20% speed. Low FX uses a shorter 0.7-second presentation with restrained recoil. Timeouts do not trigger it.
 
-The knockout applies damage/rewards once, then pauses the next finisher and victory clocks until the slow impact ends. The final order is slow impact → optional finisher → victory pose → highlights. Hidden pages/settings freeze the effect. Skip via the visible button, Esc/Enter/Space, or controller A/B/Start. Story encounters also retain their completion/retry panels afterward.
+The knockout applies damage/rewards once, then pauses the next finisher and victory clocks until the slow impact ends. The final order is slow impact → optional finisher → victory pose → highlights. Hidden pages/settings freeze the effect. These sequences cannot be skipped by touch, keyboard or controller. Story encounters also retain their completion/retry panels afterward.
 
 Run node round-impact.test.cjs. Chromium rendering and real-time first-round sequencing were checked; physical Android/Xbox testing remains.
 
 Hit glow now lasts 0.4 seconds (0.24 seconds under Low FX), with a smooth brightness fade. Knockout impact slow motion lasts 1.5 seconds; the following finisher, victory and highlights sequence waits for it.
+
+Skip options have been removed from intro, slow impact and finisher presentations. Internal completion functions remain for timers and navigation cleanup. Chromium verified hidden controls/settings, ignored skip inputs and automatic progress to highlights.

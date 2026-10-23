@@ -245,3 +245,6 @@ body:not(.use-thumbstick) .battle-shell .thumbstick{display:none!important}
 .battle-shell .arena>.round-opening[data-phase="stage"]{justify-content:flex-start;padding-top:12px;background:linear-gradient(#09162988,transparent 40%);box-sizing:border-box}
 .round-opening[data-phase="stage"] strong{font-size:clamp(16px,3vw,30px);text-shadow:2px 2px #091522}
 .round-opening[data-phase="stage"] p{font-size:clamp(7px,1vw,11px);letter-spacing:1px;margin:4px 8px}
+
+/* Presentation sequences now complete automatically, without skip UI. */
+#skipLastBar,#rivalSkipIntro,#openingContinue{display:none!important}

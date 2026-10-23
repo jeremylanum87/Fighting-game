@@ -12,7 +12,7 @@ if(JSON.stringify({hp:player.hp,ehp:enemy.hp,wins,remaining,meter:meter(player)}
 const age=cinematicFinisher.age;document.hidden=true;update(.5);if(cinematicFinisher.age!==age)throw Error('Hidden finisher advanced');document.hidden=false;
 globalThis.navigator=globalThis.navigator||{};
 const testPad={index:0,connected:true,mapping:'standard',axes:[0,0],buttons:Array.from({length:17},()=>({pressed:false,value:0}))};navigator.getGamepads=()=>[testPad];
-update(STEP);testPad.buttons[0]={pressed:true,value:1};update(STEP);if(cinematicFinisher)throw Error('Controller skip failed');testPad.buttons[0]={pressed:false,value:0};navigator.getGamepads=()=>[];
+update(STEP);testPad.buttons[0]={pressed:true,value:1};update(STEP);if(!cinematicFinisher)throw Error('Controller should not skip finisher');finishCinematicFinisher();testPad.buttons[0]={pressed:false,value:0};navigator.getGamepads=()=>[];
 for(const id of Object.keys(fighterRoster)){
  finishCinematicFinisher();player.character=id;enemy.character=id==='volt'?'ember':'volt';player.hp=100;enemy.hp=0;
  beginCinematicFinisher(player,enemy);if(!cinematicFinisher.profile.title||!cinematicFinisher.line)throw Error('Missing profile');
