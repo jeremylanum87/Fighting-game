@@ -55,7 +55,7 @@ function pollPhysicalController(dt){
  const neutral=!now.some(Boolean)&&Math.abs(x)<.22&&Math.abs(y)<.22;
  if(neutral)padNeedsNeutral=false;
  // Copy edges before navigation can clear inputs or change screens.
- const start=edge(9),back=edge(8)||edge(1),confirm=edge(0),superPress=edge(7);
+ const start=edge(9),back=edge(8)||edge(1),confirm=edge(0),superPress=edge(7),assistPress=edge(8);
  padButtons=now;
  const modal=[...document.querySelectorAll('[role="dialog"],.modal-shade')].some(padVisible);
  if(start){
@@ -81,6 +81,7 @@ function pollPhysicalController(dt){
  if(left&&!right)padOwned.add('a');if(right&&!left)padOwned.add('d');if(down)padOwned.add('s');if(up)padOwned.add('w');
  for(const key of padOwned)keys.add(key);
  if(superPress)attack(player,'super');
+ if(assistPress&&typeof storyRivalAssist==='function')storyRivalAssist();
 }
 window.addEventListener('keydown',e=>{if(!e.target||!['INPUT','SELECT','TEXTAREA'].includes(e.target.tagName))padKeyboard.add(e.key.toLowerCase())});
 window.addEventListener('keyup',e=>padKeyboard.delete(e.key.toLowerCase()));

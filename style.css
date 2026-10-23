@@ -171,3 +171,9 @@ button:focus-visible,select:focus-visible,summary:focus-visible{outline:3px soli
 .opening-low-motion .rival-faceoff{animation:none}
 @media(max-width:600px){.rival-faceoff{max-height:220px;object-fit:contain}.opening-fighter p{font-size:12px;line-height:1.5}#rivalIntroStatus{font-size:9px}.opening-bottom{gap:8px}}
 @media(orientation:landscape) and (max-height:480px){.rival-faceoff{max-height:130px;width:auto;max-width:100%}.opening-fighter p{min-height:2.5em}.opening-bottom{flex-direction:row;gap:8px}#rivalIntroStatus{font-size:8px}.opening-bottom button{padding:8px 10px;font-size:10px}}
+
+.story-hud{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px;background:#171c31;border:1px solid #a399d7;color:#e3d7ff;flex-wrap:wrap}
+.story-hud[hidden]{display:none}.story-hud button{min-height:44px}
+#storyPanel .settings-card,#storyJournal .settings-card{max-height:88dvh;overflow:auto;width:min(650px,94vw);line-height:1.7;background:#111d2c}
+#storyPanel h2,#storyJournal h2{color:#e8d3ff}#storyPanel p{font-size:14px}
+#storyJournalEntries article{border-top:1px solid #62718a;padding:12px 0}#storyJournalEntries h3{font-size:16px}#storyJournalEntries p{font-size:13px}

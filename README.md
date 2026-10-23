@@ -313,3 +313,16 @@ Open the live game in Xbox Microsoft Edge (or a browser exposing the standard Ga
 A standard-mapped controller and browser permission/exposure are required. Actual Xbox Edge hardware testing remains; automated tests simulate the browser Gamepad API. The Xbox-style touch layout is a separate preference.
 
 Run node gamepad.test.cjs for mappings, input edges, deadzone, coexistence, pause, defensive chord, disconnect and menu checks.
+
+
+### The First Breach — story prologue
+
+More Modes → Story opens three playable encounters: neighborhood tournament, first breach, and a rival-assisted defense of Cleveland. Volt and Haze are explicitly temporary visual stand-ins for the unnamed protagonist and rival.
+
+Supernatural strikes unlock in chapter two. Successful power hits disrupt enemy techniques and clear enemy projectiles, build strain, and cause a vulnerable 1.4-second exhaustion at maximum strain. Strain recovers during active play. Normal attacks remain usable.
+
+In the last encounter, Rival Assist (button / V / controller View) calls a support strike when the target is within 260 world units, with an eight-second cooldown. This is a support encounter using the existing two-fighter engine, not a full three-character tag simulation.
+
+Six journal records unlock through victories, with chapter checkpoints saved locally. Retries keep discovered clues. Normal modes retain their prior settings and do not use story strain or corruption. Completing the prologue does not invent the rival's motive or reveal the legend's eventual sacrifice to the player.
+
+Run node story.test.cjs for progression, retry, strain, support and isolation checks. Character art, enemy models and chapter presentation are prototype implementations; physical Android and Xbox testing remains.
