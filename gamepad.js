@@ -58,6 +58,7 @@ function pollPhysicalController(dt){
  const start=edge(9),back=edge(8)||edge(1),confirm=edge(0),superPress=edge(7),assistPress=edge(8);
  padButtons=now;
  const modal=[...document.querySelectorAll('[role="dialog"],.modal-shade')].some(padVisible);
+ if(typeof roundImpact!=='undefined'&&roundImpact){releasePadKeys();if(confirm||back||start)finishRoundImpact();return}
  if(typeof cinematicFinisher!=='undefined'&&cinematicFinisher){releasePadKeys();if(confirm||back||start)finishCinematicFinisher();return}
  if(start){
  releasePadKeys();padNeedsNeutral=true;

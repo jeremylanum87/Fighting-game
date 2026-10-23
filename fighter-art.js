@@ -58,8 +58,8 @@ renderStreetFighter=function(g,f,scale=2.1){if(!fighterRoster[f.character])retur
  g.save();g.translate(x,y);g.scale((f.face||1)*.78*Math.sqrt(b.width)*pose.sx,pose.sy);if(pose.angle){g.translate(0,-50*size);g.rotate(pose.angle);g.translate(0,50*size)}g.imageSmoothingEnabled=false;if(f.hitFlash>0){
  const guard=f.blockstun>0,flash=Math.min(1,f.hitFlash/.09);
  // A colored silhouette edge identifies the victim without flashing the screen.
- g.shadowColor=guard?'#65eaff':'#ff684f';g.shadowBlur=strongEffects?12:4;
- if(strongEffects)g.filter='brightness('+(1+flash*.85)+') saturate(1.35)';
+ g.shadowColor=guard?'#65eaff':'#ffe1a0';g.shadowBlur=strongEffects?26:8;
+ if(strongEffects)g.filter='brightness('+(1+flash*1.25)+') saturate(1.35)';
  }g.drawImage(image,pose.col*160,0,160,160,-80*size,-144*size,160*size,160*size);g.restore();
  if(g===ctx)drawVictimImpact(g,f);
 };
