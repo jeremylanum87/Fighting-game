@@ -352,3 +352,10 @@ Touch movement now defaults to a four-way D-pad: left/right move, down crouches 
 Each roster fighter now has a distinct ready routine during the 1.65-second stage entrance, then settles into guard before the Round/Fight countdown. The stage banner sits above the poses. Low FX keeps the poses with minimal movement. Skip Intro still bypasses this sequence. Training remains immediate.
 
 All eight pose frames, guard settle, gameplay isolation and countdown progression were checked in Chromium. Physical device checks remain.
+
+
+### Round victory and highlight timing
+
+Round winners now receive a dedicated 1.8-second animated victory before the next-round prompt. Final match wins complete any finisher first, then show the victory pose, then reveal match highlights. Early highlight calls are deferred; duplicate final highlight reveals are suppressed. Player and CPU winners are supported, timers freeze when hidden/settings are open, and navigation clears the presentation state. Training/story-specific chapter flow remains separate.
+
+Run node victory-flow.test.cjs. The first-round pose and real-time final-finisher → victory-pose → highlights order were also checked in Chromium.
