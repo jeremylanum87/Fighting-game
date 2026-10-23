@@ -240,3 +240,8 @@ button:focus-visible,select:focus-visible,summary:focus-visible{outline:3px soli
 body:not(.xbox-layout) #dpadUp{display:none}
 body:not(.use-thumbstick) .battle-shell .thumbstick{display:none!important}
 .use-thumbstick .battle-shell .thumbstick{display:block!important}
+
+/* Keep the entrance banner above the fighters while their ready poses play. */
+.battle-shell .arena>.round-opening[data-phase="stage"]{justify-content:flex-start;padding-top:12px;background:linear-gradient(#09162988,transparent 40%);box-sizing:border-box}
+.round-opening[data-phase="stage"] strong{font-size:clamp(16px,3vw,30px);text-shadow:2px 2px #091522}
+.round-opening[data-phase="stage"] p{font-size:clamp(7px,1vw,11px);letter-spacing:1px;margin:4px 8px}

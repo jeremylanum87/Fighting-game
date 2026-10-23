@@ -345,3 +345,10 @@ Combat and rewards freeze during the cosmetic sequence; no additional hits or re
 ### D-pad movement
 
 Touch movement now defaults to a four-way D-pad: left/right move, down crouches and up jumps. A remains a second jump button on the Xbox face layout. Existing installations switch to D-pad once; the Controls thumbstick option remains available. Reset Controls returns to the D-pad. Touch jump/release and landscape placement were checked in Chromium emulation.
+
+
+### In-arena pre-fight poses
+
+Each roster fighter now has a distinct ready routine during the 1.65-second stage entrance, then settles into guard before the Round/Fight countdown. The stage banner sits above the poses. Low FX keeps the poses with minimal movement. Skip Intro still bypasses this sequence. Training remains immediate.
+
+All eight pose frames, guard settle, gameplay isolation and countdown progression were checked in Chromium. Physical device checks remain.

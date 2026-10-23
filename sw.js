@@ -1,6 +1,7 @@
 'use strict';
-const CACHE='block-cypher-offline-v64';
+const CACHE='block-cypher-offline-v65';
 const FILES=[
+  "./pre-fight.js",
   "./dpad.js",
   "./finishers.js",
   "./battle-damage.js",
