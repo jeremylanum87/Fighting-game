@@ -363,8 +363,10 @@ Run node victory-flow.test.cjs. The first-round pose and real-time final-finishe
 
 ### Hit glow and round-ending slow motion
 
-Unblocked damage now gives the victim a brighter warm glow and brief brightness boost; guard feedback remains blue. Every accepted knockout hit in a normal round starts a 0.75-second slow impact with attack-pose advancement at 20% speed. Low FX uses a shorter 0.4-second presentation with restrained recoil. Timeouts do not trigger it.
+Unblocked damage now gives the victim a brighter warm glow and brief brightness boost; guard feedback remains blue. Every accepted knockout hit in a normal round starts a 1.5-second slow impact with attack-pose advancement at 20% speed. Low FX uses a shorter 0.7-second presentation with restrained recoil. Timeouts do not trigger it.
 
 The knockout applies damage/rewards once, then pauses the next finisher and victory clocks until the slow impact ends. The final order is slow impact → optional finisher → victory pose → highlights. Hidden pages/settings freeze the effect. Skip via the visible button, Esc/Enter/Space, or controller A/B/Start. Story encounters also retain their completion/retry panels afterward.
 
 Run node round-impact.test.cjs. Chromium rendering and real-time first-round sequencing were checked; physical Android/Xbox testing remains.
+
+Hit glow now lasts 0.4 seconds (0.24 seconds under Low FX), with a smooth brightness fade. Knockout impact slow motion lasts 1.5 seconds; the following finisher, victory and highlights sequence waits for it.

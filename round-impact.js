@@ -12,7 +12,7 @@ applyCombatHit=function(a,t,m,d){
  const ok=hitBeforeRoundImpact(a,t,m,d),damage=hp-t.hp;
  if(ok&&damage>0){
  const blocked=t.blockstun>0&&damage<=Math.max(0,m.chip||0);
- if(!blocked)t.hitFlash=Math.max(t.hitFlash||0,strongEffects?.18:.12);
+ if(!blocked)t.hitFlash=Math.max(t.hitFlash||0,strongEffects?.4:.24);
  if(active&&hp>0&&t.hp<=0&&(gameMode!=='training'||typeof story!=='undefined'&&story)){
  roundImpactCandidate={winner:a,target:t,dir:d,attackerPose:pose,targetPose:{...t,attack:null,stun:1,block:false,celebrating:false,knockedDown:false}};
  }
@@ -24,7 +24,7 @@ endRound=function(){
  const active=mode==='playing';endBeforeRoundImpact();
  const candidate=roundImpactCandidate;roundImpactCandidate=null;
  if(!active||!candidate||!['roundover','finished','paused'].includes(mode))return;
- roundImpact={...candidate,age:0,life:strongEffects?.75:.4};knockoutMoment=null;shakeTime=0;
+ roundImpact={...candidate,age:0,life:strongEffects?1.5:.7};knockoutMoment=null;shakeTime=0;
  $('#highlightsPanel').hidden=true;
  if(typeof story!=='undefined'&&['won','lost'].includes(story?.phase))$('#storyPanel').hidden=true;
  clearInput();$('#skipLastBar').textContent='SKIP SLOW MOTION / ESC';$('#skipLastBar').hidden=false;

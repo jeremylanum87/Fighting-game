@@ -56,7 +56,7 @@ renderStreetFighter=function(g,f,scale=2.1){if(!fighterRoster[f.character])retur
  const b=BODY_STYLES[f.character],size=scale*(g===ctx?ARENA_FIGHTER_SCALE:1)*.7*b.height;let x=pose.x,y=pose.y;const history=flowState.get(f);
  if(history&&mode==='playing'&&!superCinema&&!hitstop&&!['throw','throw-victim'].includes(pose.kind)){const alpha=Math.min(1,(flowAccumulator+simulationAccumulator*FIGHT_PACE)/STEP);if(Math.abs(f.x-history.x)<24)x+=(history.x-f.x)*(1-alpha);if(Math.abs(f.y-history.y)<30)y+=(history.y-f.y)*(1-alpha)}
  g.save();g.translate(x,y);g.scale((f.face||1)*.78*Math.sqrt(b.width)*pose.sx,pose.sy);if(pose.angle){g.translate(0,-50*size);g.rotate(pose.angle);g.translate(0,50*size)}g.imageSmoothingEnabled=false;if(f.hitFlash>0){
- const guard=f.blockstun>0,flash=Math.min(1,f.hitFlash/.09);
+ const guard=f.blockstun>0,flash=Math.min(1,f.hitFlash/(guard?.07:.22));
  // A colored silhouette edge identifies the victim without flashing the screen.
  g.shadowColor=guard?'#65eaff':'#ffe1a0';g.shadowBlur=strongEffects?26:8;
  if(strongEffects)g.filter='brightness('+(1+flash*1.25)+') saturate(1.35)';
@@ -68,6 +68,7 @@ renderStreetFighter=function(g,f,scale=2.1){if(!fighterRoster[f.character])retur
 // Small, deterministic marks follow the victim; no extra gameplay RNG or timers.
 function drawVictimImpact(g,f){
  const r=reactions.get(f),guard=f.blockstun>0,flash=f.hitFlash||0;
+ if(!guard&&!r)return;
  if(f.celebrating||(!flash&&(!r||guard))||throwSequences.some(e=>e.t===f))return;
  const life=guard?.16:r?.kind==='heavy'?.26:.19;
  const age=guard?Math.max(0,.07-flash):r?.age||0;
