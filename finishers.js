@@ -73,7 +73,7 @@ function drawCinematicFinisher(c){
  ctx.save();ctx.translate(550,300);ctx.scale(zoom,zoom);ctx.translate(-Math.max(330,Math.min(770,c.winner.x)), -300);
  drawStageBackdrop(ctx);ctx.fillStyle='#0d142b66';ctx.fillRect(0,0,1100,520);
  if(strongEffects&&!(c.story&&c.age>1.25))drawLastBarMotif(ctx,{id:c.id,age:c.age},c.winner.x,c.winner.y-155);
- ctx.save();ctx.translate(c.target.x,c.target.y);ctx.rotate(c.target.face*1.15);ctx.translate(-c.target.x,-c.target.y);renderStreetFighter(ctx,c.target,2.1);ctx.restore();renderStreetFighter(ctx,c.winner,2.1);
+ renderStreetFighter(ctx,c.target,2.1);renderStreetFighter(ctx,c.winner,2.1);
  ctx.restore();
  ctx.fillStyle='#07101eee';ctx.fillRect(0,0,1100,46);ctx.fillRect(0,415,1100,105);
  ctx.textAlign='center';ctx.fillStyle='#f3d18a';ctx.font='italic 900 31px Impact,sans-serif';ctx.fillText(c.title,550,33);

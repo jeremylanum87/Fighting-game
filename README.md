@@ -372,3 +372,10 @@ Run node round-impact.test.cjs. Chromium rendering and real-time first-round seq
 Hit glow now lasts 0.4 seconds (0.24 seconds under Low FX), with a smooth brightness fade. Knockout impact slow motion lasts 1.5 seconds; the following finisher, victory and highlights sequence waits for it.
 
 Skip options have been removed from intro, slow impact and finisher presentations. Internal completion functions remain for timers and navigation cleanup. Chromium verified hidden controls/settings, ignored skip inputs and automatic progress to highlights.
+
+
+### Defeat falls and ground poses
+
+Round losers now fall over 0.7 seconds and hold a defeated ground pose until reset. The same presentation covers either fighter, timeouts with health remaining, final-match cinematics and story wins/losses. Falls begin after the slow knockout impact; defeated characters stay down during the winner's celebration and highlights. Low FX shortens the fall to 0.35 seconds.
+
+The animation transforms only rendering, without changing fighter positions, health or hitboxes. It replaces the finisher's previous separate loser rotation so there is no double fall. Story completion/retry panels wait until the fall finishes. Run node defeated.test.cjs. Chromium rendering, including a crouching loser, was checked; physical Android/Xbox testing remains.
