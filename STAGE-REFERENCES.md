@@ -1,0 +1,15 @@
+# Location studies for the stages
+
+The stages remain fictional, original pixel-art compositions set around 2010. Real photographs informed the architectural shapes below; they are not exact recreations of the locations. No reference photographs or business logos are bundled, traced, or fetched by the game. All added geometry is drawn locally and works offline.
+
+Photo references consulted October 23, 2026:
+
+- **Cleveland / Cuyahoga Cypher:** [Center Street Swing Bridge photograph](https://airial.travel/attractions/united-states/cleveland/center-street-swing-bridge-rBvWxP-u) and [The Observer: What to do in the Flats](https://observer.case.edu/what-to-do-in-the-flats/). Red steel truss members, connection plates, river reflections, riverfront masonry and mooring posts. The game's skyline/bridge layout is an artistic composite.
+- **Basketball court:** [Rucker Park photograph in Never Ending Season](https://www.neverendingseason.com/playground-iconici-mondo/). Repeated housing windows, perimeter mesh and layered court surroundings. Modern sponsor graphics are excluded.
+- **Subway:** [Williamsburg station night photograph](https://yourbrooklynguide.com/laguardia-to-williamsburg-williamsburg-to-laguardia/) and [Chalo Gallardo's Coney Island platform photograph](https://unsplash.com/photos/a-view-of-a-train-station-with-a-roller-coaster-in-the-background-o-m3x_7aCQ8). Riveted columns, benches, platform safety textures and contrasting station signage.
+- **Corner store, laundromat, block party:** [455 Second Avenue storefront photograph](https://streeteasy.com/building/455-2-avenue-new_york/4b), [383 South Third Street photograph](https://streeteasy.com/building/383-south-3-street-brooklyn/3), and [206 Rivington Street facade photograph](https://streeteasy.com/building/206-rivington-street-new_york/1c). Brick bonds, window sills, zigzag fire escapes, drainpipes, window merchandise and service notices. Business names and phone numbers are not reproduced.
+- **Rooftop and rooftop parking:** [Brent Buck Architects: DUMBO Loft water-tower photograph](https://brentbuckarchitects.com/project/dumbo-loft/). Wooden staves, steel bands, conical tank roofs and cross-braced supports; supplemented with original ventilation equipment and parking furniture. Parking is a fictional rooftop rather than a particular photographed garage.
+- **Warehouse:** The same DUMBO industrial-building study informs multi-pane factory windows, riveted framing and loading-area materials. Interior layout is original.
+- **Underpass and street festival:** [TODD: Under the K Bridge photographs](https://www.toddprojects.com/projects/under-the-k) and [Shawn Bruce: Banks9 Skate Jam photographs](https://shawnpbruce.com/blog/banks9-skate-jam-and-hanging-out-with-the-torro-skateboards-team). Layered beam construction, concrete weathering and neighborhood gathering details. Contemporary event branding is excluded.
+
+Implementation: `photo-stage-details.js` caches up to four 1100 × 520 overlays. Draws do not modify gameplay, collision geometry or random state. Story breach effects remain above these architectural details.
