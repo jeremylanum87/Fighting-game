@@ -4,7 +4,7 @@ function validRespectSave(raw){const save={balance:0,lifetime:0,owned:[],equippe
 let respectSave=validRespectSave(safeStorageGet('block-cypher-respect-v1')),respectRound={earned:0,counts:{},comeback:false,closed:false},respectMatchEarned=0;
 const respectComboAwarded=new WeakMap();
 function saveRespect(){safeStorageSet('block-cypher-respect-v1',respectSave);$('#respectBalance').textContent=respectSave.balance+' RESPECT';$('#titleRespectBalance').textContent=respectSave.balance+' RESPECT / STYLE EARNS YOUR NAME'}
-function earnRespect(reason,amount,limit=1,result=false){if(gameMode==='training'||respectRound.closed||(!result&&mode!=='playing')||respectRound.earned>=60)return 0;const count=respectRound.counts[reason]||0;if(count>=limit)return 0;const n=Math.min(amount,60-respectRound.earned);respectRound.counts[reason]=count+1;respectRound.earned+=n;respectMatchEarned+=n;respectSave.balance+=n;respectSave.lifetime+=n;saveRespect();if(!result){impactLabels.push({x:player.x,y:player.y-190,text:'+'+n+' RESPECT / '+reason.toUpperCase(),age:0,life:.9,color:'#ffe28b'});impactLabels=impactLabels.slice(-10)}return n}
+function earnRespect(reason,amount,limit=1,result=false){if(gameMode==='training'||gameMode==='showcase'||respectRound.closed||(!result&&mode!=='playing')||respectRound.earned>=60)return 0;const count=respectRound.counts[reason]||0;if(count>=limit)return 0;const n=Math.min(amount,60-respectRound.earned);respectRound.counts[reason]=count+1;respectRound.earned+=n;respectMatchEarned+=n;respectSave.balance+=n;respectSave.lifetime+=n;saveRespect();if(!result){impactLabels.push({x:player.x,y:player.y-190,text:'+'+n+' RESPECT / '+reason.toUpperCase(),age:0,life:.9,color:'#ffe28b'});impactLabels=impactLabels.slice(-10)}return n}
 const comboBeforeRespect=onComboHit;
 onComboHit=function(f,t,m,d,blocked){comboBeforeRespect(f,t,m,d,blocked);if(f!==player||blocked||gameMode==='training')return;if(f.combo===1)respectComboAwarded.set(f,false);if(f.combo>=3&&new Set(f.comboMoves||[]).size>=2&&!respectComboAwarded.get(f)){respectComboAwarded.set(f,true);earnRespect('clean combo',6,3)}};
 const hitBeforeRespect=applyCombatHit;
@@ -14,11 +14,11 @@ function escapeThrow(defender,attacker){if(!canEscapeThrow(defender,attacker))re
 const captureBeforeRespect=captureCombatInput;
 captureCombatInput=function(){const pressed=keys.has('g')&&!previousKeys.has('g');if(pressed&&escapeThrow(player,enemy)){captureBeforeRespect();inputQueue=[];return}captureBeforeRespect()};
 const updateBeforeRespect=update;
-update=function(dt){if(mode==='playing'&&gameMode!=='training'&&player.hp>0&&player.hp/player.maxHp<=.25&&enemy.hp/enemy.maxHp>=.5)respectRound.comeback=true;updateBeforeRespect(dt)};
+update=function(dt){if(mode==='playing'&&gameMode!=='training'&&gameMode!=='showcase'&&player.hp>0&&player.hp/player.maxHp<=.25&&enemy.hp/enemy.maxHp>=.5)respectRound.comeback=true;updateBeforeRespect(dt)};
 const resetBeforeRespect=resetRound;
 resetRound=function(){if(round===1)respectMatchEarned=0;respectRound={earned:0,counts:{},comeback:false,closed:false};resetBeforeRespect();respectComboAwarded.delete(player)};
 const endBeforeRespect=endRound;
-endRound=function(){const on=mode==='playing'&&gameMode!=='training',score=[...wins];endBeforeRespect();if(!on||respectRound.closed)return;if(wins[0]>score[0]){earnRespect('round win',5,1,true);if(respectRound.comeback)earnRespect('comeback',15,1,true)}respectRound.closed=true;const tag=respectSave.equipped.tag;if(lastBar?.winner===player&&tag)lastBar.tag=RESPECT_ITEMS[tag].name};
+endRound=function(){const on=mode==='playing'&&gameMode!=='training'&&gameMode!=='showcase',score=[...wins];endBeforeRespect();if(!on||respectRound.closed)return;if(wins[0]>score[0]){earnRespect('round win',5,1,true);if(respectRound.comeback)earnRespect('comeback',15,1,true)}respectRound.closed=true;const tag=respectSave.equipped.tag;if(lastBar?.winner===player&&tag)lastBar.tag=RESPECT_ITEMS[tag].name};
 const highlightsBeforeRespect=renderHighlights;
 renderHighlights=function(){highlightsBeforeRespect();$('#highlightRespect').textContent='+'+respectMatchEarned+' Respect this match · '+respectSave.balance+' available'};
 OUTFITS.respectSunset={name:'Sunset / Respect shop'};OUTFITS.respectViolet={name:'Electric Violet / Respect shop'};

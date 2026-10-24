@@ -248,3 +248,5 @@ body:not(.use-thumbstick) .battle-shell .thumbstick{display:none!important}
 
 /* Presentation sequences now complete automatically, without skip UI. */
 #skipLastBar,#rivalSkipIntro,#openingContinue{display:none!important}
+
+body.cpu-showcase .touch { display:none !important; }
