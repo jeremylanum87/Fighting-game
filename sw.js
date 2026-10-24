@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='block-cypher-offline-v73';
+const CACHE='block-cypher-offline-v74';
 const FILES=[
   "./defeated.js",
   "./no-skip.js",
@@ -20,6 +20,7 @@ const FILES=[
   "./visual-quality.js",
   "./air-combos.js",
   "./showcase.js",
+  "./movement-polish.js",
   "./photo-stage-details.js",
   "./xbox-layout.js",
   "./respect.js",
