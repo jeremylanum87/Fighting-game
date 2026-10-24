@@ -44,6 +44,6 @@ function paintMovement(g,f,scale,pose){
 const renderBeforeMovementPolish=renderStreetFighter;
 renderStreetFighter=function(g,f,scale=2.1){const p=g===ctx?movementPose(f):null;if(p&&paintMovement(g,f,scale,p))return;renderBeforeMovementPolish(g,f,scale)};
 const drawFighterBeforeMovementPolish=drawFighter;
-drawFighter=function(f){const p=movementPose(f);if(!p)return drawFighterBeforeMovementPolish(f);ctx.save();const elevation=Math.max(0,ground-f.y),radius=Math.max(19,39-elevation*.07);ctx.fillStyle=`rgba(0,0,0,${Math.max(.13,.38-elevation*.001)})`;ctx.beginPath();ctx.ellipse(f.x,ground+2,radius,Math.max(4,8-elevation*.016),0,0,Math.PI*2);ctx.fill();renderStreetFighter(ctx,f);ctx.restore()};
+drawFighter=function(f){const p=movementPose(f);if(!p)return drawFighterBeforeMovementPolish(f);ctx.save();const elevation=Math.max(0,ground-f.y),radius=Math.max(19,39-elevation*.07);ctx.fillStyle=typeof drawingGroundedFighter!=='undefined'&&drawingGroundedFighter?'#0000':`rgba(0,0,0,${Math.max(.13,.38-elevation*.001)})`;ctx.beginPath();ctx.ellipse(f.x,ground+2,radius,Math.max(4,8-elevation*.016),0,0,Math.PI*2);ctx.fill();renderStreetFighter(ctx,f);ctx.restore()};
 const resetBeforeMovementPolish=resetRound;resetRound=function(){resetBeforeMovementPolish();movementVisuals=new WeakMap()};
 const titleBeforeMovementPolish=showTitleScreen;showTitleScreen=function(){titleBeforeMovementPolish();movementVisuals=new WeakMap()};

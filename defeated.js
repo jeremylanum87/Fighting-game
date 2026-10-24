@@ -57,7 +57,7 @@ drawFighter=function(f){
  const d=defeatedFighters.get(f);
  if(!d||roundImpact){drawFighterBeforeDefeated(f);return}
  const p=Math.min(1,d.age/d.life);
- ctx.save();ctx.globalAlpha=1;ctx.fillStyle='#0006';ctx.beginPath();
+ ctx.save();ctx.globalAlpha=1;ctx.fillStyle=typeof drawingGroundedFighter!=='undefined'&&drawingGroundedFighter?'#0000':'#0006';ctx.beginPath();
  ctx.ellipse(f.x+(f.face||1)*65*p,f.y+3,39+65*p,7,0,0,Math.PI*2);ctx.fill();
  renderStreetFighter(ctx,f);ctx.restore();
 };
