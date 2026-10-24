@@ -7,8 +7,8 @@ android {
         applicationId 'com.blockcypher.game'
         minSdk 26
         targetSdk 35
-        versionCode 20
-        versionName '0.20-smooth-gameplay-preview'
+        versionCode 21
+        versionName '0.21-clean-menu-preview'
     }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
     sourceSets.main.assets.srcDir layout.buildDirectory.dir('generated/gameAssets')
