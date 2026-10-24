@@ -52,7 +52,7 @@ const resetBeforeShowcase=resetRound;resetRound=function(){showcaseBrains=new We
 const updateBeforeShowcase=update;
 update=function(dt){updateBeforeShowcase(dt);if(gameMode!=='showcase'||document.hidden||!$('#controlSettings').hidden)return;
  if(!['roundover','finished'].includes(mode)){showcaseWait=0;return}
- if(roundImpact||cinematicFinisher||lastBar||roundVictory)return;
+ if(roundImpact||cinematicFinisher||lastBar||roundVictory||(typeof cinematicReplay!=='undefined'&&cinematicReplay))return;
  $('#highlightsPanel').hidden=true;showcaseWait+=dt;if(showcaseWait<3)return;
  if(mode==='finished'){showcaseBout++;const ids=Object.keys(fighterRoster),i=ids.indexOf(chosenCharacter);chosenCharacter=ids[(i+1)%ids.length];chosenOpponent=ids[(i+4)%ids.length];const stages=Object.keys(STAGES);selectedStage=stages[(stages.indexOf(selectedStage)+1)%stages.length];round=1;wins=[0,0]}else round++;
  resetRound();
