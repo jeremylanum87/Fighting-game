@@ -18,7 +18,7 @@ update=function(dt){const advance=['playing','roundover','finished'].includes(mo
 const resetBeforeSpecialShow=resetRound;
 resetRound=function(){specialShows=[];resetBeforeSpecialShow()};
 function drawSpecialShow(g,e){
- const p=e.age/e.life,fade=Math.sin(Math.PI*Math.min(1,p*1.3))*(1-p),r=(e.impact?30:45)+p*(e.super?185:125),count=strongEffects?12:5;
+ const p=e.age/e.life,fade=Math.sin(Math.PI*Math.min(1,p*1.3))*(1-p),r=(e.impact?30:45)+p*(e.super?185:125),count=strongEffects&&!reducedMotionPreference()?18:5;
  g.save();g.translate(e.x,e.y);g.scale(e.face,1);g.globalCompositeOperation='lighter';g.globalAlpha=fade*(strongEffects?.8:.45);
  // Expanding multicolor comic rays surround the fighter rather than covering them.
  for(let i=0;i<count;i++){const a=i/count*Math.PI*2+p*.7,inner=r*.65,outer=r*(i%2?1.15:1.5);g.fillStyle=e.colors[i%3];g.beginPath();g.moveTo(Math.cos(a-.035)*inner,Math.sin(a-.035)*inner);g.lineTo(Math.cos(a)*outer,Math.sin(a)*outer);g.lineTo(Math.cos(a+.035)*inner,Math.sin(a+.035)*inner);g.closePath();g.fill()}

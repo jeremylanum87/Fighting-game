@@ -19,7 +19,7 @@ function stageLitAtlas(source,f){
  let id=groundingSourceIds.get(source);if(!id){id=++nextGroundingSource;groundingSourceIds.set(source,id)}const key=id+':'+selectedStage+':'+(f.face<0?'L':'R');if(stageLightingCache.has(key))return stageLightingCache.get(key);
  try{const c=document.createElement('canvas');c.width=width;c.height=height;const g=c.getContext('2d');g.drawImage(source,0,0);const frame=g.getImageData(0,0,width,height),d=frame.data,original=new Uint8ClampedArray(d),p=STAGE_MATERIALS[selectedStage]||STAGE_MATERIALS.court,a=rgb(p.ambient),rim=rgb(p.rim),bounce=rgb(p.bounce),side=f.face<0?2:-2;
  for(let y=0;y<height;y++)for(let x=0;x<width;x++){const i=(y*width+x)*4;if(original[i+3]<20)continue;const local=x%160,edgeX=x+side,edge=local+side>=0&&local+side<160&&(original[(y*width+edgeX)*4+3]<40),up=y>1&&original[((y-2)*width+x)*4+3]<40,foot=Math.max(0,(y-106)/54);
- for(let k=0;k<3;k++){let value=original[i+k]*.94+a[k]*.06;value=value*(1-foot*.11)+bounce[k]*foot*.11;if(edge||up)value=value*.72+rim[k]*.28;d[i+k]=Math.round(value)}}g.putImageData(frame,0,0);
+ for(let k=0;k<3;k++){let value=original[i+k]*.94+a[k]*.06;value=value*(1-foot*.11)+bounce[k]*foot*.11;if(edge||up)value=value*.68+rim[k]*.32;d[i+k]=Math.round((value-110)*1.035+110)}}g.putImageData(frame,0,0);
  const cap=coarseGameDevice()?6:12;if(stageLightingCache.size>=cap)stageLightingCache.delete(stageLightingCache.keys().next().value);stageLightingCache.set(key,c);return c;
  }catch{return source}
 }

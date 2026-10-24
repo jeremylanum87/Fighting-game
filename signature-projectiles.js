@@ -23,7 +23,7 @@ updateMovesetButtons=function(){buttonsBeforeSignatures();const m=SIGNATURE_PROJ
 const renderBeforeSignatures=renderStreetFighter;
 renderStreetFighter=function(g,f,scale=2.1){if(f.attack?.type!=='signature'){renderBeforeSignatures(g,f,scale);return}const slot={volt:'uppercut',ember:'spinKick',cipher:'uppercut',brick:'spinKick',jade:'uppercut',rook:'uppercut',haze:'fireball',goldie:'spinKick'}[f.character],a=f.attack;renderBeforeSignatures(g,{...f,attack:{...a,type:slot,move:{...a.move,pose:slot}}},scale)};
 function drawSignatureProjectile(g,p){const m=p.move,t=(p.age||0)*10;g.save();g.translate(p.x,p.y);g.scale(p.dir,1);g.lineWidth=3;g.strokeStyle=m.colors[0];g.fillStyle=m.colors[0];
- if(strongEffects){g.globalAlpha=.25;for(let j=1;j<=4;j++){g.beginPath();g.ellipse(-j*15,0,m.width,Math.max(3,m.projectileHeight*.6),0,0,Math.PI*2);g.fill()}g.globalAlpha=1}
+ if(strongEffects){g.globalAlpha=.25;for(let j=1;j<=6;j++){g.beginPath();g.ellipse(-j*15,0,m.width,Math.max(3,m.projectileHeight*.6),0,0,Math.PI*2);g.fill()}g.globalAlpha=1}
  if(m.kind==='bolt'||m.kind==='dart'){g.beginPath();g.moveTo(-30,-10);g.lineTo(0,-6);g.lineTo(-9,-19);g.lineTo(36,0);g.lineTo(-13,16);g.lineTo(-3,5);g.lineTo(-32,10);g.closePath();g.fill()}
  else if(m.kind==='flame'){for(let j=0;j<3;j++){g.fillStyle=m.colors[j%2];g.beginPath();g.moveTo(25,0);g.quadraticCurveTo(-10,-30+j*8,-48+Math.sin(t+j)*8,-15+j*12);g.quadraticCurveTo(-20,15,25,0);g.fill()}}
  else if(m.kind==='quake'){for(let j=0;j<3;j++){g.beginPath();g.moveTo(-30+j*20,12);g.lineTo(-24+j*20,-18-(j%2)*9);g.lineTo(-10+j*20,12);g.fill()}}
