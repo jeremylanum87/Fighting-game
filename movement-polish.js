@@ -21,9 +21,9 @@ function paintMovement(g,f,scale,pose){
  let image=f.isBoss?motionArt.promoter:arcadeSprites[f.character];if(!image?.complete||image.naturalWidth<1280)return false;
  if(!f.isBoss&&(f===player||f.character===chosenCharacter&&f!==enemy))image=recolorOutfit(image,f.character,chosenOutfit(f.character));image=battleDamageAtlas(image,f);
  const b=BODY_STYLES[f.character],size=scale*ARENA_FIGHTER_SCALE*.7*b.height,flavor=MOVEMENT_FLAVOR[f.character]||[1,1],s=pose.s,air=['rise','apex','fall'].includes(pose.kind),low=pose.kind==='low-guard',land=pose.kind==='land',quiet=reducedMotionPreference(),amount=quiet?.35:1;
- const landing=land?Math.sin((s.land/.2)*Math.PI):0,entry=Math.min(1,s.airAge/.14),apex=Math.max(0,1-Math.abs(f.vy)/230),recoil=s.recoil*s.recoil;
+ const landing=land?Math.sin(Math.min(1,s.land/.2)*Math.PI/2):0,entry=Math.min(1,s.airAge/.14),apex=Math.max(0,1-Math.abs(f.vy)/230),recoil=s.recoil*s.recoil;
  const col=air?5:low?2:1,squash=air?1+.035*(1-apex)*amount:1-(landing*.15+(low?.17:0))*amount;
- const lean=air?(pose.kind==='rise'?-.12:pose.kind==='fall'?.14:0)*flavor[0]*amount:(.035*s.guard-.12*recoil*flavor[1])*amount;
+ const lean=air?(Math.max(-1,Math.min(1,f.vy/450))*.14)*flavor[0]*amount:(.035*s.guard-.12*recoil*flavor[1])*amount;
  g.save();g.translate(f.x-(air?0:f.face*recoil*7*amount),f.y);g.scale((f.face||1)*.78*Math.sqrt(b.width),squash);
  if(f.hitFlash>0){g.shadowColor=f.blockstun>0?'#79f3ff':'#ffe1a0';g.shadowBlur=strongEffects?16:4}
  g.imageSmoothingEnabled=false;
